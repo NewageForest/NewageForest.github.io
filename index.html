@@ -223,6 +223,8 @@
       font-weight:600;
       transition:0.25s ease;
       border:1px solid transparent;
+      cursor:pointer;
+      font-size:1rem;
     }
 
     .btn-primary{
@@ -382,12 +384,369 @@
       font-weight:600;
     }
 
+    /* Life Path Number Calculator */
+    .calculator-section{
+      background: linear-gradient(160deg, rgba(92,122,99,0.08), rgba(198,168,107,0.06));
+      border-radius:28px;
+      padding:36px;
+      border:1px solid rgba(92,122,99,0.14);
+      margin-top:24px;
+    }
+
+    .calc-form{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      align-items:flex-end;
+      margin:24px 0;
+    }
+
+    .calc-field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .calc-field label{
+      font-size:0.88rem;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .calc-field input, .calc-field select{
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(92,122,99,0.2);
+      background:#fffdf8;
+      font-size:1rem;
+      color:var(--text);
+      outline:none;
+      transition:0.2s;
+      width:100px;
+    }
+
+    .calc-field input:focus, .calc-field select:focus{
+      border-color:var(--green);
+      box-shadow:0 0 0 3px rgba(92,122,99,0.1);
+    }
+
+    .calc-field input.year-input{
+      width:120px;
+    }
+
+    .calc-btn{
+      padding:12px 28px;
+      border-radius:999px;
+      background:var(--green-deep);
+      color:#fff;
+      border:none;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.25s;
+    }
+
+    .calc-btn:hover{
+      background:#334c39;
+      transform:translateY(-1px);
+    }
+
+    .result-box{
+      display:none;
+      margin-top:24px;
+      padding:28px;
+      background:rgba(255,253,248,0.9);
+      border:1px solid rgba(92,122,99,0.14);
+      border-radius:24px;
+      box-shadow:0 8px 24px rgba(49,67,54,0.06);
+      animation: fadeInUp 0.4s ease;
+    }
+
+    .result-box.show{
+      display:block;
+    }
+
+    @keyframes fadeInUp{
+      from{ opacity:0; transform:translateY(16px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+
+    .result-number{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:72px;
+      height:72px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--green-deep), var(--green));
+      color:#fff;
+      font-size:2rem;
+      font-weight:700;
+      margin-bottom:16px;
+      box-shadow:0 6px 20px rgba(63,91,70,0.2);
+    }
+
+    .result-title{
+      font-size:1.3rem;
+      font-weight:700;
+      color:var(--green-deep);
+      margin-bottom:8px;
+    }
+
+    .result-desc{
+      color:var(--muted);
+      margin-bottom:18px;
+      line-height:1.8;
+    }
+
+    .cta-box{
+      margin-top:20px;
+      padding:20px;
+      background:#edf4ed;
+      border-radius:16px;
+      border:1px solid rgba(92,122,99,0.12);
+    }
+
+    .cta-box p{
+      margin:0 0 12px;
+      font-size:0.95rem;
+    }
+
+    /* Personality Grid */
+    .personality-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+      margin-top:24px;
+    }
+
+    .personality-item{
+      padding:16px;
+      background:rgba(255,253,248,0.8);
+      border:1px solid rgba(92,122,99,0.1);
+      border-radius:16px;
+      text-align:center;
+      transition:0.2s;
+    }
+
+    .personality-item:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 18px rgba(49,67,54,0.08);
+    }
+
+    .personality-num{
+      font-size:1.6rem;
+      font-weight:700;
+      color:var(--green-deep);
+    }
+
+    .personality-name{
+      font-size:0.85rem;
+      color:var(--muted);
+      margin-top:4px;
+    }
+
+    /* Product Carousel */
+    .carousel-wrapper{
+      position:relative;
+      overflow:hidden;
+      margin:0 -16px;
+      padding:0 16px;
+    }
+
+    .carousel-track{
+      display:flex;
+      gap:22px;
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      padding:10px 0;
+    }
+
+    .carousel-card{
+      flex:0 0 calc(33.333% - 15px);
+      min-width:300px;
+      background:rgba(255,253,248,0.85);
+      border:1px solid rgba(92,122,99,0.12);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:0 8px 24px rgba(49,67,54,0.05);
+      position:relative;
+      overflow:hidden;
+      transition:0.3s;
+    }
+
+    .carousel-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 14px 36px rgba(49,67,54,0.1);
+    }
+
+    .carousel-nav{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:16px;
+      margin-top:28px;
+    }
+
+    .carousel-btn{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      border:1px solid rgba(92,122,99,0.2);
+      background:rgba(255,253,248,0.9);
+      color:var(--green-deep);
+      font-size:1.3rem;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:0.2s;
+    }
+
+    .carousel-btn:hover{
+      background:var(--green-deep);
+      color:#fff;
+      border-color:var(--green-deep);
+    }
+
+    .carousel-dots{
+      display:flex;
+      gap:8px;
+    }
+
+    .carousel-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--line);
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .carousel-dot.active{
+      background:var(--green-deep);
+      width:28px;
+      border-radius:999px;
+    }
+
+    .buy-btn{
+      display:block;
+      width:100%;
+      padding:14px;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--green-deep), #4a6b50);
+      color:#fff;
+      text-align:center;
+      font-weight:600;
+      font-size:1rem;
+      transition:0.25s;
+      margin-top:16px;
+      border:none;
+      cursor:pointer;
+    }
+
+    .buy-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 18px rgba(63,91,70,0.2);
+    }
+
+    .product-visual{
+      height:160px;
+      border-radius:16px;
+      margin-bottom:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .product-visual-1{
+      background:linear-gradient(135deg, #e8f5e9, #fff9e6, #e0f2f1);
+    }
+
+    .product-visual-2{
+      background:linear-gradient(135deg, #c8e6c9, #e8f5e9, #dcedc8);
+    }
+
+    .product-visual-3{
+      background:linear-gradient(135deg, #e3f2fd, #ede7f6, #e8eaf6);
+    }
+
+    .product-visual-icon{
+      font-size:3.5rem;
+      opacity:0.8;
+    }
+
+    .five-elements{
+      display:flex;
+      gap:6px;
+      margin:10px 0;
+      flex-wrap:wrap;
+    }
+
+    .element-tag{
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:0.75rem;
+      font-weight:600;
+    }
+
+    .el-wood{ background:#e8f5e9; color:#2e7d32; }
+    .el-fire{ background:#fce4ec; color:#c62828; }
+    .el-earth{ background:#fff8e1; color:#f57f17; }
+    .el-metal{ background:#f3e5f5; color:#6a1b9a; }
+    .el-water{ background:#e3f2fd; color:#1565c0; }
+
+    /* Modal */
+    .modal-overlay{
+      display:none;
+      position:fixed;
+      top:0;left:0;right:0;bottom:0;
+      background:rgba(0,0,0,0.5);
+      z-index:2000;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+
+    .modal-overlay.show{
+      display:flex;
+    }
+
+    .modal-box{
+      background:#fffdf8;
+      border-radius:28px;
+      padding:36px;
+      max-width:500px;
+      width:100%;
+      max-height:90vh;
+      overflow-y:auto;
+      box-shadow:0 20px 60px rgba(0,0,0,0.2);
+      animation: fadeInUp 0.3s ease;
+    }
+
+    .modal-close{
+      float:right;
+      width:36px;
+      height:36px;
+      border-radius:50%;
+      border:none;
+      background:#edf4ed;
+      color:var(--green-deep);
+      font-size:1.2rem;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
     @media (max-width: 960px){
       .hero-grid,
       .grid-2,
       .grid-3,
       .store-layout,
-      .contact-boxes{
+      .contact-boxes,
+      .personality-grid{
         grid-template-columns:1fr;
       }
 
@@ -403,6 +762,38 @@
       .hero-visual{
         min-height:300px;
       }
+
+      .carousel-card{
+        flex:0 0 85%;
+        min-width:280px;
+      }
+
+      .calc-form{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .calc-field input, .calc-field select{
+        width:100%;
+      }
+
+      .calc-field input.year-input{
+        width:100%;
+      }
+
+      .personality-grid{
+        grid-template-columns:repeat(3,1fr);
+      }
+    }
+
+    @media (max-width: 600px){
+      .personality-grid{
+        grid-template-columns:repeat(3, 1fr);
+        gap:8px;
+      }
+      .personality-item{
+        padding:10px;
+      }
     }
   </style>
 </head>
@@ -416,6 +807,7 @@
       </div>
       <div class="nav-links">
         <a href="#home">首頁 Home</a>
+        <a href="#numerology">生命靈數</a>
         <a href="#store">網上商店 Store</a>
         <a href="#about">關於我哋 About</a>
         <a href="#contact">聯絡 Contact</a>
@@ -443,8 +835,8 @@
             當你著啱顏色，就好似順住流年，讓愛、貴人同豐盛更容易流入你生命。
           </p>
           <div class="btn-row">
-            <a class="btn btn-primary" href="#store">立即睇產品</a>
-            <a class="btn btn-secondary" href="#about">了解 Newage.forest</a>
+            <a class="btn btn-primary" href="#numerology">計算你嘅生命靈數</a>
+            <a class="btn btn-secondary" href="#store">立即睇產品</a>
           </div>
         </div>
 
@@ -453,7 +845,7 @@
             <div class="mini">每日能量小提醒</div>
             <div class="big">用顏色，校準你今日嘅頻率</div>
             <p class="small muted">
-              唔止係穿搭指南，而係一個每日可以回到自己、安住內心、連結宇宙流動嘅能量錨點。
+              根據你嘅生命靈數 × 每日流日五行，計算出專屬你嘅魔法衣著顏色，平衡你嘅能量場。
             </p>
           </div>
         </div>
@@ -465,8 +857,9 @@
         <div class="section-head">
           <h2>呢份唔止係日曆，係你每日嘅能量錨點</h2>
           <p class="muted">
-            新心靈導師為你度身打造嘅每日能量穿搭指引，幫你透過顏色調頻、穩定節奏、
-            提升氣場，同時喺忙碌生活入面留返一個溫柔空間畀自己。
+            根據你獨一無二嘅生命靈數，結合每日流日五行能量，
+            計算出最適合你嘅魔法衣著顏色，幫你平衡五行、調頻氣場，
+            喺忙碌生活入面留返一個溫柔空間畀自己。
           </p>
         </div>
 
@@ -481,11 +874,11 @@
           </div>
 
           <div class="card">
-            <div class="benefit-icon">🤝</div>
-            <h3>吸引貴人與豐盛財運</h3>
+            <div class="benefit-icon">☯️</div>
+            <h3>平衡五行・順應流日</h3>
             <p>
-              當你內在頻率調到啱，好運、機會、財富，同埋真正明白你嘅人，
-              會更容易被你溫暖而清晰嘅能量吸引過嚟。
+              每日嘅五行能量都唔同。例如當日火過旺，我哋會建議你著藍色（水）去平衡；
+              如果著錯顏色，有機會打破自身能量平衡，影響運勢。
             </p>
           </div>
 
@@ -493,11 +886,110 @@
             <div class="benefit-icon">🌱</div>
             <h3>穩定內在能量節奏</h3>
             <p>
-              喺生活高高低低之中，顏色可以成為你隱形嘅錨，
+              喺生活高高低低之中，每日嘅流日顏色可以成為你隱形嘅錨，
               靜靜地安撫情緒，幫你返到內在平衡與和諧。
             </p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- NUMEROLOGY -->
+    <section id="numerology">
+      <div class="container">
+        <div class="section-head">
+          <h2>🔮 生命靈數 Life Path Number</h2>
+          <p class="muted">
+            「生命數字」源自古希臘數學家畢達哥拉斯的占數術。將西元出生年月日相加至個位數，
+            用來剖析個人嘅天賦優勢、內在性格與人生課題。
+          </p>
+        </div>
+
+        <div class="calculator-section">
+          <h3>💡 立即計算你嘅生命靈數</h3>
+          <p class="muted">
+            將你嘅西元出生年月日所有數字相加，若得出兩位數，則繼續相加至個位數（1-9）。
+            <br><strong>例如：</strong>1990年5月12日 → 1+9+9+0+5+1+2 = 27 → 2+7 = <strong>9</strong>
+          </p>
+
+          <div class="calc-form">
+            <div class="calc-field">
+              <label>出生年份</label>
+              <input type="number" id="birthYear" placeholder="1990" min="1900" max="2025" class="year-input">
+            </div>
+            <div class="calc-field">
+              <label>月份</label>
+              <input type="number" id="birthMonth" placeholder="5" min="1" max="12">
+            </div>
+            <div class="calc-field">
+              <label>日期</label>
+              <input type="number" id="birthDay" placeholder="12" min="1" max="31">
+            </div>
+            <button class="calc-btn" onclick="calculateLifePath()">計算我嘅靈數 ✨</button>
+          </div>
+
+          <div class="result-box" id="resultBox">
+            <div class="result-number" id="resultNumber"></div>
+            <div class="result-title" id="resultTitle"></div>
+            <div class="result-desc" id="resultDesc"></div>
+
+            <div class="cta-box">
+              <p><strong>🌟 想了解更多？</strong></p>
+              <p class="small muted">
+                如想深入了解你嘅個人基本設定、流年運程、事業方向、感情關係、子女關係等等，
+                請立即與 Newage.forest 聯絡，預約一對一生命靈數詳細諮詢！
+              </p>
+              <div class="btn-row" style="margin-top:14px;">
+                <a class="btn btn-primary" href="#contact">立即預約諮詢</a>
+                <a class="btn btn-secondary" href="#store">睇每日能量日曆</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top:36px; margin-bottom:18px;">🔢 1到9號人的性格特質與天賦</h3>
+        <div class="personality-grid">
+          <div class="personality-item">
+            <div class="personality-num">1</div>
+            <div class="personality-name">開創領導者</div>
+          </div>
+          <div class="personality-item">
+            <div class="personality-num">2</div>
+            <div class="personality-name">溫柔協調者</div>
+          </div>
+          <div class="personality-item">
+            <div class="personality-num">3</div>
+            <div class="personality-name">熱情社交家</div>
+          </div>
+          <div class="personality-item">
+            <div class="personality-num">4</div>
+            <div class="personality-name">務實穩定者</div>
+          </div>
+          <div class="personality-item">
+            <div class="personality-num">5</div>
+            <div class="personality-name">自由冒險家</div>
+          </div>
+          <div class="personality-item">
+            <div class="personality-num">6</div>
+            <div class="personality-name">無私奉獻者</div>
+          </div>
+          <div class="personality-item">
+            <div class="personality-num">7</div>
+            <div class="personality-name">邏輯分析者</div>
+          </div>
+          <div class="personality-item">
+            <div class="personality-num">8</div>
+            <div class="personality-name">商業權威者</div>
+          </div>
+          <div class="personality-item">
+            <div class="personality-num">9</div>
+            <div class="personality-name">博愛夢想家</div>
+          </div>
+        </div>
+
+        <p class="small muted" style="margin-top:16px; text-align:center;">
+          *若加總至最後為 11 或 22，在生命靈數中被稱為「大師數」，代表擁有更強大且特殊的靈性與潛能。
+        </p>
       </div>
     </section>
 
@@ -507,55 +999,113 @@
         <div class="section-head">
           <h2>網上商店 Online Store</h2>
           <p class="muted">
-            揀一個最啱你而家狀態嘅能量載體，等宇宙訊息自然流入你每一日。
+            根據你嘅生命靈數 × 每日流日五行，計算出專屬你嘅魔法衣著顏色。
+            例如當天你五行的火過多，日曆會建議你穿藍色（水）以平衡自身力量；
+            如穿了其他顏色，有機會打破自身平衡，影響運勢。
           </p>
         </div>
 
-        <div class="grid-3">
-          <div class="card product-card">
-            <div class="tag">初體驗</div>
-            <h3>「順流初綻」</h3>
-            <p class="muted">30天能量穿搭流日指引</p>
-            <div class="price">HKD$59.4</div>
-            <p><strong>適合你如果：</strong><br>你想輕鬆開始靈性覺察第一步，試下感受能量穿搭點樣改變你每日狀態。</p>
-            <p><strong>靈魂寄語：</strong><br>畀自己一個月時間，同宇宙頻率談一場溫柔嘅戀愛。</p>
-            <div class="btn-row">
-              <a class="btn btn-primary" href="#contact">我想試下</a>
+        <!-- Carousel -->
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Product 1 -->
+            <div class="carousel-card">
+              <div class="product-visual product-visual-1">
+                <span class="product-visual-icon">🌿</span>
+              </div>
+              <div class="tag">初體驗 · 30天</div>
+              <h3>「順流初綻」</h3>
+              <p class="muted small">30天能量穿搭流日指引</p>
+              <div class="five-elements">
+                <span class="element-tag el-wood">木</span>
+                <span class="element-tag el-fire">火</span>
+                <span class="element-tag el-earth">土</span>
+                <span class="element-tag el-metal">金</span>
+                <span class="element-tag el-water">水</span>
+              </div>
+              <div class="price">HKD$59.4</div>
+              <p class="small"><strong>適合你如果：</strong><br>你想輕鬆開始靈性覺察第一步，試下感受能量穿搭點樣改變你每日狀態。</p>
+              <p class="small muted"><strong>靈魂寄語：</strong>畀自己一個月時間，同宇宙頻率談一場溫柔嘅戀愛。</p>
+              <a class="buy-btn" href="YOUR_STRIPE_LINK_1" target="_blank">立即購買 →</a>
             </div>
-          </div>
 
-          <div class="card product-card">
-            <div class="tag">年度陪伴</div>
-            <h3>「森呼吸」</h3>
-            <p class="muted">365天大地滋養能量日曆</p>
-            <div class="price">HKD$494.4</div>
-            <p><strong>適合你如果：</strong><br>你想要一整年穩定而溫暖嘅陪伴，又好鍾意森林、大自然同療癒感。</p>
-            <p><strong>靈魂寄語：</strong><br>讓大地母親嘅愛，陪你走過春夏秋冬每一次呼吸。</p>
-            <div class="btn-row">
-              <a class="btn btn-primary" href="#contact">揀森呼吸</a>
+            <!-- Product 2 -->
+            <div class="carousel-card">
+              <div class="product-visual product-visual-2">
+                <span class="product-visual-icon">🌲</span>
+              </div>
+              <div class="tag">年度陪伴 · 365天</div>
+              <h3>「森呼吸」</h3>
+              <p class="muted small">365天大地滋養能量日曆</p>
+              <div class="five-elements">
+                <span class="element-tag el-wood">木</span>
+                <span class="element-tag el-fire">火</span>
+                <span class="element-tag el-earth">土</span>
+                <span class="element-tag el-metal">金</span>
+                <span class="element-tag el-water">水</span>
+              </div>
+              <div class="price">HKD$494.4</div>
+              <p class="small"><strong>適合你如果：</strong><br>你想要一整年穩定而溫暖嘅陪伴，又好鍾意森林、大自然同療癒感。</p>
+              <p class="small muted"><strong>靈魂寄語：</strong>讓大地母親嘅愛，陪你走過春夏秋冬每一次呼吸。</p>
+              <a class="buy-btn" href="YOUR_STRIPE_LINK_2" target="_blank">立即購買 →</a>
             </div>
-          </div>
 
-          <div class="card product-card">
-            <div class="tag">經典質感</div>
-            <h3>「靜謐星河」</h3>
-            <p class="muted">365天經典水彩能量日曆</p>
-            <div class="price">HKD$494.4</div>
-            <p><strong>適合你如果：</strong><br>你偏好簡約、現代感，同時想喺沉穩之中展現自己內在力量。</p>
-            <p><strong>靈魂寄語：</strong><br>似水彩一樣溫柔優雅，喺日常中顯化屬於你嘅豐盛。</p>
-            <div class="btn-row">
-              <a class="btn btn-primary" href="#contact">揀靜謐星河</a>
+            <!-- Product 3 -->
+            <div class="carousel-card">
+              <div class="product-visual product-visual-3">
+                <span class="product-visual-icon">🌌</span>
+              </div>
+              <div class="tag">經典質感 · 365天</div>
+              <h3>「靜謐星河」</h3>
+              <p class="muted small">365天經典水彩能量日曆</p>
+              <div class="five-elements">
+                <span class="element-tag el-wood">木</span>
+                <span class="element-tag el-fire">火</span>
+                <span class="element-tag el-earth">土</span>
+                <span class="element-tag el-metal">金</span>
+                <span class="element-tag el-water">水</span>
+              </div>
+              <div class="price">HKD$494.4</div>
+              <p class="small"><strong>適合你如果：</strong><br>你偏好簡約、現代感，同時想喺沉穩之中展現自己內在力量。</p>
+              <p class="small muted"><strong>靈魂寄語：</strong>似水彩一樣溫柔優雅，喺日常中顯化屬於你嘅豐盛。</p>
+              <a class="buy-btn" href="YOUR_STRIPE_LINK_3" target="_blank">立即購買 →</a>
             </div>
           </div>
+        </div>
+
+        <div class="carousel-nav">
+          <button class="carousel-btn" onclick="moveCarousel(-1)">←</button>
+          <div class="carousel-dots">
+            <div class="carousel-dot active" onclick="goToSlide(0)"></div>
+            <div class="carousel-dot" onclick="goToSlide(1)"></div>
+            <div class="carousel-dot" onclick="goToSlide(2)"></div>
+          </div>
+          <button class="carousel-btn" onclick="moveCarousel(1)">→</button>
+        </div>
+
+        <div class="soft-panel" style="margin-top:32px;">
+          <h3>☯️ 點解要跟住流日著衫？</h3>
+          <p>
+            我哋嘅能量日曆，係根據你個人嘅生命靈數（1-9號人），結合每日流日嘅五行能量變化，
+            計算出最適合你嘅魔法衣著顏色。
+          </p>
+          <p>
+            <strong>簡單例子：</strong>如果當天你嘅五行火氣過旺，日曆會建議你穿藍色（水）以平衡自身能量場。
+            相反，如果穿咗紅色（火），就有機會火上加火，打破自身平衡，影響情緒同運勢。
+          </p>
+          <p class="muted small">
+            每個人嘅生命靈數唔同，所以同一日，唔同號數嘅人適合嘅顏色都唔一樣。
+            呢就係點解我哋嘅日曆係根據你個人靈數度身訂造嘅原因。
+          </p>
         </div>
 
         <div class="store-layout" style="margin-top:28px;">
           <div class="soft-panel">
             <h3>你買到嘅，唔只係一本日曆</h3>
             <ul class="list">
-              <li>每日能量與顏色穿搭指引</li>
+              <li>根據你生命靈數度身計算嘅每日流日五行顏色指引</li>
               <li>幫你建立更有意識嘅生活儀式感</li>
-              <li>穩定情緒、整理內在節奏</li>
+              <li>平衡五行能量、穩定情緒、整理內在節奏</li>
               <li>提升自信、吸引愛與豐盛</li>
               <li>將森林與自然療癒帶入每一日</li>
             </ul>
@@ -592,12 +1142,17 @@
           </div>
 
           <div class="faq-item">
-            <strong>Q3. 買咗之後幾時收到？</strong>
+            <strong>Q3. 日曆點樣根據我嘅靈數計算顏色？</strong>
+            <p class="muted">我哋會根據你嘅生命靈數（1-9號人），結合每日流日五行能量，運算出平衡你當日五行嘅最佳衣著顏色，幫你順流而行。</p>
+          </div>
+
+          <div class="faq-item">
+            <strong>Q4. 買咗之後幾時收到？</strong>
             <p class="muted">你可以填返實際安排，例如：付款確認後 24 小時內經 email 收到產品。</p>
           </div>
 
           <div class="faq-item">
-            <strong>Q4. 如果我有問題，可以點聯絡你？</strong>
+            <strong>Q5. 如果我有問題，可以點聯絡你？</strong>
             <p class="muted">你可以透過 Contact 頁面、Instagram DM，或者 email 聯絡我哋。</p>
           </div>
         </div>
@@ -622,7 +1177,7 @@
               好多人都慢慢失去咗同自己內在節奏嘅連結。
             </p>
             <p>
-              Newage.forest 想做嘅，就係透過每日流日色彩與能量提醒，
+              Newage.forest 想做嘅，就係透過生命靈數 × 每日流日五行色彩指引，
               幫你將「著衫」呢件看似日常嘅小事，
               變成一個有意識照顧自己、校準頻率、重新回到內在平靜嘅儀式。
             </p>
@@ -631,9 +1186,9 @@
           <div class="card">
             <h3>我哋相信</h3>
             <ul class="list">
-              <li><strong>顏色有能量：</strong> 每一種色彩，都承載住唔同感受同頻率。</li>
-              <li><strong>穿搭可以好療癒：</strong> 衣服唔止係風格，亦係你對世界發放嘅訊號。</li>
-              <li><strong>自然本身就係導師：</strong> 森林、四季、呼吸、大地，都提醒我哋回到平衡。</li>
+              <li><strong>顏色有能量：</strong> 每一種色彩，都承載住唔同感受同頻率，對應住唔同嘅五行屬性。</li>
+              <li><strong>穿搭可以好療癒：</strong> 衣服唔止係風格，亦係你對世界發放嘅訊號，更加係平衡能量嘅工具。</li>
+              <li><strong>數字蘊含宇宙密碼：</strong> 你嘅生命靈數，係宇宙寫畀你嘅靈魂藍圖。</li>
               <li><strong>每個人都值得活喺愛與豐盛入面：</strong> 你唔需要變成第二個人，只需要更靠近真正嘅自己。</li>
             </ul>
           </div>
@@ -713,6 +1268,7 @@
             <ul class="list">
               <li>產品購買問題</li>
               <li>訂單查詢</li>
+              <li>生命靈數詳細諮詢（個人基本設定、流年運程、事業、感情、子女關係）</li>
               <li>合作邀請</li>
               <li>Reiki / Numerology 個案服務</li>
               <li>分享你嘅真實體驗與轉變</li>
@@ -747,6 +1303,192 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Life Path Number Calculator
+    const lifePathData = {
+      1: {
+        title: "1 號人 — 開創領導者",
+        desc: "充滿活力與獨立精神，天生具備強烈的領導欲與創造力，是勇敢的開拓者。你擁有堅定的意志力，善於開創新局面，適合走在前面帶領他人。"
+      },
+      2: {
+        title: "2 號人 — 溫柔協調者",
+        desc: "善解人意、心思細膩，具有極佳的直覺與審美觀，擅長人際溝通與協調。你天生就是團隊中的潤滑劑，能夠感知他人的情感需求。"
+      },
+      3: {
+        title: "3 號人 — 熱情社交家",
+        desc: "樂觀、幽默且充滿童心，對新事物接受度高，善於表達與展現個人魅力。你的創造力與表達力是你最大的天賦，適合藝術與社交相關領域。"
+      },
+      4: {
+        title: "4 號人 — 務實穩定者",
+        desc: "講求實事求是、做事有條理，重視承諾與安全感，是團隊中最可靠的基石。你的耐心與毅力讓你能夠將任何計劃落實到位。"
+      },
+      5: {
+        title: "5 號人 — 自由冒險家",
+        desc: "崇尚自由、不愛拘束，學習能力強且適應力高，擁有極佳的口才與冒險精神。你的多才多藝讓你在不同領域都能綻放光芒。"
+      },
+      6: {
+        title: "6 號人 — 無私奉獻者",
+        desc: "重感情、富有同理心與責任感，非常願意照顧他人，但需要學習設立界線。你的愛與關懷是你周圍人的溫暖來源。"
+      },
+      7: {
+        title: "7 號人 — 邏輯分析者",
+        desc: "天生的獨立思考者，喜歡探究事物本質，觀察力與分析能力極強，享受獨處。你擁有深度的智慧，適合研究與靈性探索。"
+      },
+      8: {
+        title: "8 號人 — 商業權威者",
+        desc: "具有敏銳的商業與賺錢頭腦，重視物質成就與效率，天生具備經營管理的能力。你的格局與執行力讓你在事業上容易取得成就。"
+      },
+      9: {
+        title: "9 號人 — 博愛夢想家",
+        desc: "充滿理想主義與大愛精神，想像力豐富且樂於助人，擁有如老靈魂般的智慧。你的包容與慈悲讓你能夠影響並療癒身邊的人。"
+      },
+      11: {
+        title: "11 號人 — 大師數・靈性啟發者",
+        desc: "你擁有大師數 11！這代表你有著極強的靈性感知力與啟發他人的天賦。你是天生的直覺者，擁有比一般人更強大的靈性潛能與使命感。"
+      },
+      22: {
+        title: "22 號人 — 大師數・夢想建築師",
+        desc: "你擁有大師數 22！這代表你有將宏大夢想化為現實的能力。你結合了靈性與實踐力，是能夠在物質世界中實現靈性願景的稀有存在。"
+      }
+    };
+
+    function calculateLifePath() {
+      const year = document.getElementById('birthYear').value;
+      const month = document.getElementById('birthMonth').value;
+      const day = document.getElementById('birthDay').value;
+
+      if (!year || !month || !day) {
+        showModal("請輸入完整嘅出生年月日 🙏");
+        return;
+      }
+
+      if (year < 1900 || year > 2025 || month < 1 || month > 12 || day < 1 || day > 31) {
+        showModal("請輸入有效嘅日期 🙏");
+        return;
+      }
+
+      const dateStr = year.toString() + month.toString().padStart(2,'0') + day.toString().padStart(2,'0');
+      let sum = 0;
+      for (let i = 0; i < dateStr.length; i++) {
+        sum += parseInt(dateStr[i]);
+      }
+
+      // Check for master numbers before reducing
+      let result = sum;
+      while (result > 9 && result !== 11 && result !== 22) {
+        let tempSum = 0;
+        let tempStr = result.toString();
+        for (let i = 0; i < tempStr.length; i++) {
+          tempSum += parseInt(tempStr[i]);
+        }
+        result = tempSum;
+      }
+
+      const data = lifePathData[result];
+      if (data) {
+        document.getElementById('resultNumber').textContent = result;
+        document.getElementById('resultTitle').textContent = data.title;
+        document.getElementById('resultDesc').textContent = data.desc;
+        document.getElementById('resultBox').classList.add('show');
+        document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // Simple modal
+    function showModal(msg) {
+      let overlay = document.getElementById('simpleModal');
+      if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'simpleModal';
+        overlay.className = 'modal-overlay';
+        overlay.innerHTML = `
+          <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <p id="modalMsg" style="margin-top:20px; font-size:1.1rem;"></p>
+          </div>
+        `;
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click', function(e) {
+          if (e.target === overlay) closeModal();
+        });
+      }
+      document.getElementById('modalMsg').textContent = msg;
+      overlay.classList.add('show');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('simpleModal');
+      if (modal) modal.classList.remove('show');
+    }
+
+    // Carousel
+    let currentSlide = 0;
+    const totalSlides = 3;
+
+    function getSlideWidth() {
+      const track = document.getElementById('carouselTrack');
+      const card = track.querySelector('.carousel-card');
+      if (!card) return 0;
+      const style = window.getComputedStyle(track);
+      const gap = parseInt(style.gap) || 22;
+      return card.offsetWidth + gap;
+    }
+
+    function updateCarousel() {
+      const track = document.getElementById('carouselTrack');
+      const slideWidth = getSlideWidth();
+      track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+
+      // Update dots
+      const dots = document.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+      });
+    }
+
+    function moveCarousel(direction) {
+      currentSlide += direction;
+      if (currentSlide < 0) currentSlide = totalSlides - 1;
+      if (currentSlide >= totalSlides) currentSlide = 0;
+      updateCarousel();
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+
+    // Touch/swipe support for carousel
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const wrapper = document.querySelector('.carousel-wrapper');
+      if (wrapper) {
+        wrapper.addEventListener('touchstart', function(e) {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        wrapper.addEventListener('touchend', function(e) {
+          touchEndX = e.changedTouches[0].screenX;
+          const diff = touchStartX - touchEndX;
+          if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+              moveCarousel(1);
+            } else {
+              moveCarousel(-1);
+            }
+          }
+        }, { passive: true });
+      }
+    });
+
+    // Recalculate on resize
+    window.addEventListener('resize', function() {
+      updateCarousel();
+    });
+  </script>
 
 </body>
 </html>
