@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Newage.forest</title>
+  <meta name="description" content="Newage.forest — Wear your energy. Align with love and abundance. 根據生命靈數與流日五行，為你提供每日能量穿搭指引。" />
   <style>
     :root{
       --bg:#f5f3ec;
@@ -16,99 +17,46 @@
       --muted:#66756a;
       --line:#dfe6dc;
       --soft:#eef4ee;
+      --shadow:0 10px 30px rgba(49,67,54,0.08);
+      --radius-xl:28px;
+      --radius-lg:22px;
+      --radius-md:16px;
+      --radius-sm:12px;
+      --maxw:1120px;
     }
 
     *{box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{
       margin:0;
-      font-family: "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
-      background: linear-gradient(180deg, #f7f5ef 0%, #eef4ee 100%);
+      font-family:"Segoe UI","PingFang TC","Microsoft JhengHei",sans-serif;
+      background:linear-gradient(180deg,#f7f5ef 0%,#eef4ee 100%);
       color:var(--text);
       line-height:1.7;
     }
 
-    a{color:inherit;text-decoration:none;}
-    img{max-width:100%;display:block;}
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button,input{
+      font:inherit;
+    }
 
     .container{
-      width:min(1120px, 92%);
+      width:min(var(--maxw),92%);
       margin:0 auto;
     }
 
-    .nav{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(255,253,248,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid rgba(95,122,99,0.12);
-    }
-
-    .nav-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      padding:14px 0;
-    }
-
-    .brand{
-      display:flex;
-      flex-direction:column;
-      gap:2px;
-    }
-
-    .brand-title{
-      font-size:1.35rem;
-      font-weight:700;
-      letter-spacing:0.02em;
-      color:var(--green-deep);
-    }
-
-    .brand-sub{
-      font-size:0.82rem;
-      color:var(--muted);
-    }
-
-    .nav-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-
-    .nav-links a{
-      padding:10px 14px;
-      border-radius:999px;
-      color:var(--green-deep);
-      font-size:0.95rem;
-      transition:0.25s ease;
-    }
-
-    .nav-links a:hover{
-      background:var(--soft);
-    }
-
-    .hero{
-      padding:72px 0 48px;
-    }
-
-    .hero-grid{
-      display:grid;
-      grid-template-columns:1.15fr 0.85fr;
-      gap:28px;
-      align-items:center;
-    }
-
-    .eyebrow{
-      display:inline-block;
-      padding:6px 12px;
-      border-radius:999px;
-      background:#edf4ed;
-      color:var(--green-deep);
-      font-size:0.88rem;
-      margin-bottom:16px;
-    }
+    .small{font-size:.92rem;}
+    .muted{color:var(--muted);}
+    .highlight{color:var(--green-deep);font-weight:700;}
 
     h1,h2,h3{
       line-height:1.2;
@@ -117,41 +65,236 @@
     }
 
     h1{
-      font-size:clamp(2rem, 4vw, 3.6rem);
+      font-size:clamp(2.15rem,5vw,3.7rem);
     }
 
     h2{
-      font-size:clamp(1.5rem, 3vw, 2.3rem);
-      margin-bottom:14px;
+      font-size:clamp(1.6rem,3.8vw,2.35rem);
     }
 
     h3{
-      font-size:1.2rem;
+      font-size:1.16rem;
     }
 
-    .lead{
-      font-size:1.08rem;
+    section{
+      padding:64px 0;
+    }
+
+    .section-head{
+      max-width:760px;
+      margin-bottom:28px;
+    }
+
+    .card{
+      background:rgba(255,253,248,0.88);
+      border:1px solid rgba(92,122,99,0.12);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 8px 24px rgba(49,67,54,0.05);
+    }
+
+    .soft-panel{
+      background:linear-gradient(180deg,rgba(255,253,248,0.92),rgba(238,244,238,0.92));
+      border:1px solid rgba(92,122,99,0.12);
+      border-radius:28px;
+      padding:24px;
+      box-shadow:0 8px 24px rgba(49,67,54,0.04);
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:22px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.25s ease;
+      border:1px solid transparent;
+      cursor:pointer;
+      font-size:1rem;
+    }
+
+    .btn-primary{
+      background:var(--green-deep);
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      background:#334c39;
+      transform:translateY(-1px);
+    }
+
+    .btn-secondary{
+      background:transparent;
+      color:var(--green-deep);
+      border-color:rgba(63,91,70,0.22);
+    }
+
+    .btn-secondary:hover{
+      background:#f0f5f0;
+    }
+
+    /* Nav */
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:1100;
+      background:rgba(255,253,248,0.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(95,122,99,0.12);
+    }
+
+    .nav-inner{
+      min-height:72px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      position:relative;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      min-width:0;
+    }
+
+    .brand-title{
+      font-size:1.28rem;
+      font-weight:800;
+      color:var(--green-deep);
+      letter-spacing:.02em;
+    }
+
+    .brand-sub{
+      font-size:.82rem;
       color:var(--muted);
-      margin-bottom:18px;
+    }
+
+    .menu-toggle{
+      display:none;
+      width:46px;
+      height:46px;
+      border:none;
+      border-radius:14px;
+      background:#edf4ed;
+      color:var(--green-deep);
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:4px;
+      box-shadow:0 4px 14px rgba(63,91,70,0.06);
+    }
+
+    .menu-toggle span{
+      width:18px;
+      height:2px;
+      background:var(--green-deep);
+      border-radius:999px;
+      transition:.25s ease;
+      display:block;
+    }
+
+    .menu-toggle.active span:nth-child(1){
+      transform:translateY(6px) rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2){
+      opacity:0;
+    }
+
+    .menu-toggle.active span:nth-child(3){
+      transform:translateY(-6px) rotate(-45deg);
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      padding:10px 14px;
+      border-radius:999px;
+      color:var(--green-deep);
+      font-size:.95rem;
+      transition:.25s ease;
+      font-weight:600;
+    }
+
+    .nav-links a:hover{
+      background:var(--soft);
+    }
+
+    /* Hero */
+    .hero{
+      padding:52px 0 44px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.08fr .92fr;
+      gap:26px;
+      align-items:center;
     }
 
     .hero-card{
-      background:linear-gradient(160deg, rgba(92,122,99,0.15), rgba(255,255,255,0.75));
+      background:linear-gradient(160deg,rgba(92,122,99,0.14),rgba(255,255,255,0.82));
       border:1px solid rgba(92,122,99,0.16);
       border-radius:28px;
       padding:28px;
       box-shadow:0 12px 34px rgba(49,67,54,0.08);
     }
 
+    .eyebrow{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:#edf4ed;
+      color:var(--green-deep);
+      font-size:.88rem;
+      margin-bottom:16px;
+      font-weight:700;
+    }
+
+    .lead{
+      font-size:1.06rem;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
     .hero-visual{
       min-height:420px;
       border-radius:28px;
       background:
-        radial-gradient(circle at 25% 20%, rgba(255,255,255,0.8), transparent 22%),
-        radial-gradient(circle at 70% 30%, rgba(198,168,107,0.22), transparent 24%),
-        radial-gradient(circle at 50% 80%, rgba(92,122,99,0.15), transparent 24%),
-        linear-gradient(160deg, #dce8dc 0%, #f6f3ed 45%, #e6efe6 100%);
-      border:1px solid rgba(92,122,99,0.12);
+        radial-gradient(circle at 25% 20%, rgba(255,255,255,.82), transparent 22%),
+        radial-gradient(circle at 70% 30%, rgba(198,168,107,.22), transparent 24%),
+        radial-gradient(circle at 50% 80%, rgba(92,122,99,.15), transparent 24%),
+        linear-gradient(160deg,#dce8dc 0%,#f6f3ed 45%,#e6efe6 100%);
+      border:1px solid rgba(92,122,99,.12);
       display:flex;
       align-items:flex-end;
       justify-content:center;
@@ -171,7 +314,7 @@
     .hero-visual::before{
       width:180px;
       height:180px;
-      background:rgba(159,181,159,0.25);
+      background:rgba(159,181,159,.25);
       top:26px;
       right:20px;
     }
@@ -179,7 +322,7 @@
     .hero-visual::after{
       width:220px;
       height:220px;
-      background:rgba(198,168,107,0.12);
+      background:rgba(198,168,107,.12);
       bottom:18px;
       left:10px;
     }
@@ -188,105 +331,29 @@
       position:relative;
       z-index:1;
       width:100%;
-      max-width:320px;
-      background:rgba(255,253,248,0.85);
-      border:1px solid rgba(92,122,99,0.14);
+      max-width:340px;
+      background:rgba(255,253,248,.88);
+      border:1px solid rgba(92,122,99,.14);
       border-radius:24px;
       padding:22px;
-      box-shadow:0 10px 28px rgba(63,91,70,0.1);
+      box-shadow:0 10px 28px rgba(63,91,70,.10);
     }
 
     .visual-box .mini{
-      font-size:0.9rem;
+      font-size:.9rem;
       color:var(--muted);
       margin-bottom:8px;
     }
 
     .visual-box .big{
       font-size:1.5rem;
-      font-weight:700;
+      font-weight:800;
       color:var(--green-deep);
       margin-bottom:10px;
+      line-height:1.3;
     }
 
-    .btn-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:24px;
-    }
-
-    .btn{
-      display:inline-block;
-      padding:13px 20px;
-      border-radius:999px;
-      font-weight:600;
-      transition:0.25s ease;
-      border:1px solid transparent;
-      cursor:pointer;
-      font-size:1rem;
-    }
-
-    .btn-primary{
-      background:var(--green-deep);
-      color:#fff;
-    }
-
-    .btn-primary:hover{
-      transform:translateY(-1px);
-      background:#334c39;
-    }
-
-    .btn-secondary{
-      background:transparent;
-      color:var(--green-deep);
-      border-color:rgba(63,91,70,0.22);
-    }
-
-    .btn-secondary:hover{
-      background:#f0f5f0;
-    }
-
-    section{
-      padding:70px 0;
-    }
-
-    .section-head{
-      max-width:760px;
-      margin-bottom:32px;
-    }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-    }
-
-    .grid-3{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:22px;
-    }
-
-    .card{
-      background:rgba(255,253,248,0.85);
-      border:1px solid rgba(92,122,99,0.12);
-      border-radius:24px;
-      padding:24px;
-      box-shadow:0 8px 24px rgba(49,67,54,0.05);
-    }
-
-    .soft-panel{
-      background:linear-gradient(180deg, rgba(255,253,248,0.9), rgba(238,244,238,0.9));
-      border:1px solid rgba(92,122,99,0.12);
-      border-radius:28px;
-      padding:28px;
-    }
-
-    .muted{
-      color:var(--muted);
-    }
-
+    /* Benefits */
     .benefit-icon{
       width:48px;
       height:48px;
@@ -299,9 +366,213 @@
       margin-bottom:14px;
     }
 
-    .product-card{
+    /* Calculator */
+    .calculator-section{
+      background:linear-gradient(160deg,rgba(92,122,99,.08),rgba(198,168,107,.06));
+      border-radius:28px;
+      padding:28px;
+      border:1px solid rgba(92,122,99,.14);
+      margin-top:18px;
+    }
+
+    .calc-form{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:14px;
+      align-items:end;
+      margin:24px 0 12px;
+    }
+
+    .calc-field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .calc-field label{
+      font-size:.88rem;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    .calc-field input{
+      width:100%;
+      min-height:48px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(92,122,99,.2);
+      background:#fffdf8;
+      font-size:1rem;
+      color:var(--text);
+      outline:none;
+      transition:.2s;
+    }
+
+    .calc-field input:focus{
+      border-color:var(--green);
+      box-shadow:0 0 0 3px rgba(92,122,99,.1);
+    }
+
+    .calc-btn{
+      min-height:48px;
+      padding:12px 20px;
+      border-radius:999px;
+      background:var(--green-deep);
+      color:#fff;
+      border:none;
+      font-size:1rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:.25s;
+    }
+
+    .calc-btn:hover{
+      background:#334c39;
+      transform:translateY(-1px);
+    }
+
+    .result-box{
+      display:none;
+      margin-top:22px;
+      padding:24px;
+      background:rgba(255,253,248,.92);
+      border:1px solid rgba(92,122,99,.14);
+      border-radius:24px;
+      box-shadow:0 8px 24px rgba(49,67,54,.06);
+      animation:fadeInUp .35s ease;
+    }
+
+    .result-box.show{
+      display:block;
+    }
+
+    @keyframes fadeInUp{
+      from{opacity:0;transform:translateY(14px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    .result-number{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:72px;
+      height:72px;
+      border-radius:50%;
+      background:linear-gradient(135deg,var(--green-deep),var(--green));
+      color:#fff;
+      font-size:2rem;
+      font-weight:800;
+      margin-bottom:16px;
+      box-shadow:0 6px 20px rgba(63,91,70,.2);
+    }
+
+    .result-title{
+      font-size:1.3rem;
+      font-weight:800;
+      color:var(--green-deep);
+      margin-bottom:8px;
+    }
+
+    .result-desc{
+      color:var(--muted);
+      margin-bottom:18px;
+      line-height:1.8;
+    }
+
+    .cta-box{
+      margin-top:20px;
+      padding:18px;
+      background:#edf4ed;
+      border-radius:16px;
+      border:1px solid rgba(92,122,99,.12);
+    }
+
+    /* Personality interactive */
+    .personality-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .personality-item{
+      padding:16px;
+      background:rgba(255,253,248,.82);
+      border:1px solid rgba(92,122,99,.1);
+      border-radius:16px;
+      text-align:center;
+      transition:.2s;
+      cursor:pointer;
+      user-select:none;
+    }
+
+    .personality-item:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 18px rgba(49,67,54,.08);
+    }
+
+    .personality-item.active{
+      border-color:rgba(63,91,70,.34);
+      background:#edf4ed;
+      box-shadow:0 8px 18px rgba(63,91,70,.08);
+    }
+
+    .personality-num{
+      font-size:1.6rem;
+      font-weight:800;
+      color:var(--green-deep);
+      line-height:1;
+    }
+
+    .personality-name{
+      font-size:.85rem;
+      color:var(--muted);
+      margin-top:6px;
+      line-height:1.4;
+    }
+
+    .personality-detail{
+      margin-top:18px;
+      display:none;
+    }
+
+    .personality-detail.show{
+      display:block;
+      animation:fadeInUp .35s ease;
+    }
+
+    /* Store slider */
+    .store-slider-shell{
       position:relative;
-      overflow:hidden;
+    }
+
+    .store-slider{
+      display:flex;
+      gap:18px;
+      overflow-x:auto;
+      scroll-snap-type:x mandatory;
+      scroll-behavior:smooth;
+      padding:6px 2px 12px;
+      -ms-overflow-style:none;
+      scrollbar-width:none;
+    }
+
+    .store-slider::-webkit-scrollbar{
+      display:none;
+    }
+
+    .product-card{
+      flex:0 0 calc(33.333% - 12px);
+      min-width:0;
+      scroll-snap-align:start;
+      background:rgba(255,253,248,.9);
+      border:1px solid rgba(92,122,99,.12);
+      border-radius:24px;
+      padding:18px;
+      box-shadow:0 8px 24px rgba(49,67,54,.05);
+      display:flex;
+      flex-direction:column;
+      gap:14px;
     }
 
     .tag{
@@ -310,22 +581,205 @@
       background:#edf4ed;
       color:var(--green-deep);
       border-radius:999px;
-      font-size:0.82rem;
-      margin-bottom:10px;
+      font-size:.82rem;
+      font-weight:700;
     }
 
     .price{
       font-size:1.4rem;
-      font-weight:700;
+      font-weight:800;
       color:var(--green-deep);
-      margin:10px 0 14px;
+      margin:6px 0 0;
     }
 
-    .quote{
-      border-left:4px solid var(--gold);
-      padding-left:18px;
-      font-style:italic;
-      color:#425247;
+    .five-elements{
+      display:flex;
+      gap:6px;
+      flex-wrap:wrap;
+      margin:0;
+    }
+
+    .element-tag{
+      padding:4px 10px;
+      border-radius:999px;
+      font-size:.75rem;
+      font-weight:700;
+    }
+
+    .el-wood{background:#e8f5e9;color:#2e7d32;}
+    .el-fire{background:#fce4ec;color:#c62828;}
+    .el-earth{background:#fff8e1;color:#f57f17;}
+    .el-metal{background:#f3e5f5;color:#6a1b9a;}
+    .el-water{background:#e3f2fd;color:#1565c0;}
+
+    /* Product gallery inside card */
+    .gallery{
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid rgba(92,122,99,.10);
+      background:#f3f7f3;
+    }
+
+    .gallery-main{
+      position:relative;
+      aspect-ratio:4/3;
+      background:linear-gradient(135deg,#e8f5e9,#fff9e6,#e0f2f1);
+      overflow:hidden;
+    }
+
+    .gallery-main img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      background:#eef4ee;
+    }
+
+    .gallery-placeholder{
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:3rem;
+      color:rgba(63,91,70,.7);
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.8), transparent 20%),
+        linear-gradient(135deg,#e8f5e9,#fff9e6,#e0f2f1);
+    }
+
+    .gallery-controls{
+      position:absolute;
+      inset:auto 0 10px 0;
+      display:flex;
+      justify-content:space-between;
+      padding:0 10px;
+      pointer-events:none;
+    }
+
+    .gallery-btn{
+      pointer-events:auto;
+      width:36px;
+      height:36px;
+      border:none;
+      border-radius:50%;
+      background:rgba(255,253,248,.92);
+      color:var(--green-deep);
+      box-shadow:0 4px 16px rgba(0,0,0,.12);
+      cursor:pointer;
+      font-size:1rem;
+    }
+
+    .gallery-thumbs{
+      display:flex;
+      gap:8px;
+      overflow-x:auto;
+      padding:10px;
+      background:#fffdf8;
+      scrollbar-width:none;
+    }
+
+    .gallery-thumbs::-webkit-scrollbar{
+      display:none;
+    }
+
+    .thumb{
+      flex:0 0 56px;
+      width:56px;
+      height:56px;
+      border-radius:10px;
+      overflow:hidden;
+      border:2px solid transparent;
+      cursor:pointer;
+      background:#eef4ee;
+    }
+
+    .thumb.active{
+      border-color:var(--green-deep);
+    }
+
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .thumb.placeholder-thumb{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--green-deep);
+      font-size:1.2rem;
+      background:linear-gradient(135deg,#edf4ed,#f9f6ee);
+    }
+
+    .buy-btn{
+      display:block;
+      width:100%;
+      padding:14px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--green-deep),#4a6b50);
+      color:#fff;
+      text-align:center;
+      font-weight:700;
+      font-size:1rem;
+      transition:.25s;
+      margin-top:2px;
+      border:none;
+      cursor:pointer;
+    }
+
+    .buy-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 18px rgba(63,91,70,.2);
+    }
+
+    .card-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--green-deep);
+      font-weight:700;
+      font-size:.95rem;
+    }
+
+    .slider-nav{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:12px;
+      margin-top:20px;
+    }
+
+    .slider-arrow{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      border:1px solid rgba(92,122,99,.2);
+      background:rgba(255,253,248,.9);
+      color:var(--green-deep);
+      cursor:pointer;
+      font-size:1.2rem;
+    }
+
+    .slider-dots{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .slider-dot{
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--line);
+      transition:.25s;
+      cursor:pointer;
+    }
+
+    .slider-dot.active{
+      width:28px;
+      border-radius:999px;
+      background:var(--green-deep);
     }
 
     .list{
@@ -339,7 +793,7 @@
 
     .store-layout{
       display:grid;
-      grid-template-columns:1.2fr 0.8fr;
+      grid-template-columns:1.2fr .8fr;
       gap:24px;
       align-items:start;
     }
@@ -353,9 +807,16 @@
       border-bottom:none;
     }
 
+    .quote{
+      border-left:4px solid var(--gold);
+      padding-left:18px;
+      font-style:italic;
+      color:#425247;
+    }
+
     .contact-boxes{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
+      grid-template-columns:repeat(3,1fr);
       gap:18px;
       margin-top:24px;
     }
@@ -363,11 +824,11 @@
     .footer{
       padding:28px 0 50px;
       color:var(--muted);
-      font-size:0.95rem;
+      font-size:.95rem;
     }
 
     .footer-inner{
-      border-top:1px solid rgba(92,122,99,0.12);
+      border-top:1px solid rgba(92,122,99,.12);
       padding-top:24px;
       display:flex;
       justify-content:space-between;
@@ -375,338 +836,16 @@
       flex-wrap:wrap;
     }
 
-    .small{
-      font-size:0.92rem;
-    }
-
-    .highlight{
-      color:var(--green-deep);
-      font-weight:600;
-    }
-
-    /* Life Path Number Calculator */
-    .calculator-section{
-      background: linear-gradient(160deg, rgba(92,122,99,0.08), rgba(198,168,107,0.06));
-      border-radius:28px;
-      padding:36px;
-      border:1px solid rgba(92,122,99,0.14);
-      margin-top:24px;
-    }
-
-    .calc-form{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      align-items:flex-end;
-      margin:24px 0;
-    }
-
-    .calc-field{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
-    }
-
-    .calc-field label{
-      font-size:0.88rem;
-      color:var(--muted);
-      font-weight:600;
-    }
-
-    .calc-field input, .calc-field select{
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid rgba(92,122,99,0.2);
-      background:#fffdf8;
-      font-size:1rem;
-      color:var(--text);
-      outline:none;
-      transition:0.2s;
-      width:100px;
-    }
-
-    .calc-field input:focus, .calc-field select:focus{
-      border-color:var(--green);
-      box-shadow:0 0 0 3px rgba(92,122,99,0.1);
-    }
-
-    .calc-field input.year-input{
-      width:120px;
-    }
-
-    .calc-btn{
-      padding:12px 28px;
-      border-radius:999px;
-      background:var(--green-deep);
-      color:#fff;
-      border:none;
-      font-size:1rem;
-      font-weight:600;
-      cursor:pointer;
-      transition:0.25s;
-    }
-
-    .calc-btn:hover{
-      background:#334c39;
-      transform:translateY(-1px);
-    }
-
-    .result-box{
-      display:none;
-      margin-top:24px;
-      padding:28px;
-      background:rgba(255,253,248,0.9);
-      border:1px solid rgba(92,122,99,0.14);
-      border-radius:24px;
-      box-shadow:0 8px 24px rgba(49,67,54,0.06);
-      animation: fadeInUp 0.4s ease;
-    }
-
-    .result-box.show{
-      display:block;
-    }
-
-    @keyframes fadeInUp{
-      from{ opacity:0; transform:translateY(16px); }
-      to{ opacity:1; transform:translateY(0); }
-    }
-
-    .result-number{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:72px;
-      height:72px;
-      border-radius:50%;
-      background:linear-gradient(135deg, var(--green-deep), var(--green));
-      color:#fff;
-      font-size:2rem;
-      font-weight:700;
-      margin-bottom:16px;
-      box-shadow:0 6px 20px rgba(63,91,70,0.2);
-    }
-
-    .result-title{
-      font-size:1.3rem;
-      font-weight:700;
-      color:var(--green-deep);
-      margin-bottom:8px;
-    }
-
-    .result-desc{
-      color:var(--muted);
-      margin-bottom:18px;
-      line-height:1.8;
-    }
-
-    .cta-box{
-      margin-top:20px;
-      padding:20px;
-      background:#edf4ed;
-      border-radius:16px;
-      border:1px solid rgba(92,122,99,0.12);
-    }
-
-    .cta-box p{
-      margin:0 0 12px;
-      font-size:0.95rem;
-    }
-
-    /* Personality Grid */
-    .personality-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:14px;
-      margin-top:24px;
-    }
-
-    .personality-item{
-      padding:16px;
-      background:rgba(255,253,248,0.8);
-      border:1px solid rgba(92,122,99,0.1);
-      border-radius:16px;
-      text-align:center;
-      transition:0.2s;
-    }
-
-    .personality-item:hover{
-      transform:translateY(-2px);
-      box-shadow:0 6px 18px rgba(49,67,54,0.08);
-    }
-
-    .personality-num{
-      font-size:1.6rem;
-      font-weight:700;
-      color:var(--green-deep);
-    }
-
-    .personality-name{
-      font-size:0.85rem;
-      color:var(--muted);
-      margin-top:4px;
-    }
-
-    /* Product Carousel */
-    .carousel-wrapper{
-      position:relative;
-      overflow:hidden;
-      margin:0 -16px;
-      padding:0 16px;
-    }
-
-    .carousel-track{
-      display:flex;
-      gap:22px;
-      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-      padding:10px 0;
-    }
-
-    .carousel-card{
-      flex:0 0 calc(33.333% - 15px);
-      min-width:300px;
-      background:rgba(255,253,248,0.85);
-      border:1px solid rgba(92,122,99,0.12);
-      border-radius:24px;
-      padding:28px;
-      box-shadow:0 8px 24px rgba(49,67,54,0.05);
-      position:relative;
-      overflow:hidden;
-      transition:0.3s;
-    }
-
-    .carousel-card:hover{
-      transform:translateY(-4px);
-      box-shadow:0 14px 36px rgba(49,67,54,0.1);
-    }
-
-    .carousel-nav{
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      gap:16px;
-      margin-top:28px;
-    }
-
-    .carousel-btn{
-      width:44px;
-      height:44px;
-      border-radius:50%;
-      border:1px solid rgba(92,122,99,0.2);
-      background:rgba(255,253,248,0.9);
-      color:var(--green-deep);
-      font-size:1.3rem;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:0.2s;
-    }
-
-    .carousel-btn:hover{
-      background:var(--green-deep);
-      color:#fff;
-      border-color:var(--green-deep);
-    }
-
-    .carousel-dots{
-      display:flex;
-      gap:8px;
-    }
-
-    .carousel-dot{
-      width:10px;
-      height:10px;
-      border-radius:50%;
-      background:var(--line);
-      transition:0.3s;
-      cursor:pointer;
-    }
-
-    .carousel-dot.active{
-      background:var(--green-deep);
-      width:28px;
-      border-radius:999px;
-    }
-
-    .buy-btn{
-      display:block;
-      width:100%;
-      padding:14px;
-      border-radius:999px;
-      background:linear-gradient(135deg, var(--green-deep), #4a6b50);
-      color:#fff;
-      text-align:center;
-      font-weight:600;
-      font-size:1rem;
-      transition:0.25s;
-      margin-top:16px;
-      border:none;
-      cursor:pointer;
-    }
-
-    .buy-btn:hover{
-      transform:translateY(-2px);
-      box-shadow:0 6px 18px rgba(63,91,70,0.2);
-    }
-
-    .product-visual{
-      height:160px;
-      border-radius:16px;
-      margin-bottom:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .product-visual-1{
-      background:linear-gradient(135deg, #e8f5e9, #fff9e6, #e0f2f1);
-    }
-
-    .product-visual-2{
-      background:linear-gradient(135deg, #c8e6c9, #e8f5e9, #dcedc8);
-    }
-
-    .product-visual-3{
-      background:linear-gradient(135deg, #e3f2fd, #ede7f6, #e8eaf6);
-    }
-
-    .product-visual-icon{
-      font-size:3.5rem;
-      opacity:0.8;
-    }
-
-    .five-elements{
-      display:flex;
-      gap:6px;
-      margin:10px 0;
-      flex-wrap:wrap;
-    }
-
-    .element-tag{
-      padding:4px 10px;
-      border-radius:999px;
-      font-size:0.75rem;
-      font-weight:600;
-    }
-
-    .el-wood{ background:#e8f5e9; color:#2e7d32; }
-    .el-fire{ background:#fce4ec; color:#c62828; }
-    .el-earth{ background:#fff8e1; color:#f57f17; }
-    .el-metal{ background:#f3e5f5; color:#6a1b9a; }
-    .el-water{ background:#e3f2fd; color:#1565c0; }
-
     /* Modal */
     .modal-overlay{
       display:none;
       position:fixed;
-      top:0;left:0;right:0;bottom:0;
-      background:rgba(0,0,0,0.5);
+      inset:0;
+      background:rgba(0,0,0,.5);
       z-index:2000;
       align-items:center;
       justify-content:center;
-      padding:20px;
+      padding:18px;
     }
 
     .modal-overlay.show{
@@ -716,96 +855,163 @@
     .modal-box{
       background:#fffdf8;
       border-radius:28px;
-      padding:36px;
-      max-width:500px;
+      padding:28px;
+      max-width:520px;
       width:100%;
       max-height:90vh;
       overflow-y:auto;
-      box-shadow:0 20px 60px rgba(0,0,0,0.2);
-      animation: fadeInUp 0.3s ease;
+      box-shadow:0 20px 60px rgba(0,0,0,.2);
+      animation:fadeInUp .3s ease;
+      position:relative;
     }
 
     .modal-close{
-      float:right;
-      width:36px;
-      height:36px;
+      position:absolute;
+      top:14px;
+      right:14px;
+      width:38px;
+      height:38px;
       border-radius:50%;
       border:none;
       background:#edf4ed;
       color:var(--green-deep);
-      font-size:1.2rem;
+      font-size:1.1rem;
       cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:center;
     }
 
+    /* Mobile */
     @media (max-width: 960px){
+      .menu-toggle{
+        display:flex;
+      }
+
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:calc(100% + 8px);
+        left:0;
+        right:0;
+        background:rgba(255,253,248,.98);
+        border:1px solid rgba(95,122,99,0.12);
+        border-radius:20px;
+        box-shadow:0 16px 40px rgba(49,67,54,.08);
+        padding:10px;
+        flex-direction:column;
+        gap:8px;
+      }
+
+      .nav-links.show{
+        display:flex;
+      }
+
+      .nav-links a{
+        width:100%;
+        border-radius:14px;
+        background:#f7faf7;
+        padding:12px 14px;
+      }
+
       .hero-grid,
       .grid-2,
       .grid-3,
       .store-layout,
-      .contact-boxes,
-      .personality-grid{
+      .contact-boxes{
         grid-template-columns:1fr;
       }
 
       .hero{
-        padding-top:42px;
-      }
-
-      .nav-inner{
-        align-items:flex-start;
-        flex-direction:column;
+        padding-top:34px;
       }
 
       .hero-visual{
         min-height:300px;
       }
 
-      .carousel-card{
-        flex:0 0 85%;
-        min-width:280px;
-      }
-
       .calc-form{
-        flex-direction:column;
-        align-items:stretch;
-      }
-
-      .calc-field input, .calc-field select{
-        width:100%;
-      }
-
-      .calc-field input.year-input{
-        width:100%;
+        grid-template-columns:1fr;
       }
 
       .personality-grid{
         grid-template-columns:repeat(3,1fr);
       }
+
+      .product-card{
+        flex:0 0 calc(50% - 9px);
+      }
     }
 
-    @media (max-width: 600px){
+    @media (max-width: 640px){
+      section{
+        padding:52px 0;
+      }
+
+      .nav-inner{
+        min-height:66px;
+      }
+
+      .brand-title{
+        font-size:1.1rem;
+      }
+
+      .brand-sub{
+        font-size:.76rem;
+      }
+
+      .hero-card,
+      .calculator-section,
+      .soft-panel,
+      .card,
+      .modal-box{
+        padding:20px;
+      }
+
+      .product-card{
+        flex:0 0 88%;
+      }
+
       .personality-grid{
-        grid-template-columns:repeat(3, 1fr);
         gap:8px;
       }
+
       .personality-item{
-        padding:10px;
+        padding:12px 8px;
+      }
+
+      .personality-num{
+        font-size:1.35rem;
+      }
+
+      .personality-name{
+        font-size:.78rem;
+      }
+
+      .gallery-thumbs{
+        padding:8px;
+      }
+
+      .thumb{
+        flex-basis:52px;
+        width:52px;
+        height:52px;
       }
     }
   </style>
 </head>
 <body>
-
   <nav class="nav">
     <div class="container nav-inner">
       <div class="brand">
         <div class="brand-title">Newage.forest</div>
         <div class="brand-sub">Wear your energy. Align with love and abundance.</div>
       </div>
-      <div class="nav-links">
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="mobileMenu">
         <a href="#home">首頁 Home</a>
         <a href="#numerology">生命靈數</a>
         <a href="#store">網上商店 Store</a>
@@ -816,7 +1022,6 @@
   </nav>
 
   <main>
-    <!-- HOME -->
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-card">
@@ -894,38 +1099,36 @@
       </div>
     </section>
 
-    <!-- NUMEROLOGY -->
     <section id="numerology">
       <div class="container">
         <div class="section-head">
           <h2>🔮 生命靈數 Life Path Number</h2>
           <p class="muted">
-            「生命數字」源自古希臘數學家畢達哥拉斯的占數術。將西元出生年月日相加至個位數，
-            用來剖析個人嘅天賦優勢、內在性格與人生課題。
+            將西元出生年月日相加至個位數，用來剖析個人嘅天賦優勢、內在性格與人生課題。
+            若加總途中出現 11 或 22，則視為大師數。
           </p>
         </div>
 
         <div class="calculator-section">
           <h3>💡 立即計算你嘅生命靈數</h3>
           <p class="muted">
-            將你嘅西元出生年月日所有數字相加，若得出兩位數，則繼續相加至個位數（1-9）。
-            <br><strong>例如：</strong>1990年5月12日 → 1+9+9+0+5+1+2 = 27 → 2+7 = <strong>9</strong>
+            例如：1990年5月12日 → 1+9+9+0+0+5+1+2 = 27 → 2+7 = <strong>9</strong>
           </p>
 
           <div class="calc-form">
             <div class="calc-field">
-              <label>出生年份</label>
-              <input type="number" id="birthYear" placeholder="1990" min="1900" max="2025" class="year-input">
+              <label for="birthYear">出生年份</label>
+              <input type="number" id="birthYear" placeholder="1990" min="1900" />
             </div>
             <div class="calc-field">
-              <label>月份</label>
-              <input type="number" id="birthMonth" placeholder="5" min="1" max="12">
+              <label for="birthMonth">月份</label>
+              <input type="number" id="birthMonth" placeholder="5" min="1" max="12" />
             </div>
             <div class="calc-field">
-              <label>日期</label>
-              <input type="number" id="birthDay" placeholder="12" min="1" max="31">
+              <label for="birthDay">日期</label>
+              <input type="number" id="birthDay" placeholder="12" min="1" max="31" />
             </div>
-            <button class="calc-btn" onclick="calculateLifePath()">計算我嘅靈數 ✨</button>
+            <button class="calc-btn" type="button" onclick="calculateLifePath()">計算我嘅靈數 ✨</button>
           </div>
 
           <div class="result-box" id="resultBox">
@@ -937,7 +1140,7 @@
               <p><strong>🌟 想了解更多？</strong></p>
               <p class="small muted">
                 如想深入了解你嘅個人基本設定、流年運程、事業方向、感情關係、子女關係等等，
-                請立即與 Newage.forest 聯絡，預約一對一生命靈數詳細諮詢！
+                歡迎聯絡 Newage.forest 預約一對一生命靈數詳細諮詢。
               </p>
               <div class="btn-row" style="margin-top:14px;">
                 <a class="btn btn-primary" href="#contact">立即預約諮詢</a>
@@ -947,75 +1150,107 @@
           </div>
         </div>
 
-        <h3 style="margin-top:36px; margin-bottom:18px;">🔢 1到9號人的性格特質與天賦</h3>
-        <div class="personality-grid">
-          <div class="personality-item">
+        <h3 style="margin-top:36px;margin-bottom:10px;">🔢 1 到 9 號人性格特質與天賦</h3>
+        <p class="small muted">點擊下面任何一個數字，即可展開對應說明。</p>
+
+        <div class="personality-grid" id="personalityGrid">
+          <div class="personality-item active" data-num="1">
             <div class="personality-num">1</div>
             <div class="personality-name">開創領導者</div>
           </div>
-          <div class="personality-item">
+          <div class="personality-item" data-num="2">
             <div class="personality-num">2</div>
             <div class="personality-name">溫柔協調者</div>
           </div>
-          <div class="personality-item">
+          <div class="personality-item" data-num="3">
             <div class="personality-num">3</div>
             <div class="personality-name">熱情社交家</div>
           </div>
-          <div class="personality-item">
+          <div class="personality-item" data-num="4">
             <div class="personality-num">4</div>
             <div class="personality-name">務實穩定者</div>
           </div>
-          <div class="personality-item">
+          <div class="personality-item" data-num="5">
             <div class="personality-num">5</div>
             <div class="personality-name">自由冒險家</div>
           </div>
-          <div class="personality-item">
+          <div class="personality-item" data-num="6">
             <div class="personality-num">6</div>
             <div class="personality-name">無私奉獻者</div>
           </div>
-          <div class="personality-item">
+          <div class="personality-item" data-num="7">
             <div class="personality-num">7</div>
             <div class="personality-name">邏輯分析者</div>
           </div>
-          <div class="personality-item">
+          <div class="personality-item" data-num="8">
             <div class="personality-num">8</div>
             <div class="personality-name">商業權威者</div>
           </div>
-          <div class="personality-item">
+          <div class="personality-item" data-num="9">
             <div class="personality-num">9</div>
             <div class="personality-name">博愛夢想家</div>
           </div>
         </div>
 
-        <p class="small muted" style="margin-top:16px; text-align:center;">
+        <div class="personality-detail result-box show" id="personalityDetailBox">
+          <div class="result-number" id="personalityNumber">1</div>
+          <div class="result-title" id="personalityTitle">1 號人 — 開創領導者</div>
+          <div class="result-desc" id="personalityDesc">
+            充滿活力與獨立精神，天生具備強烈的領導欲與創造力，是勇敢的開拓者。你擁有堅定的意志力，善於開創新局面，適合走在前面帶領他人。
+          </div>
+        </div>
+
+        <p class="small muted" style="margin-top:16px;text-align:center;">
           *若加總至最後為 11 或 22，在生命靈數中被稱為「大師數」，代表擁有更強大且特殊的靈性與潛能。
         </p>
       </div>
     </section>
 
-    <!-- STORE -->
     <section id="store">
       <div class="container">
         <div class="section-head">
           <h2>網上商店 Online Store</h2>
           <p class="muted">
             根據你嘅生命靈數 × 每日流日五行，計算出專屬你嘅魔法衣著顏色。
-            例如當天你五行的火過多，日曆會建議你穿藍色（水）以平衡自身力量；
-            如穿了其他顏色，有機會打破自身平衡，影響運勢。
+            以下產品卡已支援多圖 gallery 結構，你之後每個產品可放 2 至 12 張圖。
           </p>
         </div>
 
-        <!-- Carousel -->
-        <div class="carousel-wrapper">
-          <div class="carousel-track" id="carouselTrack">
+        <div class="store-slider-shell">
+          <div class="store-slider" id="storeSlider">
             <!-- Product 1 -->
-            <div class="carousel-card">
-              <div class="product-visual product-visual-1">
-                <span class="product-visual-icon">🌿</span>
+            <article class="product-card">
+              <div class="gallery" data-gallery="p1">
+                <div class="gallery-main">
+                  <img src="images/product-1/1.jpg" alt="順流初綻產品圖片 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="gallery-placeholder" style="display:none;">🌿</div>
+                  <div class="gallery-controls">
+                    <button class="gallery-btn" type="button" onclick="changeGalleryImage('p1', -1)">←</button>
+                    <button class="gallery-btn" type="button" onclick="changeGalleryImage('p1', 1)">→</button>
+                  </div>
+                </div>
+                <div class="gallery-thumbs">
+                  <div class="thumb active" onclick="setGalleryImage('p1', 0)">
+                    <img src="images/product-1/1.jpg" alt="順流初綻縮圖 1" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='1';">
+                  </div>
+                  <div class="thumb" onclick="setGalleryImage('p1', 1)">
+                    <img src="images/product-1/2.jpg" alt="順流初綻縮圖 2" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='2';">
+                  </div>
+                  <div class="thumb" onclick="setGalleryImage('p1', 2)">
+                    <img src="images/product-1/3.jpg" alt="順流初綻縮圖 3" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='3';">
+                  </div>
+                  <div class="thumb" onclick="setGalleryImage('p1', 3)">
+                    <img src="images/product-1/4.jpg" alt="順流初綻縮圖 4" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='4';">
+                  </div>
+                </div>
               </div>
+
               <div class="tag">初體驗 · 30天</div>
-              <h3>「順流初綻」</h3>
-              <p class="muted small">30天能量穿搭流日指引</p>
+              <div>
+                <h3>「順流初綻」</h3>
+                <p class="muted small" style="margin:0;">30天能量穿搭流日指引</p>
+              </div>
+
               <div class="five-elements">
                 <span class="element-tag el-wood">木</span>
                 <span class="element-tag el-fire">火</span>
@@ -1023,20 +1258,53 @@
                 <span class="element-tag el-metal">金</span>
                 <span class="element-tag el-water">水</span>
               </div>
+
               <div class="price">HKD$59.4</div>
-              <p class="small"><strong>適合你如果：</strong><br>你想輕鬆開始靈性覺察第一步，試下感受能量穿搭點樣改變你每日狀態。</p>
-              <p class="small muted"><strong>靈魂寄語：</strong>畀自己一個月時間，同宇宙頻率談一場溫柔嘅戀愛。</p>
-              <a class="buy-btn" href="YOUR_STRIPE_LINK_1" target="_blank">立即購買 →</a>
-            </div>
+              <p class="small" style="margin:0;">
+                <strong>適合你如果：</strong><br>
+                你想輕鬆開始靈性覺察第一步，試下感受能量穿搭點樣改變你每日狀態。
+              </p>
+              <p class="small muted" style="margin:0;">
+                <strong>靈魂寄語：</strong> 畀自己一個月時間，同宇宙頻率談一場溫柔嘅戀愛。
+              </p>
+
+              <a class="card-link" href="#store-info">了解更多 →</a>
+              <a class="buy-btn" href="YOUR_STRIPE_LINK_1" target="_blank" rel="noopener">立即購買 →</a>
+            </article>
 
             <!-- Product 2 -->
-            <div class="carousel-card">
-              <div class="product-visual product-visual-2">
-                <span class="product-visual-icon">🌲</span>
+            <article class="product-card">
+              <div class="gallery" data-gallery="p2">
+                <div class="gallery-main">
+                  <img src="images/product-2/1.jpg" alt="森呼吸產品圖片 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="gallery-placeholder" style="display:none;">🌲</div>
+                  <div class="gallery-controls">
+                    <button class="gallery-btn" type="button" onclick="changeGalleryImage('p2', -1)">←</button>
+                    <button class="gallery-btn" type="button" onclick="changeGalleryImage('p2', 1)">→</button>
+                  </div>
+                </div>
+                <div class="gallery-thumbs">
+                  <div class="thumb active" onclick="setGalleryImage('p2', 0)">
+                    <img src="images/product-2/1.jpg" alt="森呼吸縮圖 1" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='1';">
+                  </div>
+                  <div class="thumb" onclick="setGalleryImage('p2', 1)">
+                    <img src="images/product-2/2.jpg" alt="森呼吸縮圖 2" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='2';">
+                  </div>
+                  <div class="thumb" onclick="setGalleryImage('p2', 2)">
+                    <img src="images/product-2/3.jpg" alt="森呼吸縮圖 3" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='3';">
+                  </div>
+                  <div class="thumb" onclick="setGalleryImage('p2', 3)">
+                    <img src="images/product-2/4.jpg" alt="森呼吸縮圖 4" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='4';">
+                  </div>
+                </div>
               </div>
+
               <div class="tag">年度陪伴 · 365天</div>
-              <h3>「森呼吸」</h3>
-              <p class="muted small">365天大地滋養能量日曆</p>
+              <div>
+                <h3>「森呼吸」</h3>
+                <p class="muted small" style="margin:0;">365天大地滋養能量日曆</p>
+              </div>
+
               <div class="five-elements">
                 <span class="element-tag el-wood">木</span>
                 <span class="element-tag el-fire">火</span>
@@ -1044,20 +1312,53 @@
                 <span class="element-tag el-metal">金</span>
                 <span class="element-tag el-water">水</span>
               </div>
+
               <div class="price">HKD$494.4</div>
-              <p class="small"><strong>適合你如果：</strong><br>你想要一整年穩定而溫暖嘅陪伴，又好鍾意森林、大自然同療癒感。</p>
-              <p class="small muted"><strong>靈魂寄語：</strong>讓大地母親嘅愛，陪你走過春夏秋冬每一次呼吸。</p>
-              <a class="buy-btn" href="YOUR_STRIPE_LINK_2" target="_blank">立即購買 →</a>
-            </div>
+              <p class="small" style="margin:0;">
+                <strong>適合你如果：</strong><br>
+                你想要一整年穩定而溫暖嘅陪伴，又好鍾意森林、大自然同療癒感。
+              </p>
+              <p class="small muted" style="margin:0;">
+                <strong>靈魂寄語：</strong> 讓大地母親嘅愛，陪你走過春夏秋冬每一次呼吸。
+              </p>
+
+              <a class="card-link" href="#store-info">了解更多 →</a>
+              <a class="buy-btn" href="YOUR_STRIPE_LINK_2" target="_blank" rel="noopener">立即購買 →</a>
+            </article>
 
             <!-- Product 3 -->
-            <div class="carousel-card">
-              <div class="product-visual product-visual-3">
-                <span class="product-visual-icon">🌌</span>
+            <article class="product-card">
+              <div class="gallery" data-gallery="p3">
+                <div class="gallery-main">
+                  <img src="images/product-3/1.jpg" alt="靜謐星河產品圖片 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="gallery-placeholder" style="display:none;">🌌</div>
+                  <div class="gallery-controls">
+                    <button class="gallery-btn" type="button" onclick="changeGalleryImage('p3', -1)">←</button>
+                    <button class="gallery-btn" type="button" onclick="changeGalleryImage('p3', 1)">→</button>
+                  </div>
+                </div>
+                <div class="gallery-thumbs">
+                  <div class="thumb active" onclick="setGalleryImage('p3', 0)">
+                    <img src="images/product-3/1.jpg" alt="靜謐星河縮圖 1" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='1';">
+                  </div>
+                  <div class="thumb" onclick="setGalleryImage('p3', 1)">
+                    <img src="images/product-3/2.jpg" alt="靜謐星河縮圖 2" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='2';">
+                  </div>
+                  <div class="thumb" onclick="setGalleryImage('p3', 2)">
+                    <img src="images/product-3/3.jpg" alt="靜謐星河縮圖 3" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='3';">
+                  </div>
+                  <div class="thumb" onclick="setGalleryImage('p3', 3)">
+                    <img src="images/product-3/4.jpg" alt="靜謐星河縮圖 4" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='4';">
+                  </div>
+                </div>
               </div>
+
               <div class="tag">經典質感 · 365天</div>
-              <h3>「靜謐星河」</h3>
-              <p class="muted small">365天經典水彩能量日曆</p>
+              <div>
+                <h3>「靜謐星河」</h3>
+                <p class="muted small" style="margin:0;">365天經典水彩能量日曆</p>
+              </div>
+
               <div class="five-elements">
                 <span class="element-tag el-wood">木</span>
                 <span class="element-tag el-fire">火</span>
@@ -1065,32 +1366,41 @@
                 <span class="element-tag el-metal">金</span>
                 <span class="element-tag el-water">水</span>
               </div>
+
               <div class="price">HKD$494.4</div>
-              <p class="small"><strong>適合你如果：</strong><br>你偏好簡約、現代感，同時想喺沉穩之中展現自己內在力量。</p>
-              <p class="small muted"><strong>靈魂寄語：</strong>似水彩一樣溫柔優雅，喺日常中顯化屬於你嘅豐盛。</p>
-              <a class="buy-btn" href="YOUR_STRIPE_LINK_3" target="_blank">立即購買 →</a>
+              <p class="small" style="margin:0;">
+                <strong>適合你如果：</strong><br>
+                你偏好簡約、現代感，同時想喺沉穩之中展現自己內在力量。
+              </p>
+              <p class="small muted" style="margin:0;">
+                <strong>靈魂寄語：</strong> 似水彩一樣溫柔優雅，喺日常中顯化屬於你嘅豐盛。
+              </p>
+
+              <a class="card-link" href="#store-info">了解更多 →</a>
+              <a class="buy-btn" href="YOUR_STRIPE_LINK_3" target="_blank" rel="noopener">立即購買 →</a>
+            </article>
+          </div>
+
+          <div class="slider-nav">
+            <button class="slider-arrow" type="button" onclick="scrollStoreSlider(-1)">←</button>
+            <div class="slider-dots" id="sliderDots">
+              <span class="slider-dot active" onclick="goStoreSlide(0)"></span>
+              <span class="slider-dot" onclick="goStoreSlide(1)"></span>
+              <span class="slider-dot" onclick="goStoreSlide(2)"></span>
             </div>
+            <button class="slider-arrow" type="button" onclick="scrollStoreSlider(1)">→</button>
           </div>
         </div>
 
-        <div class="carousel-nav">
-          <button class="carousel-btn" onclick="moveCarousel(-1)">←</button>
-          <div class="carousel-dots">
-            <div class="carousel-dot active" onclick="goToSlide(0)"></div>
-            <div class="carousel-dot" onclick="goToSlide(1)"></div>
-            <div class="carousel-dot" onclick="goToSlide(2)"></div>
-          </div>
-          <button class="carousel-btn" onclick="moveCarousel(1)">→</button>
-        </div>
-
-        <div class="soft-panel" style="margin-top:32px;">
+        <div class="soft-panel" id="store-info" style="margin-top:32px;">
           <h3>☯️ 點解要跟住流日著衫？</h3>
           <p>
-            我哋嘅能量日曆，係根據你個人嘅生命靈數（1-9號人），結合每日流日嘅五行能量變化，
+            我哋嘅能量日曆，係根據你個人嘅生命靈數（1–9號人），結合每日流日嘅五行能量變化，
             計算出最適合你嘅魔法衣著顏色。
           </p>
           <p>
-            <strong>簡單例子：</strong>如果當天你嘅五行火氣過旺，日曆會建議你穿藍色（水）以平衡自身能量場。
+            <strong>簡單例子：</strong>
+            如果當天你嘅五行火氣過旺，日曆會建議你穿藍色（水）以平衡自身能量場。
             相反，如果穿咗紅色（火），就有機會火上加火，打破自身平衡，影響情緒同運勢。
           </p>
           <p class="muted small">
@@ -1118,9 +1428,7 @@
               <strong>@newage.gaia</strong>，再 DM 寫低你真實使用感受，
               即可獲得專屬折扣優惠。
             </p>
-            <p class="small">
-              優惠可用於以下個案服務：
-            </p>
+            <p class="small">優惠可用於以下個案服務：</p>
             <ul class="list small">
               <li>✨ 靈氣治療 Reiki：深度療癒，疏通阻塞能量場</li>
               <li>🔮 生命數字諮詢 Numerology：解鎖靈魂藍圖，為生命導航</li>
@@ -1133,7 +1441,7 @@
 
           <div class="faq-item">
             <strong>Q1. 呢啲產品係實體定電子版？</strong>
-            <p class="muted">你可以喺呢度改成你真實銷售方式，例如：目前為電子版產品，付款後會經電郵發送下載連結。</p>
+            <p class="muted">你可以改成你真實銷售方式，例如：目前為電子版產品，付款後會經電郵發送下載連結。</p>
           </div>
 
           <div class="faq-item">
@@ -1143,7 +1451,7 @@
 
           <div class="faq-item">
             <strong>Q3. 日曆點樣根據我嘅靈數計算顏色？</strong>
-            <p class="muted">我哋會根據你嘅生命靈數（1-9號人），結合每日流日五行能量，運算出平衡你當日五行嘅最佳衣著顏色，幫你順流而行。</p>
+            <p class="muted">我哋會根據你嘅生命靈數（1-9號人），結合每日流日五行能量，運算出平衡你當日五行嘅最佳衣著顏色。</p>
           </div>
 
           <div class="faq-item">
@@ -1159,7 +1467,6 @@
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about">
       <div class="container">
         <div class="section-head">
@@ -1232,7 +1539,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
     <section id="contact">
       <div class="container">
         <div class="section-head">
@@ -1304,8 +1610,16 @@
     </div>
   </footer>
 
+  <div class="modal-overlay" id="simpleModal">
+    <div class="modal-box">
+      <button class="modal-close" type="button" onclick="closeModal()">✕</button>
+      <p id="modalMsg" style="margin-top:20px;font-size:1.1rem;"></p>
+    </div>
+  </div>
+
   <script>
-    // Life Path Number Calculator
+    const currentYear = new Date().getFullYear();
+
     const lifePathData = {
       1: {
         title: "1 號人 — 開創領導者",
@@ -1353,142 +1667,264 @@
       }
     };
 
+    const galleries = {
+      p1: {
+        index: 0,
+        images: [
+          "images/product-1/1.jpg",
+          "images/product-1/2.jpg",
+          "images/product-1/3.jpg",
+          "images/product-1/4.jpg"
+        ]
+      },
+      p2: {
+        index: 0,
+        images: [
+          "images/product-2/1.jpg",
+          "images/product-2/2.jpg",
+          "images/product-2/3.jpg",
+          "images/product-2/4.jpg"
+        ]
+      },
+      p3: {
+        index: 0,
+        images: [
+          "images/product-3/1.jpg",
+          "images/product-3/2.jpg",
+          "images/product-3/3.jpg",
+          "images/product-3/4.jpg"
+        ]
+      }
+    };
+
+    function showModal(msg) {
+      document.getElementById("modalMsg").textContent = msg;
+      document.getElementById("simpleModal").classList.add("show");
+    }
+
+    function closeModal() {
+      document.getElementById("simpleModal").classList.remove("show");
+    }
+
+    document.getElementById("simpleModal").addEventListener("click", function(e){
+      if(e.target === this) closeModal();
+    });
+
+    function isValidDate(year, month, day) {
+      const d = new Date(year, month - 1, day);
+      return d.getFullYear() === Number(year) &&
+             d.getMonth() === Number(month) - 1 &&
+             d.getDate() === Number(day);
+    }
+
     function calculateLifePath() {
-      const year = document.getElementById('birthYear').value;
-      const month = document.getElementById('birthMonth').value;
-      const day = document.getElementById('birthDay').value;
+      const year = parseInt(document.getElementById("birthYear").value, 10);
+      const month = parseInt(document.getElementById("birthMonth").value, 10);
+      const day = parseInt(document.getElementById("birthDay").value, 10);
 
       if (!year || !month || !day) {
         showModal("請輸入完整嘅出生年月日 🙏");
         return;
       }
 
-      if (year < 1900 || year > 2025 || month < 1 || month > 12 || day < 1 || day > 31) {
+      if (year < 1900 || year > currentYear || month < 1 || month > 12 || day < 1 || day > 31) {
         showModal("請輸入有效嘅日期 🙏");
         return;
       }
 
-      const dateStr = year.toString() + month.toString().padStart(2,'0') + day.toString().padStart(2,'0');
-      let sum = 0;
-      for (let i = 0; i < dateStr.length; i++) {
-        sum += parseInt(dateStr[i]);
+      if (!isValidDate(year, month, day)) {
+        showModal("你輸入嘅日期唔存在，請重新確認 🙏");
+        return;
       }
 
-      // Check for master numbers before reducing
+      const dateStr = String(year) + String(month).padStart(2, "0") + String(day).padStart(2, "0");
+      let sum = 0;
+
+      for (let i = 0; i < dateStr.length; i++) {
+        sum += parseInt(dateStr[i], 10);
+      }
+
       let result = sum;
       while (result > 9 && result !== 11 && result !== 22) {
         let tempSum = 0;
-        let tempStr = result.toString();
+        const tempStr = String(result);
         for (let i = 0; i < tempStr.length; i++) {
-          tempSum += parseInt(tempStr[i]);
+          tempSum += parseInt(tempStr[i], 10);
         }
         result = tempSum;
       }
 
       const data = lifePathData[result];
-      if (data) {
-        document.getElementById('resultNumber').textContent = result;
-        document.getElementById('resultTitle').textContent = data.title;
-        document.getElementById('resultDesc').textContent = data.desc;
-        document.getElementById('resultBox').classList.add('show');
-        document.getElementById('resultBox').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
+      if (!data) return;
 
-    // Simple modal
-    function showModal(msg) {
-      let overlay = document.getElementById('simpleModal');
-      if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.id = 'simpleModal';
-        overlay.className = 'modal-overlay';
-        overlay.innerHTML = `
-          <div class="modal-box">
-            <button class="modal-close" onclick="closeModal()">✕</button>
-            <p id="modalMsg" style="margin-top:20px; font-size:1.1rem;"></p>
-          </div>
-        `;
-        document.body.appendChild(overlay);
-        overlay.addEventListener('click', function(e) {
-          if (e.target === overlay) closeModal();
-        });
-      }
-      document.getElementById('modalMsg').textContent = msg;
-      overlay.classList.add('show');
-    }
+      document.getElementById("resultNumber").textContent = result;
+      document.getElementById("resultTitle").textContent = data.title;
+      document.getElementById("resultDesc").textContent = data.desc;
+      document.getElementById("resultBox").classList.add("show");
 
-    function closeModal() {
-      const modal = document.getElementById('simpleModal');
-      if (modal) modal.classList.remove('show');
-    }
-
-    // Carousel
-    let currentSlide = 0;
-    const totalSlides = 3;
-
-    function getSlideWidth() {
-      const track = document.getElementById('carouselTrack');
-      const card = track.querySelector('.carousel-card');
-      if (!card) return 0;
-      const style = window.getComputedStyle(track);
-      const gap = parseInt(style.gap) || 22;
-      return card.offsetWidth + gap;
-    }
-
-    function updateCarousel() {
-      const track = document.getElementById('carouselTrack');
-      const slideWidth = getSlideWidth();
-      track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-
-      // Update dots
-      const dots = document.querySelectorAll('.carousel-dot');
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentSlide);
+      document.getElementById("resultBox").scrollIntoView({
+        behavior: "smooth",
+        block: "center"
       });
     }
 
-    function moveCarousel(direction) {
-      currentSlide += direction;
-      if (currentSlide < 0) currentSlide = totalSlides - 1;
-      if (currentSlide >= totalSlides) currentSlide = 0;
-      updateCarousel();
-    }
+    // Mobile menu
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-    function goToSlide(index) {
-      currentSlide = index;
-      updateCarousel();
-    }
+    menuToggle.addEventListener("click", function(){
+      const isOpen = mobileMenu.classList.toggle("show");
+      menuToggle.classList.toggle("active", isOpen);
+      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
 
-    // Touch/swipe support for carousel
-    let touchStartX = 0;
-    let touchEndX = 0;
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("show");
+        menuToggle.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
 
-    document.addEventListener('DOMContentLoaded', function() {
-      const wrapper = document.querySelector('.carousel-wrapper');
-      if (wrapper) {
-        wrapper.addEventListener('touchstart', function(e) {
-          touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-
-        wrapper.addEventListener('touchend', function(e) {
-          touchEndX = e.changedTouches[0].screenX;
-          const diff = touchStartX - touchEndX;
-          if (Math.abs(diff) > 50) {
-            if (diff > 0) {
-              moveCarousel(1);
-            } else {
-              moveCarousel(-1);
-            }
-          }
-        }, { passive: true });
+    document.addEventListener("click", function(e){
+      if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        mobileMenu.classList.remove("show");
+        menuToggle.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
       }
     });
 
-    // Recalculate on resize
-    window.addEventListener('resize', function() {
-      updateCarousel();
-    });
-  </script>
+    // Personality click reveal
+    function showPersonality(num) {
+      const data = lifePathData[num];
+      if (!data) return;
 
+      document.getElementById("personalityNumber").textContent = num;
+      document.getElementById("personalityTitle").textContent = data.title;
+      document.getElementById("personalityDesc").textContent = data.desc;
+      document.getElementById("personalityDetailBox").classList.add("show");
+
+      document.querySelectorAll(".personality-item").forEach(item => {
+        item.classList.toggle("active", Number(item.dataset.num) === num);
+      });
+    }
+
+    document.querySelectorAll(".personality-item").forEach(item => {
+      item.addEventListener("click", function(){
+        showPersonality(Number(this.dataset.num));
+      });
+    });
+
+    // Product gallery
+    function renderGallery(galleryId) {
+      const gallery = galleries[galleryId];
+      const wrapper = document.querySelector(`[data-gallery="${galleryId}"]`);
+      if (!gallery || !wrapper) return;
+
+      const mainImg = wrapper.querySelector(".gallery-main img");
+      const placeholder = wrapper.querySelector(".gallery-placeholder");
+      const thumbs = wrapper.querySelectorAll(".thumb");
+
+      if (mainImg) {
+        mainImg.style.display = "block";
+        mainImg.src = gallery.images[gallery.index];
+        mainImg.onerror = function() {
+          this.style.display = "none";
+          if (placeholder) placeholder.style.display = "flex";
+        };
+        mainImg.onload = function() {
+          this.style.display = "block";
+          if (placeholder) placeholder.style.display = "none";
+        };
+      }
+
+      thumbs.forEach((thumb, index) => {
+        thumb.classList.toggle("active", index === gallery.index);
+      });
+    }
+
+    function setGalleryImage(galleryId, index) {
+      const gallery = galleries[galleryId];
+      if (!gallery) return;
+      if (index < 0 || index >= gallery.images.length) return;
+      gallery.index = index;
+      renderGallery(galleryId);
+    }
+
+    function changeGalleryImage(galleryId, step) {
+      const gallery = galleries[galleryId];
+      if (!gallery) return;
+      gallery.index = (gallery.index + step + gallery.images.length) % gallery.images.length;
+      renderGallery(galleryId);
+    }
+
+    // Store slider
+    const storeSlider = document.getElementById("storeSlider");
+    const sliderDots = document.querySelectorAll(".slider-dot");
+
+    function getCardStep() {
+      const firstCard = storeSlider.querySelector(".product-card");
+      if (!firstCard) return 320;
+      const styles = window.getComputedStyle(storeSlider);
+      const gap = parseInt(styles.gap) || 18;
+      return firstCard.getBoundingClientRect().width + gap;
+    }
+
+    function scrollStoreSlider(direction) {
+      storeSlider.scrollBy({
+        left: getCardStep() * direction,
+        behavior: "smooth"
+      });
+    }
+
+    function goStoreSlide(index) {
+      storeSlider.scrollTo({
+        left: getCardStep() * index,
+        behavior: "smooth"
+      });
+    }
+
+    function updateSliderDots() {
+      const step = getCardStep();
+      const index = Math.round(storeSlider.scrollLeft / step);
+      sliderDots.forEach((dot, i) => {
+        dot.classList.toggle("active", i === Math.min(index, sliderDots.length - 1));
+      });
+    }
+
+    storeSlider.addEventListener("scroll", updateSliderDots);
+
+    // Touch swipe support for each gallery main image area
+    Object.keys(galleries).forEach((galleryId) => {
+      const wrapper = document.querySelector(`[data-gallery="${galleryId}"] .gallery-main`);
+      if (!wrapper) return;
+
+      let startX = 0;
+      let endX = 0;
+
+      wrapper.addEventListener("touchstart", function(e){
+        startX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      wrapper.addEventListener("touchend", function(e){
+        endX = e.changedTouches[0].screenX;
+        const diff = startX - endX;
+        if (Math.abs(diff) > 40) {
+          if (diff > 0) changeGalleryImage(galleryId, 1);
+          else changeGalleryImage(galleryId, -1);
+        }
+      }, { passive: true });
+    });
+
+    window.addEventListener("load", function(){
+      document.getElementById("birthYear").setAttribute("max", currentYear);
+
+      Object.keys(galleries).forEach(renderGallery);
+      showPersonality(1);
+      updateSliderDots();
+    });
+
+    window.addEventListener("resize", updateSliderDots);
+  </script>
 </body>
 </html>
