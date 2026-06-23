@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newage.forest</title>
+  <style>
+    :root{
+      --bg:#f5f3ec;
+      --card:#fffdf8;
+      --green:#5c7a63;
+      --green-deep:#3f5b46;
+      --sage:#9fb59f;
+      --gold:#c6a86b;
+      --text:#2d3a2f;
+      --muted:#66756a;
+      --line:#dfe6dc;
+      --soft:#eef4ee;
+    }
+
+    *{box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      font-family: "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      background: linear-gradient(180deg, #f7f5ef 0%, #eef4ee 100%);
+      color:var(--text);
+      line-height:1.7;
+    }
+
+    a{color:inherit;text-decoration:none;}
+    img{max-width:100%;display:block;}
+
+    .container{
+      width:min(1120px, 92%);
+      margin:0 auto;
+    }
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,253,248,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid rgba(95,122,99,0.12);
+    }
+
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      padding:14px 0;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+    }
+
+    .brand-title{
+      font-size:1.35rem;
+      font-weight:700;
+      letter-spacing:0.02em;
+      color:var(--green-deep);
+    }
+
+    .brand-sub{
+      font-size:0.82rem;
+      color:var(--muted);
+    }
+
+    .nav-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .nav-links a{
+      padding:10px 14px;
+      border-radius:999px;
+      color:var(--green-deep);
+      font-size:0.95rem;
+      transition:0.25s ease;
+    }
+
+    .nav-links a:hover{
+      background:var(--soft);
+    }
+
+    .hero{
+      padding:72px 0 48px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr 0.85fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      padding:6px 12px;
+      border-radius:999px;
+      background:#edf4ed;
+      color:var(--green-deep);
+      font-size:0.88rem;
+      margin-bottom:16px;
+    }
+
+    h1,h2,h3{
+      line-height:1.2;
+      margin:0 0 14px;
+      color:var(--green-deep);
+    }
+
+    h1{
+      font-size:clamp(2rem, 4vw, 3.6rem);
+    }
+
+    h2{
+      font-size:clamp(1.5rem, 3vw, 2.3rem);
+      margin-bottom:14px;
+    }
+
+    h3{
+      font-size:1.2rem;
+    }
+
+    .lead{
+      font-size:1.08rem;
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    .hero-card{
+      background:linear-gradient(160deg, rgba(92,122,99,0.15), rgba(255,255,255,0.75));
+      border:1px solid rgba(92,122,99,0.16);
+      border-radius:28px;
+      padding:28px;
+      box-shadow:0 12px 34px rgba(49,67,54,0.08);
+    }
+
+    .hero-visual{
+      min-height:420px;
+      border-radius:28px;
+      background:
+        radial-gradient(circle at 25% 20%, rgba(255,255,255,0.8), transparent 22%),
+        radial-gradient(circle at 70% 30%, rgba(198,168,107,0.22), transparent 24%),
+        radial-gradient(circle at 50% 80%, rgba(92,122,99,0.15), transparent 24%),
+        linear-gradient(160deg, #dce8dc 0%, #f6f3ed 45%, #e6efe6 100%);
+      border:1px solid rgba(92,122,99,0.12);
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+      padding:28px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-visual::before,
+    .hero-visual::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      filter:blur(4px);
+    }
+
+    .hero-visual::before{
+      width:180px;
+      height:180px;
+      background:rgba(159,181,159,0.25);
+      top:26px;
+      right:20px;
+    }
+
+    .hero-visual::after{
+      width:220px;
+      height:220px;
+      background:rgba(198,168,107,0.12);
+      bottom:18px;
+      left:10px;
+    }
+
+    .visual-box{
+      position:relative;
+      z-index:1;
+      width:100%;
+      max-width:320px;
+      background:rgba(255,253,248,0.85);
+      border:1px solid rgba(92,122,99,0.14);
+      border-radius:24px;
+      padding:22px;
+      box-shadow:0 10px 28px rgba(63,91,70,0.1);
+    }
+
+    .visual-box .mini{
+      font-size:0.9rem;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+
+    .visual-box .big{
+      font-size:1.5rem;
+      font-weight:700;
+      color:var(--green-deep);
+      margin-bottom:10px;
+    }
+
+    .btn-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-top:24px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:13px 20px;
+      border-radius:999px;
+      font-weight:600;
+      transition:0.25s ease;
+      border:1px solid transparent;
+    }
+
+    .btn-primary{
+      background:var(--green-deep);
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-1px);
+      background:#334c39;
+    }
+
+    .btn-secondary{
+      background:transparent;
+      color:var(--green-deep);
+      border-color:rgba(63,91,70,0.22);
+    }
+
+    .btn-secondary:hover{
+      background:#f0f5f0;
+    }
+
+    section{
+      padding:70px 0;
+    }
+
+    .section-head{
+      max-width:760px;
+      margin-bottom:32px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:22px;
+    }
+
+    .card{
+      background:rgba(255,253,248,0.85);
+      border:1px solid rgba(92,122,99,0.12);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 8px 24px rgba(49,67,54,0.05);
+    }
+
+    .soft-panel{
+      background:linear-gradient(180deg, rgba(255,253,248,0.9), rgba(238,244,238,0.9));
+      border:1px solid rgba(92,122,99,0.12);
+      border-radius:28px;
+      padding:28px;
+    }
+
+    .muted{
+      color:var(--muted);
+    }
+
+    .benefit-icon{
+      width:48px;
+      height:48px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#edf4ed;
+      color:var(--green-deep);
+      font-size:1.2rem;
+      margin-bottom:14px;
+    }
+
+    .product-card{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:6px 10px;
+      background:#edf4ed;
+      color:var(--green-deep);
+      border-radius:999px;
+      font-size:0.82rem;
+      margin-bottom:10px;
+    }
+
+    .price{
+      font-size:1.4rem;
+      font-weight:700;
+      color:var(--green-deep);
+      margin:10px 0 14px;
+    }
+
+    .quote{
+      border-left:4px solid var(--gold);
+      padding-left:18px;
+      font-style:italic;
+      color:#425247;
+    }
+
+    .list{
+      padding-left:20px;
+      margin:10px 0 0;
+    }
+
+    .list li{
+      margin-bottom:10px;
+    }
+
+    .store-layout{
+      display:grid;
+      grid-template-columns:1.2fr 0.8fr;
+      gap:24px;
+      align-items:start;
+    }
+
+    .faq-item{
+      padding:16px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .faq-item:last-child{
+      border-bottom:none;
+    }
+
+    .contact-boxes{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+      margin-top:24px;
+    }
+
+    .footer{
+      padding:28px 0 50px;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    .footer-inner{
+      border-top:1px solid rgba(92,122,99,0.12);
+      padding-top:24px;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .small{
+      font-size:0.92rem;
+    }
+
+    .highlight{
+      color:var(--green-deep);
+      font-weight:600;
+    }
+
+    @media (max-width: 960px){
+      .hero-grid,
+      .grid-2,
+      .grid-3,
+      .store-layout,
+      .contact-boxes{
+        grid-template-columns:1fr;
+      }
+
+      .hero{
+        padding-top:42px;
+      }
+
+      .nav-inner{
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .hero-visual{
+        min-height:300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-title">Newage.forest</div>
+        <div class="brand-sub">Wear your energy. Align with love and abundance.</div>
+      </div>
+      <div class="nav-links">
+        <a href="#home">首頁 Home</a>
+        <a href="#store">網上商店 Store</a>
+        <a href="#about">關於我哋 About</a>
+        <a href="#contact">聯絡 Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HOME -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-card">
+          <div class="eyebrow">順應宇宙能量・穿出每日好運</div>
+          <h1>今日，你想活出咩能量頻率？</h1>
+          <p class="lead">
+            <span class="highlight">Wear your energy. Align with love and abundance.</span><br>
+            衣服，係你嘅第二層皮膚；顏色，係宇宙送畀你嘅無形戰袍。
+          </p>
+          <p>
+            你有冇試過，每朝打開衣櫃，明明好多衫，但都唔知著咩先啱？
+            又或者生活節奏太快，心好攰，成個人好似搵唔返自己咁？
+          </p>
+          <p>
+            其實宇宙每日都會發出唔同嘅能量訊號。當你著錯咗頻率，就好似逆水行舟；
+            當你著啱顏色，就好似順住流年，讓愛、貴人同豐盛更容易流入你生命。
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#store">立即睇產品</a>
+            <a class="btn btn-secondary" href="#about">了解 Newage.forest</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-box">
+            <div class="mini">每日能量小提醒</div>
+            <div class="big">用顏色，校準你今日嘅頻率</div>
+            <p class="small muted">
+              唔止係穿搭指南，而係一個每日可以回到自己、安住內心、連結宇宙流動嘅能量錨點。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2>呢份唔止係日曆，係你每日嘅能量錨點</h2>
+          <p class="muted">
+            新心靈導師為你度身打造嘅每日能量穿搭指引，幫你透過顏色調頻、穩定節奏、
+            提升氣場，同時喺忙碌生活入面留返一個溫柔空間畀自己。
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="benefit-icon">✨</div>
+            <h3>提升個人氣場與自信</h3>
+            <p>
+              當你著上屬於你當日頻率嘅顏色，就好似披上一件無形戰袍，
+              由內到外散發更穩定、更自然、更有存在感嘅光芒。
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="benefit-icon">🤝</div>
+            <h3>吸引貴人與豐盛財運</h3>
+            <p>
+              當你內在頻率調到啱，好運、機會、財富，同埋真正明白你嘅人，
+              會更容易被你溫暖而清晰嘅能量吸引過嚟。
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="benefit-icon">🌱</div>
+            <h3>穩定內在能量節奏</h3>
+            <p>
+              喺生活高高低低之中，顏色可以成為你隱形嘅錨，
+              靜靜地安撫情緒，幫你返到內在平衡與和諧。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORE -->
+    <section id="store">
+      <div class="container">
+        <div class="section-head">
+          <h2>網上商店 Online Store</h2>
+          <p class="muted">
+            揀一個最啱你而家狀態嘅能量載體，等宇宙訊息自然流入你每一日。
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card product-card">
+            <div class="tag">初體驗</div>
+            <h3>「順流初綻」</h3>
+            <p class="muted">30天能量穿搭流日指引</p>
+            <div class="price">HKD$59.4</div>
+            <p><strong>適合你如果：</strong><br>你想輕鬆開始靈性覺察第一步，試下感受能量穿搭點樣改變你每日狀態。</p>
+            <p><strong>靈魂寄語：</strong><br>畀自己一個月時間，同宇宙頻率談一場溫柔嘅戀愛。</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#contact">我想試下</a>
+            </div>
+          </div>
+
+          <div class="card product-card">
+            <div class="tag">年度陪伴</div>
+            <h3>「森呼吸」</h3>
+            <p class="muted">365天大地滋養能量日曆</p>
+            <div class="price">HKD$494.4</div>
+            <p><strong>適合你如果：</strong><br>你想要一整年穩定而溫暖嘅陪伴，又好鍾意森林、大自然同療癒感。</p>
+            <p><strong>靈魂寄語：</strong><br>讓大地母親嘅愛，陪你走過春夏秋冬每一次呼吸。</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#contact">揀森呼吸</a>
+            </div>
+          </div>
+
+          <div class="card product-card">
+            <div class="tag">經典質感</div>
+            <h3>「靜謐星河」</h3>
+            <p class="muted">365天經典水彩能量日曆</p>
+            <div class="price">HKD$494.4</div>
+            <p><strong>適合你如果：</strong><br>你偏好簡約、現代感，同時想喺沉穩之中展現自己內在力量。</p>
+            <p><strong>靈魂寄語：</strong><br>似水彩一樣溫柔優雅，喺日常中顯化屬於你嘅豐盛。</p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="#contact">揀靜謐星河</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="store-layout" style="margin-top:28px;">
+          <div class="soft-panel">
+            <h3>你買到嘅，唔只係一本日曆</h3>
+            <ul class="list">
+              <li>每日能量與顏色穿搭指引</li>
+              <li>幫你建立更有意識嘅生活儀式感</li>
+              <li>穩定情緒、整理內在節奏</li>
+              <li>提升自信、吸引愛與豐盛</li>
+              <li>將森林與自然療癒帶入每一日</li>
+            </ul>
+          </div>
+
+          <div class="soft-panel">
+            <h3>🎁 延續療癒禮物</h3>
+            <p>
+              只要購買日曆，並喺體驗三星期內追蹤我哋 Instagram
+              <strong>@newage.gaia</strong>，再 DM 寫低你真實使用感受，
+              即可獲得專屬折扣優惠。
+            </p>
+            <p class="small">
+              優惠可用於以下個案服務：
+            </p>
+            <ul class="list small">
+              <li>✨ 靈氣治療 Reiki：深度療癒，疏通阻塞能量場</li>
+              <li>🔮 生命數字諮詢 Numerology：解鎖靈魂藍圖，為生命導航</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:28px;">
+          <h3>常見問題 FAQ</h3>
+
+          <div class="faq-item">
+            <strong>Q1. 呢啲產品係實體定電子版？</strong>
+            <p class="muted">你可以喺呢度改成你真實銷售方式，例如：目前為電子版產品，付款後會經電郵發送下載連結。</p>
+          </div>
+
+          <div class="faq-item">
+            <strong>Q2. 我應該揀 30 天定 365 天版本？</strong>
+            <p class="muted">如果你係第一次接觸能量穿搭，建議由 30 天開始；如果你想要長期陪伴，同建立日常儀式感，365 天會更適合你。</p>
+          </div>
+
+          <div class="faq-item">
+            <strong>Q3. 買咗之後幾時收到？</strong>
+            <p class="muted">你可以填返實際安排，例如：付款確認後 24 小時內經 email 收到產品。</p>
+          </div>
+
+          <div class="faq-item">
+            <strong>Q4. 如果我有問題，可以點聯絡你？</strong>
+            <p class="muted">你可以透過 Contact 頁面、Instagram DM，或者 email 聯絡我哋。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <h2>關於 Newage.forest</h2>
+          <p class="muted">
+            讓穿搭唔止係外在選擇，而係你同宇宙、同自己重新連結嘅方式。
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>我哋嘅初心</h3>
+            <p>
+              喺呢個節奏好快、資訊好多、情緒好容易被拉走嘅世界，
+              好多人都慢慢失去咗同自己內在節奏嘅連結。
+            </p>
+            <p>
+              Newage.forest 想做嘅，就係透過每日流日色彩與能量提醒，
+              幫你將「著衫」呢件看似日常嘅小事，
+              變成一個有意識照顧自己、校準頻率、重新回到內在平靜嘅儀式。
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>我哋相信</h3>
+            <ul class="list">
+              <li><strong>顏色有能量：</strong> 每一種色彩，都承載住唔同感受同頻率。</li>
+              <li><strong>穿搭可以好療癒：</strong> 衣服唔止係風格，亦係你對世界發放嘅訊號。</li>
+              <li><strong>自然本身就係導師：</strong> 森林、四季、呼吸、大地，都提醒我哋回到平衡。</li>
+              <li><strong>每個人都值得活喺愛與豐盛入面：</strong> 你唔需要變成第二個人，只需要更靠近真正嘅自己。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:24px;">
+          <div class="soft-panel">
+            <h3>關於日曆嘅設計心思</h3>
+            <p>
+              我哋將森林與大自然嘅視覺意象揉合到設計入面，希望你每次打開日曆，
+              都有一種慢慢呼吸、慢慢安定落嚟嘅感覺。
+            </p>
+            <p>
+              森林嘅綠意，象徵大地母親 Gaia 對你無條件嘅滋養與支持。
+              無論外在世界點樣變化，你都依然被愛住、被宇宙接住。
+            </p>
+          </div>
+
+          <div class="soft-panel">
+            <h3>與萬物同頻嘅靈魂呼吸</h3>
+            <p>
+              樹木有春生夏長、秋收冬藏，你都一樣有自己唔同生命節奏。
+              有時候你好有力量，有時候你想安靜沉澱，呢啲都係自然。
+            </p>
+            <p>
+              當你望住日曆、深呼吸、再揀一個今日屬於你嘅顏色，
+              就係一個返到自己、返到平安、返到宇宙流動入面嘅時刻。
+            </p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:24px;">
+          <h3>導師的溫柔叮嚀</h3>
+          <p class="quote">
+            「每日出門前嗰五分鐘，係你有意識咁選擇自己人生頻率嘅時刻。
+            祝福你喺未來每一日，都可以穿出屬於你嘅光芒，
+            活喺愛與豐盛嘅頻率入面。每一日，都係最美好嘅顯化。」
+            —— Love and Light 🧝🏼‍♀️✨
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>聯絡我哋 Contact</h2>
+          <p class="muted">
+            如果你對產品、訂購方式、合作邀請，或者療癒服務有興趣，歡迎隨時搵我哋。
+          </p>
+        </div>
+
+        <div class="contact-boxes">
+          <div class="card">
+            <h3>Instagram</h3>
+            <p>@newage.gaia</p>
+            <p class="small muted">適合 DM 問產品、分享體驗、查詢優惠。</p>
+          </div>
+
+          <div class="card">
+            <h3>Email</h3>
+            <p>hello@newageforest.com</p>
+            <p class="small muted">你可以改成你自己真實使用嘅 email。</p>
+          </div>
+
+          <div class="card">
+            <h3>回覆時間</h3>
+            <p>1–3 個工作天</p>
+            <p class="small muted">我哋會用溫柔同真誠回覆你每一個訊息。</p>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:24px;">
+          <div class="soft-panel">
+            <h3>你可以搵我哋關於：</h3>
+            <ul class="list">
+              <li>產品購買問題</li>
+              <li>訂單查詢</li>
+              <li>合作邀請</li>
+              <li>Reiki / Numerology 個案服務</li>
+              <li>分享你嘅真實體驗與轉變</li>
+            </ul>
+          </div>
+
+          <div class="soft-panel">
+            <h3>一段溫柔嘅開始</h3>
+            <p>
+              你每一個提問、每一段分享，都可能係一場能量交流嘅開始。
+              如果你而家正喺生活某個轉角位，想重新搵返自己節奏，
+              我哋都好樂意陪你行一段。
+            </p>
+            <div class="btn-row">
+              <a class="btn btn-primary" href="mailto:hello@newageforest.com">Email 我哋</a>
+              <a class="btn btn-secondary" href="#store">返回商店</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>Newage.forest</strong><br>
+        <span class="small">Wear your energy. Align with love and abundance.</span>
+      </div>
+      <div class="small">
+        Instagram: @newage.gaia · 順應宇宙能量，穿出每日好運
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
