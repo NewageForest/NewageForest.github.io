@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>網上商店 | Newage.forest</title>
+
+  <meta name="description" content="Newage.forest 網上商店，購買生命靈數每日能量穿搭日曆。" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <div class="brand-title">Newage.forest</div>
+      <div class="brand-sub">Wear your energy. Align with love and abundance.</div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links" id="mobileMenu">
+      <a href="index.html">首頁 Home</a>
+      <a href="numerology.html">生命靈數</a>
+      <a href="store.html">網上商店 Store</a>
+      <a href="about.html">關於我哋 About</a>
+      <a href="contact.html">聯絡 Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<section id="store">
+  <div class="container">
+    <div class="section-head">
+      <h1>網上商店 Online Store</h1>
+      <p class="muted">
+        根據你嘅生命靈數 × 每日流日五行，計算出專屬你嘅魔法衣著顏色。
+        以下產品卡已支援多圖 gallery 結構，你之後每個產品可放 2 至 12 張圖。
+      </p>
+    </div>
+
+    <div class="store-slider-shell">
+      <div class="store-slider" id="storeSlider">
+
+        <!-- Product 1 -->
+        <article class="product-card">
+          <div class="gallery" data-gallery="p1">
+            <div class="gallery-main">
+              <img src="images/product-1/1.jpg" alt="順流初綻產品圖片 1" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="gallery-placeholder" style="display:none;">🌿</div>
+
+              <div class="gallery-controls">
+                <button class="gallery-btn" type="button" onclick="event.stopPropagation(); changeGalleryImage('p1', -1)">←</button>
+                <button class="gallery-btn" type="button" onclick="event.stopPropagation(); changeGalleryImage('p1', 1)">→</button>
+              </div>
+            </div>
+
+            <div class="gallery-thumbs">
+              <div class="thumb active" onclick="setGalleryImage('p1', 0)">
+                <img src="images/product-1/1.jpg" alt="順流初綻縮圖 1" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='1';">
+              </div>
+              <div class="thumb" onclick="setGalleryImage('p1', 1)">
+                <img src="images/product-1/2.jpg" alt="順流初綻縮圖 2" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='2';">
+              </div>
+              <div class="thumb" onclick="setGalleryImage('p1', 2)">
+                <img src="images/product-1/3.jpg" alt="順流初綻縮圖 3" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='3';">
+              </div>
+              <div class="thumb" onclick="setGalleryImage('p1', 3)">
+                <img src="images/product-1/4.jpg" alt="順流初綻縮圖 4" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='4';">
+              </div>
+            </div>
+          </div>
+
+          <div class="tag">初體驗 · 30天</div>
+
+          <div>
+            <h3>「順流初綻」</h3>
+            <p class="muted small" style="margin:0;">30天能量穿搭流日指引</p>
+          </div>
+
+          <div class="five-elements">
+            <span class="element-tag el-wood">木</span>
+            <span class="element-tag el-fire">火</span>
+            <span class="element-tag el-earth">土</span>
+            <span class="element-tag el-metal">金</span>
+            <span class="element-tag el-water">水</span>
+          </div>
+
+          <div class="price">HKD$59.4</div>
+
+          <p class="small" style="margin:0;">
+            <strong>適合你如果：</strong><br>
+            你想輕鬆開始靈性覺察第一步，試下感受能量穿搭點樣改變你每日狀態。
+          </p>
+
+          <p class="small muted" style="margin:0;">
+            <strong>靈魂寄語：</strong> 畀自己一個月時間，同宇宙頻率談一場溫柔嘅戀愛。
+          </p>
+
+          <a class="card-link" href="#store-info">了解更多 →</a>
+          <a class="buy-btn" href="https://buy.stripe.com/test_28EfZagDFcwDdjD49TdAk00" target="_blank" rel="noopener">立即購買 →</a>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="product-card">
+          <div class="gallery" data-gallery="p2">
+            <div class="gallery-main">
+              <img src="images/product-2/1.jpg" alt="森呼吸產品圖片 1" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="gallery-placeholder" style="display:none;">🌲</div>
+
+              <div class="gallery-controls">
+                <button class="gallery-btn" type="button" onclick="event.stopPropagation(); changeGalleryImage('p2', -1)">←</button>
+                <button class="gallery-btn" type="button" onclick="event.stopPropagation(); changeGalleryImage('p2', 1)">→</button>
+              </div>
+            </div>
+
+            <div class="gallery-thumbs">
+              <div class="thumb active" onclick="setGalleryImage('p2', 0)">
+                <img src="images/product-2/1.jpg" alt="森呼吸縮圖 1" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='1';">
+              </div>
+              <div class="thumb" onclick="setGalleryImage('p2', 1)">
+                <img src="images/product-2/2.jpg" alt="森呼吸縮圖 2" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='2';">
+              </div>
+              <div class="thumb" onclick="setGalleryImage('p2', 2)">
+                <img src="images/product-2/3.jpg" alt="森呼吸縮圖 3" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='3';">
+              </div>
+              <div class="thumb" onclick="setGalleryImage('p2', 3)">
+                <img src="images/product-2/4.jpg" alt="森呼吸縮圖 4" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='4';">
+              </div>
+            </div>
+          </div>
+
+          <div class="tag">年度陪伴 · 365天</div>
+
+          <div>
+            <h3>「森呼吸」</h3>
+            <p class="muted small" style="margin:0;">365天大地滋養能量日曆</p>
+          </div>
+
+          <div class="five-elements">
+            <span class="element-tag el-wood">木</span>
+            <span class="element-tag el-fire">火</span>
+            <span class="element-tag el-earth">土</span>
+            <span class="element-tag el-metal">金</span>
+            <span class="element-tag el-water">水</span>
+          </div>
+
+          <div class="price">HKD$494.4</div>
+
+          <p class="small" style="margin:0;">
+            <strong>適合你如果：</strong><br>
+            你想要一整年穩定而溫暖嘅陪伴，又好鍾意森林、大自然同療癒感。
+          </p>
+
+          <p class="small muted" style="margin:0;">
+            <strong>靈魂寄語：</strong> 讓大地母親嘅愛，陪你走過春夏秋冬每一次呼吸。
+          </p>
+
+          <a class="card-link" href="#store-info">了解更多 →</a>
+          <a class="buy-btn" href="YOUR_STRIPE_LINK_2" target="_blank" rel="noopener">立即購買 →</a>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="product-card">
+          <div class="gallery" data-gallery="p3">
+            <div class="gallery-main">
+              <img src="images/product-3/1.jpg" alt="靜謐星河產品圖片 1" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="gallery-placeholder" style="display:none;">🌌</div>
+
+              <div class="gallery-controls">
+                <button class="gallery-btn" type="button" onclick="event.stopPropagation(); changeGalleryImage('p3', -1)">←</button>
+                <button class="gallery-btn" type="button" onclick="event.stopPropagation(); changeGalleryImage('p3', 1)">→</button>
+              </div>
+            </div>
+
+            <div class="gallery-thumbs">
+              <div class="thumb active" onclick="setGalleryImage('p3', 0)">
+                <img src="images/product-3/1.jpg" alt="靜謐星河縮圖 1" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='1';">
+              </div>
+              <div class="thumb" onclick="setGalleryImage('p3', 1)">
+                <img src="images/product-3/2.jpg" alt="靜謐星河縮圖 2" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='2';">
+              </div>
+              <div class="thumb" onclick="setGalleryImage('p3', 2)">
+                <img src="images/product-3/3.jpg" alt="靜謐星河縮圖 3" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='3';">
+              </div>
+              <div class="thumb" onclick="setGalleryImage('p3', 3)">
+                <img src="images/product-3/4.jpg" alt="靜謐星河縮圖 4" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='4';">
+              </div>
+            </div>
+          </div>
+
+          <div class="tag">經典質感 · 365天</div>
+
+          <div>
+            <h3>「靜謐星河」</h3>
+            <p class="muted small" style="margin:0;">365天經典水彩能量日曆</p>
+          </div>
+
+          <div class="five-elements">
+            <span class="element-tag el-wood">木</span>
+            <span class="element-tag el-fire">火</span>
+            <span class="element-tag el-earth">土</span>
+            <span class="element-tag el-metal">金</span>
+            <span class="element-tag el-water">水</span>
+          </div>
+
+          <div class="price">HKD$494.4</div>
+
+          <p class="small" style="margin:0;">
+            <strong>適合你如果：</strong><br>
+            你偏好簡約、現代感，同時想喺沉穩之中展現自己內在力量。
+          </p>
+
+          <p class="small muted" style="margin:0;">
+            <strong>靈魂寄語：</strong> 似水彩一樣溫柔優雅，喺日常中顯化屬於你嘅豐盛。
+          </p>
+
+          <a class="card-link" href="#store-info">了解更多 →</a>
+          <a class="buy-btn" href="YOUR_STRIPE_LINK_3" target="_blank" rel="noopener">立即購買 →</a>
+        </article>
+
+      </div>
+
+      <div class="slider-nav">
+        <button class="slider-arrow" type="button" onclick="scrollStoreSlider(-1)">←</button>
+
+        <div class="slider-dots" id="sliderDots">
+          <span class="slider-dot active" onclick="goStoreSlide(0)"></span>
+          <span class="slider-dot" onclick="goStoreSlide(1)"></span>
+          <span class="slider-dot" onclick="goStoreSlide(2)"></span>
+        </div>
+
+        <button class="slider-arrow" type="button" onclick="scrollStoreSlider(1)">→</button>
+      </div>
+    </div>
+
+    <div class="soft-panel" id="store-info" style="margin-top:32px;">
+      <h3>☯️ 點解要跟住流日著衫？</h3>
+
+      <p>
+        我哋嘅能量日曆，係根據你個人嘅生命靈數（1–9號人），結合每日流日嘅五行能量變化，
+        計算出最適合你嘅魔法衣著顏色。
+      </p>
+
+      <p>
+        <strong>簡單例子：</strong>
+        如果當天你嘅五行火氣過旺，日曆會建議你穿藍色（水）以平衡自身能量場。
+        相反，如果穿咗紅色（火），就有機會火上加火，打破自身平衡，影響情緒同運勢。
+      </p>
+
+      <p class="muted small">
+        每個人嘅生命靈數唔同，所以同一日，唔同號數嘅人適合嘅顏色都唔一樣。
+        呢就係點解我哋嘅日曆係根據你個人靈數度身訂造嘅原因。
+      </p>
+    </div>
+
+    <div class="store-layout" style="margin-top:28px;">
+      <div class="soft-panel">
+        <h3>你買到嘅，唔只係一本日曆</h3>
+
+        <ul class="list">
+          <li>根據你生命靈數度身計算嘅每日流日五行顏色指引</li>
+          <li>幫你建立更有意識嘅生活儀式感</li>
+          <li>平衡五行能量、穩定情緒、整理內在節奏</li>
+          <li>提升自信、吸引愛與豐盛</li>
+          <li>將森林與自然療癒帶入每一日</li>
+        </ul>
+      </div>
+
+      <div class="soft-panel">
+        <h3>🎁 延續療癒禮物</h3>
+
+        <p>
+          只要購買日曆，並喺體驗三星期內追蹤我哋 Instagram
+          <strong>@newage.gaia</strong>，再 DM 寫低你真實使用感受，
+          即可獲得專屬折扣優惠。
+        </p>
+
+        <p class="small">優惠可用於以下個案服務：</p>
+
+        <ul class="list small">
+          <li>✨ 靈氣治療 Reiki：深度療癒，疏通阻塞能量場</li>
+          <li>🔮 生命數字諮詢 Numerology：解鎖靈魂藍圖，為生命導航</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:28px;">
+      <h3>常見問題 FAQ</h3>
+
+      <div class="faq-item">
+        <strong>Q1. 呢啲產品係實體定電子版？</strong>
+        <p class="muted">你可以改成你真實銷售方式，例如：目前為電子版產品，付款後會經電郵發送下載連結。</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q2. 我應該揀 30 天定 365 天版本？</strong>
+        <p class="muted">如果你係第一次接觸能量穿搭，建議由 30 天開始；如果你想要長期陪伴，同建立日常儀式感，365 天會更適合你。</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q3. 日曆點樣根據我嘅靈數計算顏色？</strong>
+        <p class="muted">我哋會根據你嘅生命靈數（1-9號人），結合每日流日五行能量，運算出平衡你當日五行嘅最佳衣著顏色。</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q4. 買咗之後幾時收到？</strong>
+        <p class="muted">你可以填返實際安排，例如：付款確認後 24 小時內經 email 收到產品。</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q5. 如果我有問題，可以點聯絡你？</strong>
+        <p class="muted">你可以透過 Contact 頁面、Instagram DM，或者 email 聯絡我哋。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Newage.forest</strong><br>
+      <span class="small">Wear your energy. Align with love and abundance.</span>
+    </div>
+
+    <div class="small">
+      Instagram: @newage.gaia · 順應宇宙能量，穿出每日好運
+    </div>
+  </div>
+</footer>
+
+<div class="image-modal" id="imageModal" aria-hidden="true">
+  <div class="image-modal-box">
+    <button class="image-modal-close" type="button" onclick="closeImageModal()" aria-label="Close image preview">✕</button>
+    <img id="imageModalImg" class="image-modal-img" src="" alt="產品完整圖片預覽">
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

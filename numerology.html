@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>生命靈數 | Newage.forest</title>
+
+  <meta name="description" content="計算你嘅生命靈數，了解個人天賦、性格特質與人生課題。" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <div class="brand-title">Newage.forest</div>
+      <div class="brand-sub">Wear your energy. Align with love and abundance.</div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-links" id="mobileMenu">
+      <a href="index.html">首頁 Home</a>
+      <a href="numerology.html">生命靈數</a>
+      <a href="store.html">網上商店 Store</a>
+      <a href="about.html">關於我哋 About</a>
+      <a href="contact.html">聯絡 Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<section id="numerology">
+  <div class="container">
+    <div class="section-head">
+      <h1>🔮 生命靈數 Life Path Number</h1>
+      <p class="muted">
+        將西元出生年月日相加至個位數，用來剖析個人嘅天賦優勢、內在性格與人生課題。
+        若加總途中出現 11 或 22，則視為大師數。
+      </p>
+    </div>
+
+    <div class="calculator-section">
+      <h3>💡 立即計算你嘅生命靈數</h3>
+      <p class="muted">
+        例如：1990年5月12日 → 1+9+9+0+0+5+1+2 = 27 → 2+7 = <strong>9</strong>
+      </p>
+
+      <div class="calc-form">
+        <div class="calc-field">
+          <label for="birthYear">出生年份</label>
+          <input type="number" id="birthYear" placeholder="1990" min="1900" />
+        </div>
+
+        <div class="calc-field">
+          <label for="birthMonth">月份</label>
+          <input type="number" id="birthMonth" placeholder="5" min="1" max="12" />
+        </div>
+
+        <div class="calc-field">
+          <label for="birthDay">日期</label>
+          <input type="number" id="birthDay" placeholder="12" min="1" max="31" />
+        </div>
+
+        <button class="calc-btn" type="button" onclick="calculateLifePath()">計算我嘅靈數 ✨</button>
+      </div>
+
+      <div class="result-box" id="resultBox">
+        <div class="result-number" id="resultNumber"></div>
+        <div class="result-title" id="resultTitle"></div>
+        <div class="result-desc" id="resultDesc"></div>
+
+        <div class="cta-box">
+          <p><strong>🌟 想了解更多？</strong></p>
+          <p class="small muted">
+            如想深入了解你嘅個人基本設定、流年運程、事業方向、感情關係、子女關係等等，
+            歡迎聯絡 Newage.forest 預約一對一生命靈數詳細諮詢。
+          </p>
+
+          <div class="btn-row" style="margin-top:14px;">
+            <a class="btn btn-primary" href="contact.html">立即預約諮詢</a>
+            <a class="btn btn-secondary" href="store.html">睇每日能量日曆</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:36px;margin-bottom:10px;">🔢 1 到 9 號人性格特質與天賦</h3>
+    <p class="small muted">點擊下面任何一個數字，即可展開對應說明。</p>
+
+    <div class="personality-grid" id="personalityGrid">
+      <div class="personality-item active" data-num="1">
+        <div class="personality-num">1</div>
+        <div class="personality-name">開創領導者</div>
+      </div>
+
+      <div class="personality-item" data-num="2">
+        <div class="personality-num">2</div>
+        <div class="personality-name">溫柔協調者</div>
+      </div>
+
+      <div class="personality-item" data-num="3">
+        <div class="personality-num">3</div>
+        <div class="personality-name">熱情社交家</div>
+      </div>
+
+      <div class="personality-item" data-num="4">
+        <div class="personality-num">4</div>
+        <div class="personality-name">務實穩定者</div>
+      </div>
+
+      <div class="personality-item" data-num="5">
+        <div class="personality-num">5</div>
+        <div class="personality-name">自由冒險家</div>
+      </div>
+
+      <div class="personality-item" data-num="6">
+        <div class="personality-num">6</div>
+        <div class="personality-name">無私奉獻者</div>
+      </div>
+
+      <div class="personality-item" data-num="7">
+        <div class="personality-num">7</div>
+        <div class="personality-name">邏輯分析者</div>
+      </div>
+
+      <div class="personality-item" data-num="8">
+        <div class="personality-num">8</div>
+        <div class="personality-name">商業權威者</div>
+      </div>
+
+      <div class="personality-item" data-num="9">
+        <div class="personality-num">9</div>
+        <div class="personality-name">博愛夢想家</div>
+      </div>
+    </div>
+
+    <div class="personality-detail result-box show" id="personalityDetailBox">
+      <div class="result-number" id="personalityNumber">1</div>
+      <div class="result-title" id="personalityTitle">1 號人 — 開創領導者</div>
+      <div class="result-desc" id="personalityDesc">
+        充滿活力與獨立精神，天生具備強烈的領導欲與創造力，是勇敢的開拓者。你擁有堅定的意志力，善於開創新局面，適合走在前面帶領他人。
+      </div>
+    </div>
+
+    <p class="small muted" style="margin-top:16px;text-align:center;">
+      *若加總至最後為 11 或 22，在生命靈數中被稱為「大師數」，代表擁有更強大且特殊的靈性與潛能。
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Newage.forest</strong><br>
+      <span class="small">Wear your energy. Align with love and abundance.</span>
+    </div>
+
+    <div class="small">
+      Instagram: @newage.gaia · 順應宇宙能量，穿出每日好運
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="simpleModal">
+  <div class="modal-box">
+    <button class="modal-close" type="button" onclick="closeModal()">✕</button>
+    <p id="modalMsg" style="margin-top:20px;font-size:1.1rem;"></p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
