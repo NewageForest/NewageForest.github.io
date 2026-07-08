@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Newage.forest</title>
-
-  <meta name="description" content="Newage.forest — Wear your energy. Align with love and abundance. 根據生命靈數與流日五行，為你提供每日能量穿搭指引。" />
-
+  <meta name="description" content="順應宇宙能量，穿出每日好運。透過生命靈數 × 每日流日五行，計算專屬你嘅魔法衣著顏色。" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
+
+<div class="scroll-progress" id="scrollProgressBar"></div>
 
 <nav class="nav">
   <div class="container nav-inner">
@@ -27,7 +25,7 @@
     </button>
 
     <div class="nav-links" id="mobileMenu">
-      <a href="index.html">首頁 Home</a>
+      <a class="active" href="index.html">首頁 Home</a>
       <a href="numerology.html">生命靈數</a>
       <a href="store.html">網上商店 Store</a>
       <a href="about.html">關於我哋 About</a>
@@ -37,111 +35,103 @@
 </nav>
 
 <main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-card reveal">
+        <div class="eyebrow">順應宇宙能量・穿出每日好運</div>
+        <h1>今日，你想活出咩能量頻率？</h1>
+        <p class="lead">Wear your energy. Align with love and abundance.</p>
 
-<section class="hero" id="home">
-  <div class="container hero-grid">
-    <div class="hero-card">
-      <div class="eyebrow">順應宇宙能量・穿出每日好運</div>
-
-      <h1>今日，你想活出咩能量頻率？</h1>
-
-      <p class="lead">
-        <span class="highlight">Wear your energy. Align with love and abundance.</span><br>
-        衣服，係你嘅第二層皮膚；顏色，係宇宙送畀你嘅無形戰袍。
-      </p>
-
-      <p>
-        你有冇試過，每朝打開衣櫃，明明好多衫，但都唔知著咩先啱？
-        又或者生活節奏太快，心好攰，成個人好似搵唔返自己咁？
-      </p>
-
-      <p>
-        其實宇宙每日都會發出唔同嘅能量訊號。當你著錯咗頻率，就好似逆水行舟；
-        當你著啱顏色，就好似順住流年，讓愛、貴人同豐盛更容易流入你生命。
-      </p>
-
-      <div class="btn-row">
-        <a class="btn btn-primary" href="numerology.html">計算你嘅生命靈數</a>
-        <a class="btn btn-secondary" href="store.html">立即睇產品</a>
-      </div>
-    </div>
-
-    <div class="hero-visual">
-      <div class="visual-box">
-        <div class="mini">每日能量小提醒</div>
-        <div class="big">用顏色，校準你今日嘅頻率</div>
-        <p class="small muted">
-          根據你嘅生命靈數 × 每日流日五行，計算出專屬你嘅魔法衣著顏色，平衡你嘅能量場。
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-head">
-      <h2>呢份唔止係日曆，係你每日嘅能量錨點</h2>
-      <p class="muted">
-        根據你獨一無二嘅生命靈數，結合每日流日五行能量，
-        計算出最適合你嘅魔法衣著顏色，幫你平衡五行、調頻氣場，
-        喺忙碌生活入面留返一個溫柔空間畀自己。
-      </p>
-    </div>
-
-    <div class="grid-3">
-      <div class="card">
-        <div class="benefit-icon">✨</div>
-        <h3>提升個人氣場與自信</h3>
         <p>
-          當你著上屬於你當日頻率嘅顏色，就好似披上一件無形戰袍，
-          由內到外散發更穩定、更自然、更有存在感嘅光芒。
+          衣服，係你嘅第二層皮膚；顏色，係宇宙送畀你嘅無形戰袍。
         </p>
+        <p>
+          你有冇試過，每朝打開衣櫃，明明好多衫，但都唔知著咩先啱？
+          又或者生活節奏太快，心好攰，成個人好似搵唔返自己咁？
+        </p>
+        <p>
+          其實宇宙每日都會發出唔同嘅能量訊號。當你著錯咗頻率，就好似逆水行舟；
+          當你著啱顏色，就好似順住流年，讓愛、貴人同豐盛更容易流入你生命。
+        </p>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="numerology.html">計算你嘅生命靈數</a>
+          <a class="btn btn-secondary" href="store.html">立即睇產品</a>
+        </div>
       </div>
 
-      <div class="card">
-        <div class="benefit-icon">☯️</div>
-        <h3>平衡五行・順應流日</h3>
-        <p>
-          每日嘅五行能量都唔同。例如當日火過旺，我哋會建議你著藍色（水）去平衡；
-          如果著錯顏色，有機會打破自身能量平衡，影響運勢。
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="benefit-icon">🌱</div>
-        <h3>穩定內在能量節奏</h3>
-        <p>
-          喺生活高高低低之中，每日嘅流日顏色可以成為你隱形嘅錨，
-          靜靜地安撫情緒，幫你返到內在平衡與和諧。
-        </p>
+      <div class="hero-visual reveal">
+        <div class="visual-box">
+          <div class="mini">每日能量小提醒</div>
+          <div class="big">用顏色，校準你今日嘅頻率</div>
+          <p class="muted" style="margin:0;">
+            根據你嘅生命靈數 × 每日流日五行，計算出專屬你嘅魔法衣著顏色，平衡你嘅能量場。
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container">
-    <div class="soft-panel">
-      <h2>開始你嘅每日能量穿搭旅程</h2>
-      <p class="muted">
-        先計算你嘅生命靈數，再選擇適合你嘅能量日曆。
-      </p>
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <h2>呢份唔止係日曆，係你每日嘅能量錨點</h2>
+        <p class="muted">
+          根據你獨一無二嘅生命靈數，結合每日流日五行能量，
+          計算出最適合你嘅魔法衣著顏色，幫你平衡五行、調頻氣場，
+          喺忙碌生活入面留返一個溫柔空間畀自己。
+        </p>
+      </div>
 
-      <div class="btn-row">
-        <a class="btn btn-primary" href="numerology.html">計算生命靈數</a>
-        <a class="btn btn-secondary" href="store.html">瀏覽網上商店</a>
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="benefit-icon">✨</div>
+          <h3>提升個人氣場與自信</h3>
+          <p class="muted">
+            當你著上屬於你當日頻率嘅顏色，就好似披上一件無形戰袍，
+            由內到外散發更穩定、更自然、更有存在感嘅光芒。
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <div class="benefit-icon">☯️</div>
+          <h3>平衡五行・順應流日</h3>
+          <p class="muted">
+            每日嘅五行能量都唔同。例如當日火過旺，我哋會建議你著藍色（水）去平衡；
+            如果著錯顏色，有機會打破自身能量平衡，影響運勢。
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <div class="benefit-icon">🌱</div>
+          <h3>穩定內在能量節奏</h3>
+          <p class="muted">
+            喺生活高高低低之中，每日嘅流日顏色可以成為你隱形嘅錨，
+            靜靜地安撫情緒，幫你返到內在平衡與和諧。
+          </p>
+        </div>
+      </div>
+
+      <div class="soft-panel intro-panel reveal">
+        <div class="intro-badge">開始你嘅每日能量穿搭旅程</div>
+        <h3 class="intro-title">先計算你嘅生命靈數，再選擇適合你嘅能量日曆。</h3>
+        <p class="intro-text">
+          由了解自己開始，再讓每日穿搭變成一種溫柔而有意識嘅生活儀式。
+        </p>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="numerology.html">計算生命靈數</a>
+          <a class="btn btn-secondary" href="store.html">瀏覽網上商店</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 </main>
 
 <footer class="footer">
   <div class="container footer-inner">
     <div>
-      <strong>Newage.forest</strong><br>
+      <strong>Newage.forest</strong><br />
       <span class="small">Wear your energy. Align with love and abundance.</span>
     </div>
 
@@ -152,6 +142,5 @@
 </footer>
 
 <script src="js/main.js"></script>
-
 </body>
 </html>

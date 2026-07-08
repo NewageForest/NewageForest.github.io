@@ -1,418 +1,362 @@
 const currentYear = new Date().getFullYear();
 
 const lifePathData = {
-  1: {
-    title: "1 號人 — 開創領導者",
-    desc: "充滿活力與獨立精神，天生具備強烈的領導欲與創造力，是勇敢的開拓者。你擁有堅定的意志力，善於開創新局面，適合走在前面帶領他人。"
+  1:{
+    title:"1 號人 — 開創領導者 (行動型人格)",
+    desc:"核心能量：獨立、目標感與開創性。你在高頻狀態下自帶強大行動力，能清晰設定目標並勇往直前。然而在低頻時，容易因為過度逞強而陷入孤軍奮戰，或在外表現得獨立、內心卻缺乏安全感。今生課題是學會『從盲目擴張轉向精準聚焦』，在帶領他人的同時，也接納自己的脆弱。",
+    color:"紅、橙、紫",keyword:"領導 · 行動 · 開創",emoji:"🔥"
   },
-  2: {
-    title: "2 號人 — 溫柔協調者",
-    desc: "善解人意、心思細膩，具有極佳的直覺與審美觀，擅長人際溝通與協調。你天生就是團隊中的潤滑劑，能夠感知他人的情感需求。"
+  2:{
+    title:"2 號人 — 溫柔協調者 (關係型人格)",
+    desc:"核心能量：情感細膩、合作與深度感知。作為 2 號人，你對周圍的能量、情緒卡點有著極強的直覺。高頻的你擅長人際溝通與資源協調，是完美的團隊潤滑劑；但在低頻或受內在盲點影響時，你極易因為過度迎合他人、害怕衝突而產生嚴重的內在內耗與委屈。今生最需要修煉的學分是『設立心理界線，在陪伴他人的同時不丟失自己』。",
+    color:"白、金、銀",keyword:"協調 · 感知 · 關係",emoji:"🌸"
   },
-  3: {
-    title: "3 號人 — 熱情社交家",
-    desc: "樂觀、幽默且充滿童心，對新事物接受度高，善於表達與展現個人魅力。你的創造力與表達力是你最大的天賦，適合藝術與社交相關領域。"
+  3:{
+    title:"3 號人 — 熱情社交家 (創造型人格)",
+    desc:"核心能量：創意、表達與情緒流動。你天生具備打破常規的藝術感與個人魅力，能透過言語、創作或社交將快樂帶給身邊的人。然而，3 號人的能量源頭來自『起心動念的純粹』，一旦能量走向低頻，容易因為外界評價而陷入情緒大起大落、注意力分散或過度包裝內心的焦慮。學會『讓創意的種子在耐心中落地，活出真實的表達』是你的黃金鑰匙。",
+    color:"綠、青",keyword:"創意 · 表達 · 社交",emoji:"🌿"
   },
-  4: {
-    title: "4 號人 — 務實穩定者",
-    desc: "講求實事求是、做事有條理，重視承諾與安全感，是團隊中最可靠的基石。你的耐心與毅力讓你能夠將任何計劃落實到位。"
+  4:{
+    title:"4 號人 — 務實穩定者 (穩定感特質)",
+    desc:"核心能量：秩序、規劃與責任感。你是物質世界中最可靠的基礎建立者，講求實事求是，擅長將宏大的計畫拆解成清晰的步驟落地執行。當你處於低頻狀態，往往會演變成過度壓抑情緒、害怕改變、甚至因為瘋狂追求安全感而作繭自縛。看清你內在對秩序的執著，學習『在穩固的結構中，允許生命擁有彈性與未知的流動』是今生的靈魂考題。",
+    color:"黑、藍、灰",keyword:"穩定 · 規劃 · 責任",emoji:"🌙"
   },
-  5: {
-    title: "5 號人 — 自由冒險家",
-    desc: "崇尚自由、不愛拘束，學習能力強且適應力高，擁有極佳的口才與冒險精神。你的多才多藝讓你在不同領域都能綻放光芒。"
+  5:{
+    title:"5 號人 — 自由冒險家 (變化性特質)",
+    desc:"核心能量：自由、幽默、高適應力。你擁有極佳的口才與多才多藝的天賦，討厭被任何條條框框束縛，適應新環境的能力極強。然而，5 號人的雙刃劍在於，當你在現實中感到受限或缺乏安全感時，情緒起伏會變得非常劇烈，容易用『逃避或不斷轉換賽道』來掩飾內心的迷茫。只有當你明白『真正的自由來自內心的安定，而非外在的流浪』時，你才能顯化最高頻的豐盛。",
+    color:"紅、橙、粉紅",keyword:"自由 · 變化 · 冒險",emoji:"✨"
   },
-  6: {
-    title: "6 號人 — 無私奉獻者",
-    desc: "重感情、富有同理心與責任感，非常願意照顧他人，但需要學習設立界線。你的愛與關懷是你周圍人的溫暖來源。"
+  6:{
+    title:"6 號人 — 無私奉獻者 (關係導向特質)",
+    desc:"核心能量：大愛、責任、照顧與療癒。你天生對家庭、親密關係或身邊的朋友有著強烈的責任感，樂於承擔與照顧。但在低頻顯化時，6 號人極易把所有人的壓力和不快樂都扛在自己肩膀上，演變成『用過度的犧牲來交換愛，最終導致內心失衡與抱怨』。今生最溫柔的提醒：請先學會無條件地滋養自己、拯救自己，才能真正療癒他人。",
+    color:"啡、深黃、杏",keyword:"奉獻 · 療癒 · 大愛",emoji:"💚"
   },
-  7: {
-    title: "7 號人 — 邏輯分析者",
-    desc: "天生的獨立思考者，喜歡探究事物本質，觀察力與分析能力極強，享受獨處。你擁有深度的智慧，適合研究與靈性探索。"
+  7:{
+    title:"7 號人 — 邏輯分析者 (內在思考傾向)",
+    desc:"核心能量：探究本質、質疑、獨立思考。你擁有一個不知疲倦、喜歡挖掘真相的敏銳大腦，觀察力極強，非常享受獨處的精神世界。低頻時的 7 號人，容易因為防備心過重而與外界刻意保持距離，甚至陷入過度理性、用邏輯建構冷漠高牆的自我內耗。你今生的靈魂軌跡，是要『從頭腦的質疑走向心靈的臣服』，將深度的智慧應用於靈性與現實的結合。",
+    color:"白、金、銀",keyword:"分析 · 智慧 · 探究",emoji:"🔮"
   },
-  8: {
-    title: "8 號人 — 商業權威者",
-    desc: "具有敏銳的商業與賺錢頭腦，重視物質成就與效率，天生具備經營管理的能力。你的格局與執行力讓你在事業上容易取得成就。"
+  8:{
+    title:"8 號人 — 商業權威者 (理想追求特質)",
+    desc:"核心能量：成就、掌控力、豐盛與現實顯化。你對物質回報、效率以及經營管理有著天生的敏銳度，企圖心強，格局宏大。但也因為如此，8 號人的起心動念極其關鍵——如果純粹為了證明自己或出於對匱乏的恐懼（低頻狀態），你在職場與感情中都會展現出過強的控制欲與批判性。當你學會『順應豐盛的宇宙流動，用財富與力量去賦能他人』時，你將會登上真正的巔峰。",
+    color:"綠、青",keyword:"豐盛 · 成就 · 領導",emoji:"💫"
   },
-  9: {
-    title: "9 號人 — 博愛夢想家",
-    desc: "充滿理想主義與大愛精神，想像力豐富且樂於助人，擁有如老靈魂般的智慧。你的包容與慈悲讓你能夠影響並療癒身邊的人。"
-  },
-  11: {
-    title: "11 號人 — 大師數・靈性啟發者",
-    desc: "你擁有大師數 11！這代表你有著極強的靈性感知力與啟發他人的天賦。你是天生的直覺者，擁有比一般人更強大的靈性潛能與使命感。"
-  },
-  22: {
-    title: "22 號人 — 大師數・夢想建築師",
-    desc: "你擁有大師數 22！這代表你有將宏大夢想化為現實的能力。你結合了靈性與實踐力，是能夠在物質世界中實現靈性願景的稀有存在。"
+  9:{
+    title:"9 號人 — 博愛夢想家 (精神追求傾向)",
+    desc:"核心能量：同理心、大愛、理想主義。你就像一個活了很久的老靈魂，情感敏銳，極易對他人的痛苦產生強烈共感，天生帶有療癒和服務人群的基因。然而低頻時的 9 號人，往往會因為過度理想化現實而活在幻想中，或在面對殘酷現實時選擇自我麻痺、甚至陷入悲觀的受害者心態。腳踏實地，『將無邊際的慈悲轉化為具體的世俗行動』，是你與生俱來的使命。",
+    color:"黑、藍、灰",keyword:"博愛 · 理想 · 夢想",emoji:"🌌"
   }
 };
 
-const galleries = {
-  p1: {
-    index: 0,
-    images: [
-      "images/product-1/1.jpg",
-      "images/product-1/2.jpg",
-      "images/product-1/3.jpg",
-      "images/product-1/4.jpg"
-    ]
-  },
-  p2: {
-    index: 0,
-    images: [
-      "images/product-2/1.jpg",
-      "images/product-2/2.jpg",
-      "images/product-2/3.jpg",
-      "images/product-2/4.jpg"
-    ]
-  },
-  p3: {
-    index: 0,
-    images: [
-      "images/product-3/1.jpg",
-      "images/product-3/2.jpg",
-      "images/product-3/3.jpg",
-      "images/product-3/4.jpg"
-    ]
+// ===== Utils =====
+function reduceToLifePath(num){
+  while(num>9){
+    num=String(num).split("").reduce((s,d)=>s+Number(d),0);
   }
-};
-
-function showModal(msg) {
-  const modalMsg = document.getElementById("modalMsg");
-  const simpleModal = document.getElementById("simpleModal");
-
-  if (!modalMsg || !simpleModal) return;
-
-  modalMsg.textContent = msg;
-  simpleModal.classList.add("show");
+  return num;
 }
 
-function closeModal() {
-  const simpleModal = document.getElementById("simpleModal");
-  if (!simpleModal) return;
-
-  simpleModal.classList.remove("show");
-}
-
-function openImageModal(src, alt) {
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("imageModalImg");
-
-  if (!modal || !modalImg) return;
-
-  modalImg.src = src;
-  modalImg.alt = alt || "產品完整圖片預覽";
+function showModal(message){
+  const modal=document.getElementById("simpleModal");
+  const modalMsg=document.getElementById("modalMsg");
+  if(!modal||!modalMsg)return;
+  modalMsg.textContent=message;
   modal.classList.add("show");
-  modal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
+  document.body.style.overflow="hidden";
 }
 
-function closeImageModal() {
-  const modal = document.getElementById("imageModal");
-  const modalImg = document.getElementById("imageModalImg");
-
-  if (!modal || !modalImg) return;
-
-  modal.classList.remove("show");
-  modal.setAttribute("aria-hidden", "true");
-  modalImg.src = "";
-  document.body.style.overflow = "";
+function closeModal(){
+  const modal=document.getElementById("simpleModal");
+  if(modal)modal.classList.remove("show");
+  document.body.style.overflow="";
 }
 
-function isValidDate(year, month, day) {
-  const d = new Date(year, month - 1, day);
+// ===== Life Path Calculation =====
+function calculateLifePath(){
+  const yearInput=document.getElementById("birthYear");
+  const monthInput=document.getElementById("birthMonth");
+  const dayInput=document.getElementById("birthDay");
+  const resultBox=document.getElementById("resultBox");
+  const resultNumber=document.getElementById("resultNumber");
+  const resultTitle=document.getElementById("resultTitle");
+  const resultDesc=document.getElementById("resultDesc");
 
-  return d.getFullYear() === Number(year) &&
-    d.getMonth() === Number(month) - 1 &&
-    d.getDate() === Number(day);
-}
+  if(!yearInput||!monthInput||!dayInput)return;
 
-function calculateLifePath() {
-  const yearInput = document.getElementById("birthYear");
-  const monthInput = document.getElementById("birthMonth");
-  const dayInput = document.getElementById("birthDay");
+  const year=parseInt(yearInput.value,10);
+  const month=parseInt(monthInput.value,10);
+  const day=parseInt(dayInput.value,10);
 
-  if (!yearInput || !monthInput || !dayInput) return;
+  if(!year||!month||!day){showModal("請完整輸入出生年份、月份與日期。");return;}
+  if(year<1900||year>currentYear){showModal(`請輸入有效的出生年份（1900 - ${currentYear}）。`);return;}
+  if(month<1||month>12){showModal("請輸入有效月份（1 - 12）。");return;}
 
-  const year = parseInt(yearInput.value, 10);
-  const month = parseInt(monthInput.value, 10);
-  const day = parseInt(dayInput.value, 10);
+  const testDate=new Date(year,month-1,day);
+  const isValid=testDate.getFullYear()===year&&testDate.getMonth()===month-1&&testDate.getDate()===day;
+  if(!isValid){showModal("請輸入有效日期，例如 1997 / 8 / 15。");return;}
 
-  if (!year || !month || !day) {
-    showModal("請輸入完整嘅出生年月日 🙏");
-    return;
+  const digits=`${year}${month}${day}`.split("").map(Number);
+  const sum=digits.reduce((a,n)=>a+n,0);
+  const lifePath=reduceToLifePath(sum);
+  const data=lifePathData[lifePath];
+  if(!data){showModal("暫時未能計算此生命靈數結果，請稍後再試。");return;}
+
+  resultNumber.textContent=lifePath;
+  resultTitle.textContent=data.title;
+  resultDesc.textContent=data.desc;
+
+  // Enhanced result extras
+  const colorEl=document.getElementById("resultColor");
+  const keywordEl=document.getElementById("resultKeyword");
+  if(colorEl)colorEl.textContent=data.color;
+  if(keywordEl)keywordEl.textContent=data.keyword;
+
+  // Recommend product based on result
+  const storeRec=document.getElementById("storeRecommendation");
+  if(storeRec){
+    storeRec.innerHTML=`你係 <strong>${lifePath} 號人</strong>，建議從「初體驗 30天日曆」開始感受屬於你嘅 <strong>${data.color}</strong> 能量。`;
   }
 
-  if (year < 1900 || year > currentYear || month < 1 || month > 12 || day < 1 || day > 31) {
-    showModal("請輸入有效嘅日期 🙏");
-    return;
-  }
-
-  if (!isValidDate(year, month, day)) {
-    showModal("你輸入嘅日期唔存在，請重新確認 🙏");
-    return;
-  }
-
-  const dateStr = String(year) + String(month).padStart(2, "0") + String(day).padStart(2, "0");
-
-  let sum = 0;
-
-  for (let i = 0; i < dateStr.length; i++) {
-    sum += parseInt(dateStr[i], 10);
-  }
-
-  let result = sum;
-
-  while (result > 9 && result !== 11 && result !== 22) {
-    let tempSum = 0;
-    const tempStr = String(result);
-
-    for (let i = 0; i < tempStr.length; i++) {
-      tempSum += parseInt(tempStr[i], 10);
-    }
-
-    result = tempSum;
-  }
-
-  const data = lifePathData[result];
-
-  if (!data) return;
-
-  document.getElementById("resultNumber").textContent = result;
-  document.getElementById("resultTitle").textContent = data.title;
-  document.getElementById("resultDesc").textContent = data.desc;
-
-  const resultBox = document.getElementById("resultBox");
   resultBox.classList.add("show");
+  resultBox.scrollIntoView({behavior:"smooth",block:"start"});
 
-  resultBox.scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
+  // Celebration spark
+  triggerSpark(resultNumber||document.body);
 }
 
-function showPersonality(num) {
-  const data = lifePathData[num];
-
-  if (!data) return;
-
-  const personalityNumber = document.getElementById("personalityNumber");
-  const personalityTitle = document.getElementById("personalityTitle");
-  const personalityDesc = document.getElementById("personalityDesc");
-  const personalityDetailBox = document.getElementById("personalityDetailBox");
-
-  if (!personalityNumber || !personalityTitle || !personalityDesc || !personalityDetailBox) return;
-
-  personalityNumber.textContent = num;
-  personalityTitle.textContent = data.title;
-  personalityDesc.textContent = data.desc;
-  personalityDetailBox.classList.add("show");
-
-  document.querySelectorAll(".personality-item").forEach(item => {
-    item.classList.toggle("active", Number(item.dataset.num) === num);
-  });
-}
-
-function renderGallery(galleryId) {
-  const gallery = galleries[galleryId];
-  const wrapper = document.querySelector(`[data-gallery="${galleryId}"]`);
-
-  if (!gallery || !wrapper) return;
-
-  const mainImg = wrapper.querySelector(".gallery-main img");
-  const placeholder = wrapper.querySelector(".gallery-placeholder");
-  const thumbs = wrapper.querySelectorAll(".thumb");
-
-  if (mainImg) {
-    mainImg.style.display = "block";
-    mainImg.src = gallery.images[gallery.index];
-
-    mainImg.onerror = function() {
-      this.style.display = "none";
-      if (placeholder) placeholder.style.display = "flex";
-    };
-
-    mainImg.onload = function() {
-      this.style.display = "block";
-      if (placeholder) placeholder.style.display = "none";
-    };
+// ===== Spark / Celebrate =====
+function triggerSpark(el){
+  if(!el)return;
+  const sparks=["✨","🌟","💫","⭐","🌿","✦"];
+  const rect=el.getBoundingClientRect();
+  for(let i=0;i<8;i++){
+    const s=document.createElement("span");
+    s.textContent=sparks[Math.floor(Math.random()*sparks.length)];
+    s.style.cssText=`
+      position:fixed;pointer-events:none;z-index:9999;font-size:1.2rem;
+      left:${rect.left+rect.width/2}px;top:${rect.top+rect.height/2}px;
+      animation:sparkFly .9s ease forwards;
+      --tx:${(Math.random()-0.5)*120}px;--ty:${-(Math.random()*100+40)}px;
+    `;
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),950);
   }
+}
 
-  thumbs.forEach((thumb, index) => {
-    thumb.classList.toggle("active", index === gallery.index);
+// Inject spark animation once
+(function(){
+  const style=document.createElement("style");
+  style.textContent=`@keyframes sparkFly{0%{opacity:1;transform:translate(0,0) scale(1);}100%{opacity:0;transform:translate(var(--tx),var(--ty)) scale(0.3);}}`;
+  document.head.appendChild(style);
+})();
+
+// ===== Personality Cards =====
+function showPersonality(num){
+  const detailBox=document.getElementById("personalityDetailBox");
+  const numberEl=document.getElementById("personalityNumber");
+  const titleEl=document.getElementById("personalityTitle");
+  const descEl=document.getElementById("personalityDesc");
+
+  const data=lifePathData[num];
+  if(!data||!detailBox||!numberEl||!titleEl||!descEl)return;
+
+  numberEl.textContent=num;
+  titleEl.textContent=data.title;
+  descEl.textContent=data.desc;
+
+  // extras
+  const emojiEl=document.getElementById("personalityEmoji");
+  const colorEl=document.getElementById("personalityColor");
+  const kwEl=document.getElementById("personalityKeyword");
+  if(emojiEl)emojiEl.textContent=data.emoji||"";
+  if(colorEl)colorEl.textContent=data.color||"";
+  if(kwEl)kwEl.textContent=data.keyword||"";
+
+  detailBox.classList.add("show");
+  document.querySelectorAll(".personality-item").forEach(item=>{
+    item.classList.toggle("active",Number(item.dataset.num)===Number(num));
   });
 }
 
-function setGalleryImage(galleryId, index) {
-  const gallery = galleries[galleryId];
+// ===== FAQ Accordion =====
+function initFaqAccordion(){
+  document.querySelectorAll(".faq-accordion-item").forEach(item=>{
+    const button=item.querySelector(".faq-question");
+    const answer=item.querySelector(".faq-answer");
+    if(!button||!answer)return;
 
-  if (!gallery) return;
-  if (index < 0 || index >= gallery.images.length) return;
-
-  gallery.index = index;
-  renderGallery(galleryId);
-}
-
-function changeGalleryImage(galleryId, step) {
-  const gallery = galleries[galleryId];
-
-  if (!gallery) return;
-
-  gallery.index = (gallery.index + step + gallery.images.length) % gallery.images.length;
-  renderGallery(galleryId);
-}
-
-function getCardStep() {
-  const storeSlider = document.getElementById("storeSlider");
-
-  if (!storeSlider) return 320;
-
-  const firstCard = storeSlider.querySelector(".product-card");
-
-  if (!firstCard) return 320;
-
-  const styles = window.getComputedStyle(storeSlider);
-  const gap = parseInt(styles.gap) || 18;
-
-  return firstCard.getBoundingClientRect().width + gap;
-}
-
-function scrollStoreSlider(direction) {
-  const storeSlider = document.getElementById("storeSlider");
-
-  if (!storeSlider) return;
-
-  storeSlider.scrollBy({
-    left: getCardStep() * direction,
-    behavior: "smooth"
-  });
-}
-
-function goStoreSlide(index) {
-  const storeSlider = document.getElementById("storeSlider");
-
-  if (!storeSlider) return;
-
-  storeSlider.scrollTo({
-    left: getCardStep() * index,
-    behavior: "smooth"
-  });
-}
-
-function updateSliderDots() {
-  const storeSlider = document.getElementById("storeSlider");
-  const sliderDots = document.querySelectorAll(".slider-dot");
-
-  if (!storeSlider || !sliderDots.length) return;
-
-  const step = getCardStep();
-  const index = Math.round(storeSlider.scrollLeft / step);
-
-  sliderDots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === Math.min(index, sliderDots.length - 1));
-  });
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  const birthYear = document.getElementById("birthYear");
-
-  if (birthYear) {
-    birthYear.setAttribute("max", currentYear);
-  }
-
-  const simpleModal = document.getElementById("simpleModal");
-
-  if (simpleModal) {
-    simpleModal.addEventListener("click", function(e) {
-      if (e.target === this) closeModal();
+    button.addEventListener("click",()=>{
+      const isOpen=item.classList.contains("open");
+      document.querySelectorAll(".faq-accordion-item").forEach(other=>{
+        other.classList.remove("open");
+        const ob=other.querySelector(".faq-question");
+        const oa=other.querySelector(".faq-answer");
+        if(ob)ob.setAttribute("aria-expanded","false");
+        if(oa)oa.style.maxHeight=null;
+      });
+      if(!isOpen){
+        item.classList.add("open");
+        button.setAttribute("aria-expanded","true");
+        answer.style.maxHeight=answer.scrollHeight+"px";
+      }
     });
-  }
+  });
+}
 
-  const imageModal = document.getElementById("imageModal");
+// ===== Scroll Progress Bar =====
+function initScrollProgress(){
+  const bar=document.getElementById("scrollProgressBar");
+  if(!bar)return;
+  document.addEventListener("scroll",()=>{
+    const total=document.body.scrollHeight-window.innerHeight;
+    const pct=total>0?(window.scrollY/total*100):0;
+    bar.style.width=pct+"%";
+  },{passive:true});
+}
 
-  if (imageModal) {
-    imageModal.addEventListener("click", function(e) {
-      if (e.target === this) closeImageModal();
+// ===== Nav scroll effect =====
+function initNavScroll(){
+  const nav=document.querySelector(".nav");
+  if(!nav)return;
+  window.addEventListener("scroll",()=>{
+    nav.classList.toggle("scrolled",window.scrollY>40);
+  },{passive:true});
+}
+
+// ===== Animated Counters =====
+function animateCounter(el,target,duration=1600){
+  let start=0;
+  const step=timestamp=>{
+    if(!start)start=timestamp;
+    const progress=Math.min((timestamp-start)/duration,1);
+    const eased=1-Math.pow(1-progress,3);
+    el.textContent=Math.floor(eased*target).toLocaleString();
+    if(progress<1)requestAnimationFrame(step);
+    else el.textContent=target.toLocaleString();
+  };
+  requestAnimationFrame(step);
+}
+
+function initCounters(){
+  const counters=document.querySelectorAll("[data-counter]");
+  if(!counters.length)return;
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const el=entry.target;
+        const target=parseInt(el.dataset.counter,10);
+        animateCounter(el,target);
+        obs.unobserve(el);
+      }
     });
-  }
+  },{threshold:0.5});
+  counters.forEach(c=>obs.observe(c));
+}
 
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") {
-      closeModal();
-      closeImageModal();
-    }
+// ===== Reveal on Scroll =====
+function initRevealOnScroll(){
+  const items=document.querySelectorAll(".reveal");
+  if(!items.length)return;
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("is-visible");
+        obs.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.12});
+  items.forEach(item=>obs.observe(item));
+}
+
+// ===== Store Slider =====
+function initStoreSlider(){
+  const slider=document.querySelector(".store-slider");
+  const dots=document.querySelectorAll(".slider-dot");
+  const prevBtn=document.querySelector(".slider-arrow.prev");
+  const nextBtn=document.querySelector(".slider-arrow.next");
+  if(!slider)return;
+
+  function getVisibleCount(){
+    return window.innerWidth<=640?1:window.innerWidth<=960?2:3;
+  }
+  function updateDots(){
+    const visible=getVisibleCount();
+    const cards=slider.querySelectorAll(".product-card");
+    const total=Math.ceil(cards.length/visible);
+    const scrollLeft=slider.scrollLeft;
+    const cardW=cards[0]?(cards[0].offsetWidth+18):0;
+    const current=Math.round(scrollLeft/(cardW*visible));
+    dots.forEach((d,i)=>d.classList.toggle("active",i===current));
+  }
+  slider.addEventListener("scroll",updateDots,{passive:true});
+
+  if(prevBtn)prevBtn.addEventListener("click",()=>{
+    const cards=slider.querySelectorAll(".product-card");
+    const w=(cards[0]?(cards[0].offsetWidth+18):0)*getVisibleCount();
+    slider.scrollBy({left:-w,behavior:"smooth"});
+  });
+  if(nextBtn)nextBtn.addEventListener("click",()=>{
+    const cards=slider.querySelectorAll(".product-card");
+    const w=(cards[0]?(cards[0].offsetWidth+18):0)*getVisibleCount();
+    slider.scrollBy({left:w,behavior:"smooth"});
   });
 
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
+  dots.forEach((dot,i)=>dot.addEventListener("click",()=>{
+    const cards=slider.querySelectorAll(".product-card");
+    const w=(cards[0]?(cards[0].offsetWidth+18):0)*getVisibleCount();
+    slider.scrollTo({left:w*i,behavior:"smooth"});
+  }));
 
-  if (menuToggle && mobileMenu) {
-    menuToggle.addEventListener("click", function() {
-      const isOpen = mobileMenu.classList.toggle("show");
+  updateDots();
+}
 
-      menuToggle.classList.toggle("active", isOpen);
-      menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+// ===== DOMContentLoaded =====
+document.addEventListener("DOMContentLoaded",()=>{
+  window.calculateLifePath=calculateLifePath;
+  window.closeModal=closeModal;
+  window.showModal=showModal;
+  window.showPersonality=showPersonality;
+
+  // Mobile menu
+  const menuToggle=document.getElementById("menuToggle");
+  const mobileMenu=document.getElementById("mobileMenu");
+  if(menuToggle&&mobileMenu){
+    menuToggle.addEventListener("click",()=>{
+      const isOpen=mobileMenu.classList.toggle("show");
+      menuToggle.classList.toggle("active",isOpen);
+      menuToggle.setAttribute("aria-expanded",String(isOpen));
     });
-
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
+    mobileMenu.querySelectorAll("a").forEach(link=>{
+      link.addEventListener("click",()=>{
         mobileMenu.classList.remove("show");
         menuToggle.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-expanded","false");
       });
     });
-
-    document.addEventListener("click", function(e) {
-      if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-        mobileMenu.classList.remove("show");
-        menuToggle.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-      }
-    });
   }
 
-  document.querySelectorAll(".personality-item").forEach(item => {
-    item.addEventListener("click", function() {
-      showPersonality(Number(this.dataset.num));
-    });
+  // Modal backdrop close
+  const simpleModal=document.getElementById("simpleModal");
+  if(simpleModal){
+    simpleModal.addEventListener("click",e=>{if(e.target===simpleModal)closeModal();});
+  }
+
+  // Personality cards
+  document.querySelectorAll(".personality-item").forEach(item=>{
+    item.addEventListener("click",()=>showPersonality(Number(item.dataset.num)));
   });
 
-  if (document.getElementById("personalityDetailBox")) {
-    showPersonality(1);
-  }
-
-  Object.keys(galleries).forEach(renderGallery);
-
-  Object.keys(galleries).forEach((galleryId) => {
-    const wrapper = document.querySelector(`[data-gallery="${galleryId}"] .gallery-main`);
-
-    if (!wrapper) return;
-
-    let startX = 0;
-    let endX = 0;
-
-    wrapper.addEventListener("touchstart", function(e) {
-      startX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    wrapper.addEventListener("touchend", function(e) {
-      endX = e.changedTouches[0].screenX;
-
-      const diff = startX - endX;
-
-      if (Math.abs(diff) > 40) {
-        if (diff > 0) changeGalleryImage(galleryId, 1);
-        else changeGalleryImage(galleryId, -1);
-      }
-    }, { passive: true });
+  // Enter key on calc inputs
+  ["birthYear","birthMonth","birthDay"].forEach(id=>{
+    const input=document.getElementById(id);
+    if(input)input.addEventListener("keydown",e=>{if(e.key==="Enter")calculateLifePath();});
   });
 
-  const storeSlider = document.getElementById("storeSlider");
-
-  if (storeSlider) {
-    storeSlider.addEventListener("scroll", updateSliderDots);
-    updateSliderDots();
-  }
-
-  window.addEventListener("resize", updateSliderDots);
+  showPersonality(1);
+  initFaqAccordion();
+  initRevealOnScroll();
+  initScrollProgress();
+  initNavScroll();
+  initCounters();
+  initStoreSlider();
 });

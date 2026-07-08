@@ -6,7 +6,10 @@
 
   <title>生命靈數 | Newage.forest</title>
 
-  <meta name="description" content="計算你嘅生命靈數，了解個人天賦、性格特質與人生課題。" />
+  <meta
+    name="description"
+    content="計算你嘅生命靈數，結合三角因果計算法、13 個生命位置、81 組聯合數字與早中晚三大人生階段，了解核心人格天賦、高低頻特質與人生課題。"
+  />
 
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -20,7 +23,13 @@
       <div class="brand-sub">Wear your energy. Align with love and abundance.</div>
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="mobileMenu"
+    >
       <span></span>
       <span></span>
       <span></span>
@@ -40,37 +49,63 @@
 
 <section id="numerology">
   <div class="container">
+    <!-- STEP 1: Introduction - What is Life Path Number -->
     <div class="section-head">
       <h1>🔮 生命靈數 Life Path Number</h1>
-      <p class="muted">
-        將西元出生年月日相加至個位數，用來剖析個人嘅天賦優勢、內在性格與人生課題。
-        若加總途中出現 11 或 22，則視為大師數。
+      <p class="muted" style="line-height: 1.7;">
+        生命靈數是一套透過出生日期解讀你內在性格與人生模式的自我理解工具。<br />
+        透過西元出生年月日的數字能量，我們可以看見你與生俱來的性格底牌、潛在盲點，以及如何活出最高頻的豐盛人生。
       </p>
     </div>
 
-    <div class="calculator-section">
-      <h3>💡 立即計算你嘅生命靈數</h3>
+    <!-- What is Life Path Number - Detailed explanation -->
+    <div class="soft-panel intro-panel" style="margin-top: 32px;">
+      <div class="intro-badge">認識生命靈數</div>
+      <h2 class="intro-title">一套透過出生數字解讀靈魂能量的自我探索工具</h2>
+      <p class="intro-text">
+        生命靈數源自古希臘畢達哥拉斯的數字哲學，相信<strong>每個數字都代表獨特的能量頻率與人格特質</strong>。
+        當時的人認為，數字不只是計算工具，更是理解宇宙與人性的密碼。<br /><br />
+        
+        現代系統透過出生年月日的數字排列，分析一個人與生俱來的性格傾向、思考模式、情緒反應與人生課題。
+        它既是感情關係的解讀工具，也是工作方向的探索指南。<br /><br />
+        
+        <strong>它與其他工具有何不同？</strong><br />
+        星座看天體運行，MBTI 看行為決策，紫微看流年事件，八字看五行大運，易經看時空變化——
+        而<strong>生命靈數，直接從「出生數字本身的能量頻率」出發</strong>，
+        透視你最核心的性格底牌與靈魂功課。<br /><br />
+        
+        近年越來越多人開始研究生命靈數，因為比起單純預測運勢，
+        <strong>它更像一面鏡子</strong>——幫你看清自己為什麼會這樣思考、這樣反應，
+        又為什麼總在某些關係或人生課題中重複打轉。當你真正認識自己，才能找到真正適合的能量方向。
+      </p>
+    </div>
+
+    <!-- STEP 2: Quick Calculator - Let users try first -->
+    <div class="calculator-section" id="lifePathCalculator" style="margin-top: 44px;">
+      <h3>💡 立即解碼你嘅生命主命數</h3>
       <p class="muted">
-        例如：1990年5月12日 → 1+9+9+0+0+5+1+2 = 27 → 2+7 = <strong>9</strong>
+        <strong>計算公式：</strong>
+        將西元出生年月日的所有數字拆開相加，直到最後化簡成 1～9 的個位數（若途中出現 11 或 22 則直接保留）。<br />
+        <span>例如：1997年8月15日 → 1+9+9+7+8+1+5 = 40 → 4+0 = <strong>4 號人</strong></span>
       </p>
 
       <div class="calc-form">
         <div class="calc-field">
-          <label for="birthYear">出生年份</label>
-          <input type="number" id="birthYear" placeholder="1990" min="1900" />
+          <label for="birthYear">出生年份 (西元)</label>
+          <input type="number" id="birthYear" placeholder="1997" min="1900" />
         </div>
 
         <div class="calc-field">
           <label for="birthMonth">月份</label>
-          <input type="number" id="birthMonth" placeholder="5" min="1" max="12" />
+          <input type="number" id="birthMonth" placeholder="8" min="1" max="12" />
         </div>
 
         <div class="calc-field">
           <label for="birthDay">日期</label>
-          <input type="number" id="birthDay" placeholder="12" min="1" max="31" />
+          <input type="number" id="birthDay" placeholder="15" min="1" max="31" />
         </div>
 
-        <button class="calc-btn" type="button" onclick="calculateLifePath()">計算我嘅靈數 ✨</button>
+        <button class="calc-btn" type="button" onclick="calculateLifePath()">解鎖我哋靈魂密碼 ✨</button>
       </div>
 
       <div class="result-box" id="resultBox">
@@ -78,82 +113,475 @@
         <div class="result-title" id="resultTitle"></div>
         <div class="result-desc" id="resultDesc"></div>
 
-        <div class="cta-box">
-          <p><strong>🌟 想了解更多？</strong></p>
-          <p class="small muted">
-            如想深入了解你嘅個人基本設定、流年運程、事業方向、感情關係、子女關係等等，
-            歡迎聯絡 Newage.forest 預約一對一生命靈數詳細諮詢。
-          </p>
-
-          <div class="btn-row" style="margin-top:14px;">
-            <a class="btn btn-primary" href="contact.html">立即預約諮詢</a>
-            <a class="btn btn-secondary" href="store.html">睇每日能量日曆</a>
-          </div>
+        <div class="btn-row" style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+          <a class="btn btn-primary" href="contact.html">📅 預約諮詢</a>
+          <a class="btn btn-secondary" href="store.html">🛍️ 瀏覽商店</a>
         </div>
       </div>
     </div>
 
-    <h3 style="margin-top:36px;margin-bottom:10px;">🔢 1 到 9 號人性格特質與天賦</h3>
-    <p class="small muted">點擊下面任何一個數字，即可展開對應說明。</p>
+    <!-- STEP 3: The 9 Personalities - Interactive exploration -->
+    <h3 style="margin-top:48px; margin-bottom:10px;">🔢 1 到 9 號主性格特質動態剖析</h3>
+    <p class="small muted">
+      點擊下方數字，即可查閱該數字的核心天賦與低頻卡點：
+    </p>
 
     <div class="personality-grid" id="personalityGrid">
       <div class="personality-item active" data-num="1">
         <div class="personality-num">1</div>
-        <div class="personality-name">開創領導者</div>
+        <div class="personality-name">開創領導</div>
       </div>
 
       <div class="personality-item" data-num="2">
         <div class="personality-num">2</div>
-        <div class="personality-name">溫柔協調者</div>
+        <div class="personality-name">溫柔協調</div>
       </div>
 
       <div class="personality-item" data-num="3">
         <div class="personality-num">3</div>
-        <div class="personality-name">熱情社交家</div>
+        <div class="personality-name">熱情社交</div>
       </div>
 
       <div class="personality-item" data-num="4">
         <div class="personality-num">4</div>
-        <div class="personality-name">務實穩定者</div>
+        <div class="personality-name">務實穩定</div>
       </div>
 
       <div class="personality-item" data-num="5">
         <div class="personality-num">5</div>
-        <div class="personality-name">自由冒險家</div>
+        <div class="personality-name">自由冒險</div>
       </div>
 
       <div class="personality-item" data-num="6">
         <div class="personality-num">6</div>
-        <div class="personality-name">無私奉獻者</div>
+        <div class="personality-name">無私奉獻</div>
       </div>
 
       <div class="personality-item" data-num="7">
         <div class="personality-num">7</div>
-        <div class="personality-name">邏輯分析者</div>
+        <div class="personality-name">邏輯分析</div>
       </div>
 
       <div class="personality-item" data-num="8">
         <div class="personality-num">8</div>
-        <div class="personality-name">商業權威者</div>
+        <div class="personality-name">商業權威</div>
       </div>
 
       <div class="personality-item" data-num="9">
         <div class="personality-num">9</div>
-        <div class="personality-name">博愛夢想家</div>
+        <div class="personality-name">博愛夢想</div>
       </div>
     </div>
 
-    <div class="personality-detail result-box show" id="personalityDetailBox">
+    <div class="personality-detail result-box show" id="personalityDetailBox" style="margin-top: 20px;">
       <div class="result-number" id="personalityNumber">1</div>
-      <div class="result-title" id="personalityTitle">1 號人 — 開創領導者</div>
+      <div class="result-title" id="personalityTitle">1 號人 — 開創領導者 (行動型人格)</div>
       <div class="result-desc" id="personalityDesc">
-        充滿活力與獨立精神，天生具備強烈的領導欲與創造力，是勇敢的開拓者。你擁有堅定的意志力，善於開創新局面，適合走在前面帶領他人。
+        核心能量：獨立、目標感與開創性。你在高頻狀態下自帶強大行動力，
+        能清晰設定目標並勇往直前。然而在低頻時，容易因為過度逞強而陷入孤軍奮戰，
+        或在外表現得獨立、內心卻缺乏安全感。今生課題是學會『從盲目擴張轉向精準聚焦』，
+        在帶領他人的同時，也接納自己的脆弱。
       </div>
     </div>
 
-    <p class="small muted" style="margin-top:16px;text-align:center;">
-      *若加總至最後為 11 或 22，在生命靈數中被稱為「大師數」，代表擁有更強大且特殊的靈性與潛能。
-    </p>
+    <!-- STEP 4: Why one number is not enough - Bridge to deeper system -->
+    <div class="soft-panel intro-panel" style="margin-top: 48px;">
+      <div class="intro-badge">為什麼主命數只是開始？</div>
+      <h2 class="intro-title">你不是只得一個數字，而是一整套正在運作的人生結構</h2>
+      <p class="intro-text">
+        很多人以為生命靈數只是算出自己是 1 號人、4 號人或 8 號人，
+        但真正影響一個人的，從來不只是表面的主命數。<br /><br />
+        <strong>相同的主命數，為什麼人生卻可以天差地遠？</strong><br />
+        因為主命數只告訴你核心性格傾向，但它無法解釋：<br />
+        · 為什麼你在工作上很有主見，感情裡卻缺乏安全感？<br />
+        · 為什麼你外表溫和，內在卻有很強的控制與防衛？<br />
+        · 為什麼你總是在相似的關係或事業模式中重複打轉？<br /><br />
+        這些差異，就來自更深層的完整命盤結構。
+      </p>
+    </div>
+
+    <!-- STEP 5: About the Triangle System - The methodology -->
+    <div class="soft-panel tri-panel" style="margin-top: 32px;">
+      <h3 style="margin-top: 0;">🧭 關於東南亞「三角計算法」流派</h3>
+      <p class="small" style="line-height: 1.7; color: #444;">
+        不同於西方傳統生命靈數九宮格，「三角計算法」起源於 20 世紀末的馬來西亞與新加坡，
+        由華人學者結合東方先天因果論所優化。<br /><br />
+        它以幾何能量流動的概念出發，強調主命數在整個思維邏輯與行為模式中
+        <strong>佔了高達 60% 的核心比重</strong>，並延伸出：<br />
+        · 13 個生命位置（看不同人生領域）<br />
+        · 81 組聯合數字（看內在動機與行為模式）<br />
+        · 早中晚三大階段（看時間線上的能量展開）<br /><br />
+        真正重要的不只是知道自己是幾號人，而是理解你是如何一步步走向現在的人生狀態。
+      </p>
+    </div>
+
+    <!-- STEP 6: The Advanced System - How it works -->
+    <section class="joint-section" id="jointSection" style="margin-top: 48px;">
+      <div class="joint-shell">
+        <div class="section-head joint-head">
+          <div class="joint-badge">進階深度解析</div>
+          <h2>完整生命靈數系統：三個層面解讀你的人生藍圖</h2>
+          <p class="muted" style="line-height: 1.8;">
+            如果說主命數是你的核心輪廓，那麼完整生命靈數盤就是一張更立體的生命藍圖。
+            它從<strong>人生領域、數字能量、時間階段</strong>三個層面，
+            理解你在性格、關係、事業、財富、家庭與內在成長中的運作模式。
+          </p>
+        </div>
+
+        <div class="joint-logic">
+          <div class="joint-logic-title">完整系統的三大組成</div>
+
+          <div class="joint-steps">
+            <div class="joint-step">
+              <div class="joint-step-num">01</div>
+              <h3>13 個生命位置</h3>
+              <p>
+                代表人生不同領域：父基因、母基因、主性格、事業、朋友、婚姻、
+                財富健康、子女下屬與隱藏潛意識等。
+                <strong>橫向看人生範疇。</strong>
+              </p>
+            </div>
+
+            <div class="joint-step">
+              <div class="joint-step-num">02</div>
+              <h3>81 組聯合數字</h3>
+              <p>
+                每個位置都對應一組由「因、程、果」組成的數字能量，
+                代表該領域中的內在動機、行動過程與最終展現。
+                <strong>看能量如何運作。</strong>
+              </p>
+            </div>
+
+            <div class="joint-step">
+              <div class="joint-step-num">03</div>
+              <h3>早中晚三大階段</h3>
+              <p>
+                透過早年(21-40)、中年(41-60)、晚年(61+)的時間線，
+                看同一組能量如何在不同年齡階段中展開、轉化與成熟。
+                <strong>縱向看人生時間線。</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAYER 1: Joint Numbers Logic -->
+        <div class="joint-logic" style="margin-top: 40px;">
+          <div class="joint-logic-title">聯合數字的核心邏輯：因 → 程 → 果</div>
+
+          <p class="muted" style="text-align: center; line-height: 1.8; margin-bottom: 32px;">
+            📌 這三組聯合數字，每一組都有三個數字、固定排序，
+            形成全人類 81 種獨一無二的能量模式。
+            每一組都不只是一組數字，
+            而是一種深藏在你內心的性格邏輯、行為慣性、人生選擇的節奏。
+          </p>
+
+          <div class="joint-steps">
+            <div class="joint-step">
+              <div class="joint-step-num">因</div>
+              <h3>起心動念</h3>
+              <p>
+                第一個數字代表內在原因。你在該人生領域中的真正驅動是什麼？
+                是熱情、責任、恐懼、匱乏、討好，還是想證明自己？
+              </p>
+            </div>
+
+            <div class="joint-step">
+              <div class="joint-step-num">程</div>
+              <h3>行動過程</h3>
+              <p>
+                第二個數字代表過程選擇。當壓力或機會出現時，
+                你會主動突破、理性壓抑、逃避拖延，還是進入情緒內耗？
+              </p>
+            </div>
+
+            <div class="joint-step">
+              <div class="joint-step-num">果</div>
+              <h3>結果顯化</h3>
+              <p>
+                第三個數字代表外在結果。最後在工作、關係、金錢與人生方向上，
+                這股能量會如何變成可見的現實狀態。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Example Case -->
+        <div class="joint-logic" style="margin-top: 32px; margin-bottom: 32px;">
+          <h3 class="joint-logic-title">📍 實例解析：1994 年 7 月 9 日</h3>
+          <div class="joint-grid">
+            <div class="joint-mini-card">
+              <h4>✔ 起因數字：977</h4>
+              <p>代表人緣好，富人脈，但亦要學會界線感</p>
+            </div>
+            <div class="joint-mini-card">
+              <h4>✔ 過程數字：145</h4>
+              <p>做事有計劃、有目標，但信心不足易中途放棄</p>
+            </div>
+            <div class="joint-mini-card">
+              <h4>✔ 結果數字：753</h4>
+              <p>天生貴人運，但也可能惹來小人與競爭</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAYER 2: 13 Life Positions -->
+        <div style="margin-top: 40px;">
+          <h3 style="text-align: center; margin-bottom: 24px;">13 個生命位置詳解</h3>
+          
+          <div class="joint-grid">
+            <div class="joint-mini-card">
+              <h4>1. 父基因</h4>
+              <p>看理性思維、職場形象、行動模式、責任感與父系能量影響。</p>
+            </div>
+
+            <div class="joint-mini-card">
+              <h4>2. 母基因</h4>
+              <p>看情緒反應、親密關係、潛意識、安全感與母系能量影響。</p>
+            </div>
+
+            <div class="joint-mini-card">
+              <h4>3. 主性格</h4>
+              <p>看最核心、最容易被看見的性格底色、天賦與盲點。</p>
+            </div>
+
+            <div class="joint-mini-card">
+              <h4>4. 過程 1</h4>
+              <p>看人生前段或面對外界時的第一層行動模式與學習過程。</p>
+            </div>
+
+            <div class="joint-mini-card">
+              <h4>5. 過程 2</h4>
+              <p>看更深層的轉化課題、反覆出現的選擇與內在調整方向。</p>
+            </div>
+
+            <div class="joint-mini-card">
+              <h4>6. 子女下屬</h4>
+              <p>看與子女、晚輩、學生、團隊成員或下屬之間的互動模式。</p>
+            </div>
+
+            <div class="joint-mini-card">
+              <h4>7. 事業 1</h4>
+              <p>看主要事業能量、職場優勢、工作模式與事業發展方向。</p>
+            </div>
+
+            <div class="joint-mini-card">
+              <h4>8. 事業 2</h4>
+              <p>看事業突破點、合作模式、長期發展與職涯中的隱藏挑戰。</p>
+            </div>
+
+            <div class="joint-mini-card">
+              <h4>9. 當下朋友</h4>
+              <p>看目前人際圈、朋友關係、社交狀態與容易吸引的人際能量。</p>
+            </div>
+
+            <div class="joint-mini-card">
+              <h4>10. 婚姻 1</h4>
+              <p>看主要感情模式、愛情觀、伴侶期待與親密關係中的安全感需求。</p>
+            </div>
+
+            <div class="joint-mini-card">
+              <h4>11. 婚姻 2</h4>
+              <p>看長期關係中的承諾、磨合、衝突模式與關係修復課題。</p>
+            </div>
+
+            <div class="joint-mini-card">
+              <h4>12. 財健子</h4>
+              <p>看財富能量、資源流動、生活穩定感、子女緣分與身心平衡提醒。</p>
+            </div>
+
+            <div class="joint-mini-card">
+              <h4>13. 隱藏號</h4>
+              <p>看潛意識渴望、壓抑特質、不容易被看見的一面與尚未開發的天賦。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAYER 3: Life Stages -->
+        <div style="margin-top: 48px;">
+          <h3 style="text-align: center; margin-bottom: 24px;">早年運・中年運・晚年運</h3>
+          <p class="muted" style="text-align: center; line-height: 1.8; margin-bottom: 32px;">
+            同樣的能量，在不同人生階段會有不同展現。<br />
+            完整解讀不只看你「有什麼能量」，更會看這些能量「何時」展開。
+          </p>
+
+          <div class="joint-steps">
+            <div class="joint-step">
+              <div class="joint-step-num">21–40</div>
+              <h3>早年運：奠基衝刺期</h3>
+              <p>
+                學習、嘗試、建立能力與開拓人脈的階段。
+                重點在於累積經驗、建立社會形象、探索方向，
+                並逐步形成自己的工作與人生定位。
+              </p>
+            </div>
+
+            <div class="joint-step">
+              <div class="joint-step-num">41–60</div>
+              <h3>中年運：成熟整合期</h3>
+              <p>
+                事業、家庭、責任與資源整合的成熟階段。
+                重點在於展現專業、承擔責任、管理資源，
+                並經歷更深層的內在轉化與人生方向調整。
+              </p>
+            </div>
+
+            <div class="joint-step">
+              <div class="joint-step-num">61+</div>
+              <h3>晚年運：收穫傳承期</h3>
+              <p>
+                心靈沉澱、家庭回歸、關係修復與生命傳承。
+                重點在於整理一生經驗、回到內在安定，
+                並將智慧、愛與資源傳遞給後代或身邊的人。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="joint-bottom-note" style="margin-top: 32px;">
+          <p>
+            <strong>簡單來說：13 個位置看人生範疇，81 組數字看能量模式，早中晚三運看時間發展。</strong><br />
+            真正有價值的，不是知道一個標籤，而是看懂你為什麼總在某些人生劇本中重複打轉。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 7: FAQ - Address common concerns -->
+    <section class="faq-section" id="faqSection" style="margin-top: 48px;">
+      <div class="faq-shell">
+        <div class="section-head" style="margin-bottom: 20px;">
+          <div class="faq-badge">常見問題 FAQ</div>
+          <h2>開始接觸生命靈數前，你可能也想知道</h2>
+        </div>
+
+        <div class="faq-list-advanced">
+          <div class="faq-accordion-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>生命靈數準嗎？它到底是算命，還是自我理解工具？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                很多人第一次接觸生命靈數，都會把它當成「命運答案」。
+                但更貼近的理解是：它是一套幫助你看懂自己內在模式的工具。
+                它不是替你決定人生，而是讓你更清楚自己習慣怎麼思考、怎麼反應、又為什麼總在某些課題中重複。
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>為什麼我和朋友同樣的主命數，個性卻差很多？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                因為主命數看到的是核心主軸，但不是完整全貌。
+                一個人的外在表現、情緒模式、關係課題、壓力反應，
+                還會受到父基因、母基因、隱藏數字、13 個生命位置與聯合結構影響。
+                所以同一個主命數，仍然可能活出完全不同的人生狀態。
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>只知道主命數還不夠嗎？什麼情況適合做深度解析？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                如果你只是想快速認識自己的基本特質，主命數已經很有幫助。
+                但如果你正卡在感情、人際、事業方向、情緒內耗、
+                或者一直重複類似的人生問題，深度解析會更適合你。
+                因為真正造成卡關的，通常不是表面性格，而是更深層的能量結構。
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>十三組聯合數字可以幫我看見什麼？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                它可以幫助你更完整地看見：你的起心動念、壓力下的反應模式、
+                關係中的慣性、工作上的能量使用方式、不同人生階段的課題，
+                以及你為什麼會在某些模式中反覆打轉。
+                它的價值，不只是描述你，而是幫你理解「問題是怎麼形成的」。
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>如果我想更深入了解自己，下一步應該怎樣做？</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                最直接的方式，就是預約一對一生命數字諮詢。
+                比起只看一個主命數結果，深度解析能帶你更完整理解自己的核心天賦、
+                關係課題、低頻盲點、13 個生命位置、81 組聯合數字與人生階段方向，
+                也更適合正準備轉換人生階段的人。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 8: CTA - Final conversion -->
+    <section class="cta-consult-section" id="ctaConsult" style="margin-top: 48px;">
+      <div class="cta-consult-wrap">
+        <div class="cta-consult-glow cta-glow-1"></div>
+        <div class="cta-consult-glow cta-glow-2"></div>
+
+        <div class="cta-consult-content">
+          <div class="cta-badge">專屬一對一解析</div>
+
+          <h2 class="cta-title">
+            想知道自己不只是幾號人，
+            <span>而是更完整看懂內在模式、關係課題與人生方向？</span>
+          </h2>
+
+          <p class="cta-subtitle">
+            當你真正理解自己，很多困住你的問題，才會開始慢慢鬆動。
+          </p>
+
+          <p class="cta-description">
+            歡迎預約一對一生命數字諮詢，深入解析你的主命數、父母基因、
+            隱藏數字、13 個生命位置、81 組聯合數字與早中晚三大階段，
+            陪你更清楚看見自己的性格核心、情緒慣性、關係模式與當下最適合的人生方向。
+          </p>
+
+          <div class="cta-feature-list">
+            <div class="cta-feature-item">主命數核心解析</div>
+            <div class="cta-feature-item">13 個生命位置拆解</div>
+            <div class="cta-feature-item">81 組聯合數字說明</div>
+            <div class="cta-feature-item">早中晚三大階段梳理</div>
+            <div class="cta-feature-item">關係 / 事業 / 人生方向整理</div>
+          </div>
+
+          <div class="cta-action-row">
+            <a href="contact.html" class="cta-btn cta-btn-primary">
+              📅 預約一對一生命數字諮詢
+              <span class="cta-btn-arrow">→</span>
+            </a>
+            <a href="store.html" class="cta-btn cta-btn-secondary">
+              🛍️ 瀏覽能量商品
+            </a>
+          </div>
+
+          <p class="cta-note">
+            適合正在經歷關係卡點、人生轉折、情緒內耗，
+            或想更深入認識自己的人。
+          </p>
+        </div>
+      </div>
+    </section>
+
   </div>
 </section>
 
@@ -162,15 +590,31 @@
 <footer class="footer">
   <div class="container footer-inner">
     <div>
-      <strong>Newage.forest</strong><br>
+      <strong>Newage.forest</strong><br />
       <span class="small">Wear your energy. Align with love and abundance.</span>
     </div>
 
     <div class="small">
-      Instagram: @newage.gaia · 順應宇宙能量，穿出每日好運
+      Instagram:
+      <a
+        href="https://www.instagram.com/newage.forest?igsh=dGxlaWs1ZHEzMjVt&utm_source=qr"
+        target="_blank"
+        style="color: inherit; text-decoration: underline;"
+      >@newage.forest</a>
+      · 順應宇宙能量，穿出每日好運
     </div>
   </div>
 </footer>
+
+<!-- Floating Action Buttons -->
+<div class="floating-actions">
+  <a href="contact.html" class="float-btn float-btn-contact" title="預約諮詢">
+    📅
+  </a>
+  <a href="store.html" class="float-btn float-btn-store" title="網上商店">
+    🛍️
+  </a>
+</div>
 
 <div class="modal-overlay" id="simpleModal">
   <div class="modal-box">

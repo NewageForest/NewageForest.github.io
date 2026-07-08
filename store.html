@@ -40,22 +40,32 @@
 
 <section id="store">
   <div class="container">
+    
+    <!-- 方案一的段落視覺設計 -->
     <div class="section-head">
       <h1>網上商店 Online Store</h1>
-      <p class="muted">
-        根據你嘅生命靈數 × 每日流日五行，計算出專屬你嘅魔法衣著顏色。
-        以下產品卡已支援多圖 gallery 結構，你之後每個產品可放 2 至 12 張圖。
+      
+      <p class="store-quote" style="font-size: 1.15rem; color: #333; font-weight: 500; margin-bottom: 20px; letter-spacing: 1px;">
+        「每天出門前的那五分鐘，是你有意識選擇自己人生頻率的時刻。」
+      </p>
+      
+      <p class="store-desc" style="line-height: 1.7; margin-bottom: 16px;">
+        根據你嘅 <strong style="color: #6e8e75;">生命靈數 × 每日流日五行</strong>，計算出專屬你嘅魔法衣著顏色。
+      </p>
+      
+      <p class="muted small" style="font-style: italic;">
+        如果你對產品、訂購方式、合作邀請，或者療癒服務有興趣，歡迎隨時搵我哋 🌿
       </p>
     </div>
 
     <div class="store-slider-shell">
       <div class="store-slider" id="storeSlider">
 
-        <!-- Product 1 -->
+        <!-- Product 1: 初體驗 -->
         <article class="product-card">
           <div class="gallery" data-gallery="p1">
             <div class="gallery-main">
-              <img src="images/product-1/1.jpg" alt="順流初綻產品圖片 1" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <img src="images/product-1/1.jpg" alt="初體驗產品圖片 1" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
               <div class="gallery-placeholder" style="display:none;">🌿</div>
 
               <div class="gallery-controls">
@@ -66,16 +76,16 @@
 
             <div class="gallery-thumbs">
               <div class="thumb active" onclick="setGalleryImage('p1', 0)">
-                <img src="images/product-1/1.jpg" alt="順流初綻縮圖 1" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='1';">
+                <img src="images/product-1/1.jpg" alt="初體驗縮圖 1" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='1';">
               </div>
               <div class="thumb" onclick="setGalleryImage('p1', 1)">
-                <img src="images/product-1/2.jpg" alt="順流初綻縮圖 2" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='2';">
+                <img src="images/product-1/2.jpg" alt="初體驗縮圖 2" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='2';">
               </div>
               <div class="thumb" onclick="setGalleryImage('p1', 2)">
-                <img src="images/product-1/3.jpg" alt="順流初綻縮圖 3" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='3';">
+                <img src="images/product-1/3.jpg" alt="初體驗縮圖 3" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='3';">
               </div>
               <div class="thumb" onclick="setGalleryImage('p1', 3)">
-                <img src="images/product-1/4.jpg" alt="順流初綻縮圖 4" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='4';">
+                <img src="images/product-1/4.jpg" alt="初體驗縮圖 4" onerror="this.parentElement.classList.add('placeholder-thumb'); this.remove(); this.parentElement.textContent='4';">
               </div>
             </div>
           </div>
@@ -83,7 +93,7 @@
           <div class="tag">初體驗 · 30天</div>
 
           <div>
-            <h3>「順流初綻」</h3>
+            <h3>「初體驗」</h3>
             <p class="muted small" style="margin:0;">30天能量穿搭流日指引</p>
           </div>
 
@@ -110,7 +120,7 @@
           <a class="buy-btn" href="https://buy.stripe.com/test_28EfZagDFcwDdjD49TdAk00" target="_blank" rel="noopener">立即購買 →</a>
         </article>
 
-        <!-- Product 2 -->
+        <!-- Product 2: 森呼吸 -->
         <article class="product-card">
           <div class="gallery" data-gallery="p2">
             <div class="gallery-main">
@@ -169,7 +179,7 @@
           <a class="buy-btn" href="YOUR_STRIPE_LINK_2" target="_blank" rel="noopener">立即購買 →</a>
         </article>
 
-        <!-- Product 3 -->
+        <!-- Product 3: 靜謐星河 -->
         <article class="product-card">
           <div class="gallery" data-gallery="p3">
             <div class="gallery-main">
@@ -281,7 +291,7 @@
 
         <p>
           只要購買日曆，並喺體驗三星期內追蹤我哋 Instagram
-          <strong>@newage.gaia</strong>，再 DM 寫低你真實使用感受，
+          <strong><a href="https://www.instagram.com/newage.forest?igsh=dGxlaWs1ZHEzMjVt&utm_source=qr" target="_blank" style="color: inherit; text-decoration: underline;">@newage.forest</a></strong>，再 DM 寫低你真實使用感受，
           即可獲得專屬折扣優惠。
         </p>
 
@@ -294,32 +304,67 @@
       </div>
     </div>
 
+    <!-- FAQ 部分 -->
     <div class="card" style="margin-top:28px;">
       <h3>常見問題 FAQ</h3>
 
-      <div class="faq-item">
-        <strong>Q1. 呢啲產品係實體定電子版？</strong>
-        <p class="muted">你可以改成你真實銷售方式，例如：目前為電子版產品，付款後會經電郵發送下載連結。</p>
+      <div class="faq-item" style="margin-bottom: 20px;">
+        <strong>Q1. 日曆最底嘅數字同符號點樣睇㗎？</strong>
+        <div class="muted small" style="margin-top: 8px; line-height: 1.6;">
+          <p>數字（1 至 9）代表你當日嘅<strong>流日數字</strong>；五個符號就代表<strong>五行（金、木、水、火、土）</strong>。日曆入面嘅每一個日期，都已經完全根據你提供嘅出生年月日專屬計算好，幫你直接配搭！</p>
+          
+          <p><strong>例子說明：</strong>如果某日顯示 <code>2 / 🜄</code>，即係代表當天你嘅流日數字係 2（對應顏色：白、金、銀），而五行屬性係水（對應顏色：黑、藍、灰）。</p>
+          
+          <!-- 穿搭優先次序提示框 -->
+          <p style="background: #f4f6f4; padding: 12px 14px; border-left: 3px solid #6e8e75; border-radius: 4px; margin: 16px 0; color: #333;">
+            <strong>💡 穿搭優先次序指引：</strong><br>
+            每日出門搵衫時，請<strong>優先跟隨「流日數字」</strong>嘅顏色去穿搭。如果衣櫃入面真係完全冇嗰種顏色嘅衫，先至退而求其次，<strong>跟隨「五行符號」</strong>嘅顏色。咁樣配搭就最靈活，亦能同時兼顧到當日嘅能量平衡 🌿
+          </p>
+          
+          <div style="margin-top: 12px; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+            <div>
+              <strong>🔢 流日數字與顏色對應（第一優先）：</strong><br>
+              • 1、6 ： 啡、深黃、杏、褐<br>
+              • 2、7 ： 白、金、銀<br>
+              • 3、8 ： 綠、青<br>
+              • 4、9 ： 黑、藍、灰<br>
+              • 5 &nbsp; &nbsp; &nbsp; ： 紅、橙、紫、粉紅
+            </div>
+            <div>
+              <strong>☯️ 五行符號與顏色對應（次要後備）：</strong><br>
+              • 🜋 (金) ： 白、金、銀<br>
+              • 🜄 (水) ： 黑、藍、灰<br>
+              • 🜂 (火) ： 紅、橙、紫、粉紅<br>
+              • 🜅 (木) ： 綠、青<br>
+              • 🜃 (土) ： 啡、深黃、杏、褐
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="faq-item">
-        <strong>Q2. 我應該揀 30 天定 365 天版本？</strong>
-        <p class="muted">如果你係第一次接觸能量穿搭，建議由 30 天開始；如果你想要長期陪伴，同建立日常儀式感，365 天會更適合你。</p>
+        <strong>Q2. 呢啲產品係實體定電子版？</strong>
+        <p class="muted">目前所有能量日曆均為<strong>電子版產品</strong>。付款成功後，系統會自動經電郵（Email）發送下載連結畀你。</p>
       </div>
 
       <div class="faq-item">
-        <strong>Q3. 日曆點樣根據我嘅靈數計算顏色？</strong>
-        <p class="muted">我哋會根據你嘅生命靈數（1-9號人），結合每日流日五行能量，運算出平衡你當日五行嘅最佳衣著顏色。</p>
+        <strong>Q3. 我應該揀 30 天定 365 天版本？</strong>
+        <p class="muted">如果你係第一次接觸能量穿搭，想小試牛刀，建議由 30 天嘅「初體驗」開始，感受下能量為每日狀態帶嚟嘅改變；如果你想要長期、穩定嘅溫暖陪伴，並建立日常儀式感， 365 天版本會更適合你。</p>
       </div>
 
       <div class="faq-item">
-        <strong>Q4. 買咗之後幾時收到？</strong>
-        <p class="muted">你可以填返實際安排，例如：付款確認後 24 小時內經 email 收到產品。</p>
+        <strong>Q4. 日曆點樣根據我嘅靈數計算顏色？</strong>
+        <p class="muted">我哋會根據你專屬嘅生命靈數（1-9號人），結合每日流日嘅五行能量變化，精準運算出能夠平衡你當日自身能量場嘅最佳衣著顏色。</p>
       </div>
 
       <div class="faq-item">
-        <strong>Q5. 如果我有問題，可以點聯絡你？</strong>
-        <p class="muted">你可以透過 Contact 頁面、Instagram DM，或者 email 聯絡我哋。</p>
+        <strong>Q5. 買咗之後幾時收到？</strong>
+        <p class="muted">付款確認後，你將會喺 <strong>24 小時內</strong>經 Email 收到產品。如果超過時間都未見到，記得順便幫手檢查埋「垃圾郵件箱 (Spam)」啊！</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Q6. 如果我有問題，可以點聯絡你？</strong>
+        <p class="muted">隨時歡迎你透過網站嘅 Contact 頁面，或者直接喺 Instagram DM 我哋（<a href="https://www.instagram.com/newage.forest?igsh=dGxlaWs1ZHEzMjVt&utm_source=qr" target="_blank" style="color: inherit; text-decoration: underline;">@newage.forest</a>），我哋會盡快回覆你！</p>
       </div>
     </div>
   </div>
@@ -335,7 +380,7 @@
     </div>
 
     <div class="small">
-      Instagram: @newage.gaia · 順應宇宙能量，穿出每日好運
+      Instagram: <a href="https://www.instagram.com/newage.forest?igsh=dGxlaWs1ZHEzMjVt&utm_source=qr" target="_blank" style="color: inherit; text-decoration: underline;">@newage.forest</a> · 順應宇宙能量，穿出每日好運
     </div>
   </div>
 </footer>
