@@ -1234,7 +1234,45 @@ section{padding:64px 0;scroll-margin-top:var(--nav-offset);}
   animation:shimmer 3s linear infinite;
 }
 
-/* ===== MOBILE ===== */
+/* ===== REVEAL ON SCROLL ===== */
+/* FIX: These were missing — initRevealOnScroll() in JS depends on them */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:opacity .55s ease, transform .55s ease;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== REDUCED MOTION (Accessibility) ===== */
+@media(prefers-reduced-motion:reduce){
+  .reveal{
+    opacity:1;
+    transform:none;
+    transition:none;
+  }
+  .reveal.is-visible{
+    opacity:1;
+    transform:none;
+  }
+  .shimmer-text{
+    animation:none;
+  }
+  .floating-num{
+    animation:none;
+  }
+}
+
+/* ===== IMAGE MODAL NAV — medium screens fix ===== */
+/* FIX: -60px buttons overflow off viewport on screens narrower than ~1280px */
+@media(max-width:1280px){
+  .image-modal-nav.prev{left:12px;}
+  .image-modal-nav.next{right:12px;}
+}
+
+/* ===== MOBILE (≤960px) ===== */
 @media(max-width:960px){
   :root{--nav-offset:118px;}
   .menu-toggle{display:flex;}
@@ -1272,6 +1310,7 @@ section{padding:64px 0;scroll-margin-top:var(--nav-offset);}
   .btn{width:100%;}
 }
 
+/* ===== SMALL MOBILE (≤640px) ===== */
 @media(max-width:640px){
   :root{--nav-offset:128px;}
   section{padding:52px 0;}
@@ -1286,34 +1325,30 @@ section{padding:64px 0;scroll-margin-top:var(--nav-offset);}
   .personality-name{font-size:.78rem;}
   .gallery-thumbs{padding:8px;}
   .thumb{flex-basis:52px;width:52px;height:52px;}
-.image-modal-box{
-  width:100%;
-  height:auto;
-  min-height:60vh;
-}
-
-.image-modal-close{
-  top:8px;
-  right:8px;
-  position:absolute;
-  width:36px;
-  height:36px;
-  font-size:1rem;
-}
-
-.image-modal-nav{
-  width:40px;
-  height:40px;
-  font-size:1.1rem;
-}
-
-.image-modal-nav.prev{
-  left:8px;
-}
-
-.image-modal-nav.next{
-  right:8px;
-}
+  .image-modal-box{
+    width:100%;
+    height:auto;
+    min-height:60vh;
+  }
+  .image-modal-close{
+    top:8px;
+    right:8px;
+    position:absolute;
+    width:36px;
+    height:36px;
+    font-size:1rem;
+  }
+  .image-modal-nav{
+    width:40px;
+    height:40px;
+    font-size:1.1rem;
+  }
+  .image-modal-nav.prev{
+    left:8px;
+  }
+  .image-modal-nav.next{
+    right:8px;
+  }
   .compare-table th,.compare-table td{padding:10px 14px;font-size:.85rem;}
   .promo-banner{flex-direction:column;text-align:center;}
   .testimonial-grid{grid-template-columns:1fr;}

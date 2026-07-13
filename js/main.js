@@ -643,6 +643,41 @@ function initStoreSlider() {
   });
 }
 
+// ===== Touch Swipe for Image Modal =====
+// FIX: Image modal had no swipe support on mobile — keyboard arrows don't work on phones
+function initImageModalSwipe() {
+  const modal = document.getElementById("imageModal");
+  if (!modal) return;
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let isHorizontalSwipe = false;
+
+  modal.addEventListener("touchstart", e => {
+    touchStartX = e.changedTouches[0].clientX;
+    touchStartY = e.changedTouches[0].clientY;
+    isHorizontalSwipe = false;
+  }, { passive: true });
+
+  modal.addEventListener("touchmove", e => {
+    const dx = Math.abs(e.changedTouches[0].clientX - touchStartX);
+    const dy = Math.abs(e.changedTouches[0].clientY - touchStartY);
+    // Only treat as horizontal swipe if clearly moving sideways
+    if (dx > dy && dx > 10) {
+      isHorizontalSwipe = true;
+    }
+  }, { passive: true });
+
+  modal.addEventListener("touchend", e => {
+    if (!isHorizontalSwipe) return;
+    const diff = touchStartX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      changeModalImage(diff > 0 ? 1 : -1);
+    }
+    isHorizontalSwipe = false;
+  }, { passive: true });
+}
+
 // ===== DOMContentLoaded =====
 document.addEventListener("DOMContentLoaded", () => {
   window.calculateLifePath = calculateLifePath;
@@ -734,4 +769,5 @@ document.addEventListener("DOMContentLoaded", () => {
   initCounters();
   initGalleries();
   initStoreSlider();
+  initImageModalSwipe(); // FIX: enable touch swipe on image modal for mobile
 });
