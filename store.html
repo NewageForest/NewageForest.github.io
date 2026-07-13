@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>網上商店 | Newage.forest</title>
-
   <meta name="description" content="Newage.forest 網上商店，購買生命靈數每日能量穿搭日曆。" />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -20,7 +19,7 @@
       <div class="brand-sub">Wear your energy. Align with love and abundance.</div>
     </a>
 
-    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
       <span></span>
       <span></span>
       <span></span>
@@ -29,7 +28,7 @@
     <div class="nav-links" id="mobileMenu">
       <a href="index.html">首頁 Home</a>
       <a href="numerology.html">生命靈數</a>
-      <a href="store.html">網上商店 Store</a>
+      <a href="store.html" class="active">網上商店 Store</a>
       <a href="about.html">關於我哋 About</a>
       <a href="contact.html">聯絡 Contact</a>
     </div>
@@ -40,32 +39,50 @@
 
 <section id="store">
   <div class="container">
-    
-    <!-- 方案一的段落視覺設計 -->
+
     <div class="section-head">
       <h1>網上商店 Online Store</h1>
-      
+
       <p class="store-quote" style="font-size: 1.15rem; color: #333; font-weight: 500; margin-bottom: 20px; letter-spacing: 1px;">
         「每天出門前的那五分鐘，是你有意識選擇自己人生頻率的時刻。」
       </p>
-      
+
       <p class="store-desc" style="line-height: 1.7; margin-bottom: 16px;">
         根據你嘅 <strong style="color: #6e8e75;">生命靈數 × 每日流日五行</strong>，計算出專屬你嘅魔法衣著顏色。
       </p>
-      
+
       <p class="muted small" style="font-style: italic;">
         如果你對產品、訂購方式、合作邀請，或者療癒服務有興趣，歡迎隨時搵我哋 🌿
+      </p>
+    </div>
+
+    <div class="soft-panel" style="margin-bottom: 24px;">
+      <h2 style="margin-bottom: 8px;">能量日曆 Energy Calendars</h2>
+      <p class="muted small" style="margin:0;">
+        每款日曆都根據你嘅生命靈數與每日流日能量而設計，並以不同主題與陪伴方式呈現。
       </p>
     </div>
 
     <div class="store-slider-shell">
       <div class="store-slider" id="storeSlider">
 
-        <!-- Product 1: 初體驗 -->
-        <article class="product-card">
+        <!-- Product 1 -->
+        <article
+          class="product-card"
+          data-category="能量日曆"
+          data-subcategory="體驗版"
+          data-theme="入門"
+          data-format="電子版"
+          data-duration="30天"
+        >
           <div class="gallery" data-gallery="p1">
             <div class="gallery-main">
-              <img src="images/product-1/1.jpg" alt="初體驗產品圖片 1" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <img
+                src="images/product-1/1.jpg"
+                alt="初體驗產品圖片 1"
+                onclick="openImageModalByGallery('p1')"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
               <div class="gallery-placeholder" style="display:none;">🌿</div>
 
               <div class="gallery-controls">
@@ -90,22 +107,25 @@
             </div>
           </div>
 
-          <div class="tag">初體驗 · 30天</div>
+          <div class="tag">能量日曆 · 體驗版</div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin: 10px 0 2px;">
+            <span class="tag">30天</span>
+            <span class="tag">電子版</span>
+            <span class="tag">入門</span>
+            <span class="tag">個人化</span>
+          </div>
 
           <div>
             <h3>「初體驗」</h3>
             <p class="muted small" style="margin:0;">30天能量穿搭流日指引</p>
           </div>
 
-          <div class="five-elements">
-            <span class="element-tag el-wood">木</span>
-            <span class="element-tag el-fire">火</span>
-            <span class="element-tag el-earth">土</span>
-            <span class="element-tag el-metal">金</span>
-            <span class="element-tag el-water">水</span>
-          </div>
-
           <div class="price">HKD$59.4</div>
+
+          <p class="small" style="margin:0;">
+            <strong>產品分類：</strong> 能量日曆 / 體驗版 / 入門系列
+          </p>
 
           <p class="small" style="margin:0;">
             <strong>適合你如果：</strong><br>
@@ -120,11 +140,23 @@
           <a class="buy-btn" href="https://buy.stripe.com/test_28EfZagDFcwDdjD49TdAk00" target="_blank" rel="noopener">立即購買 →</a>
         </article>
 
-        <!-- Product 2: 森呼吸 -->
-        <article class="product-card">
+        <!-- Product 2 -->
+        <article
+          class="product-card"
+          data-category="能量日曆"
+          data-subcategory="年度版"
+          data-theme="森林療癒"
+          data-format="電子版"
+          data-duration="365天"
+        >
           <div class="gallery" data-gallery="p2">
             <div class="gallery-main">
-              <img src="images/product-2/1.jpg" alt="森呼吸產品圖片 1" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <img
+                src="images/product-2/1.jpg"
+                alt="森呼吸產品圖片 1"
+                onclick="openImageModalByGallery('p2')"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
               <div class="gallery-placeholder" style="display:none;">🌲</div>
 
               <div class="gallery-controls">
@@ -149,22 +181,25 @@
             </div>
           </div>
 
-          <div class="tag">年度陪伴 · 365天</div>
+          <div class="tag">能量日曆 · 年度版</div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin: 10px 0 2px;">
+            <span class="tag">365天</span>
+            <span class="tag">電子版</span>
+            <span class="tag">森林療癒</span>
+            <span class="tag">個人化</span>
+          </div>
 
           <div>
             <h3>「森呼吸」</h3>
             <p class="muted small" style="margin:0;">365天大地滋養能量日曆</p>
           </div>
 
-          <div class="five-elements">
-            <span class="element-tag el-wood">木</span>
-            <span class="element-tag el-fire">火</span>
-            <span class="element-tag el-earth">土</span>
-            <span class="element-tag el-metal">金</span>
-            <span class="element-tag el-water">水</span>
-          </div>
-
           <div class="price">HKD$494.4</div>
+
+          <p class="small" style="margin:0;">
+            <strong>產品分類：</strong> 能量日曆 / 年度版 / 自然療癒系列
+          </p>
 
           <p class="small" style="margin:0;">
             <strong>適合你如果：</strong><br>
@@ -176,14 +211,26 @@
           </p>
 
           <a class="card-link" href="#store-info">了解更多 →</a>
-          <a class="buy-btn" href="YOUR_STRIPE_LINK_2" target="_blank" rel="noopener">立即購買 →</a>
+          <a class="buy-btn" href="https://buy.stripe.com/test_00w00c879eELbbvbCldAk01" target="_blank" rel="noopener">立即購買 →</a>
         </article>
 
-        <!-- Product 3: 靜謐星河 -->
-        <article class="product-card">
+        <!-- Product 3 -->
+        <article
+          class="product-card"
+          data-category="能量日曆"
+          data-subcategory="年度版"
+          data-theme="星河水彩"
+          data-format="電子版"
+          data-duration="365天"
+        >
           <div class="gallery" data-gallery="p3">
             <div class="gallery-main">
-              <img src="images/product-3/1.jpg" alt="靜謐星河產品圖片 1" onclick="openImageModal(this.src, this.alt)" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <img
+                src="images/product-3/1.jpg"
+                alt="靜謐星河產品圖片 1"
+                onclick="openImageModalByGallery('p3')"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              >
               <div class="gallery-placeholder" style="display:none;">🌌</div>
 
               <div class="gallery-controls">
@@ -208,22 +255,25 @@
             </div>
           </div>
 
-          <div class="tag">經典質感 · 365天</div>
+          <div class="tag">能量日曆 · 年度版</div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin: 10px 0 2px;">
+            <span class="tag">365天</span>
+            <span class="tag">電子版</span>
+            <span class="tag">星河水彩</span>
+            <span class="tag">個人化</span>
+          </div>
 
           <div>
             <h3>「靜謐星河」</h3>
             <p class="muted small" style="margin:0;">365天經典水彩能量日曆</p>
           </div>
 
-          <div class="five-elements">
-            <span class="element-tag el-wood">木</span>
-            <span class="element-tag el-fire">火</span>
-            <span class="element-tag el-earth">土</span>
-            <span class="element-tag el-metal">金</span>
-            <span class="element-tag el-water">水</span>
-          </div>
-
           <div class="price">HKD$494.4</div>
+
+          <p class="small" style="margin:0;">
+            <strong>產品分類：</strong> 能量日曆 / 年度版 / 藝術質感系列
+          </p>
 
           <p class="small" style="margin:0;">
             <strong>適合你如果：</strong><br>
@@ -235,13 +285,13 @@
           </p>
 
           <a class="card-link" href="#store-info">了解更多 →</a>
-          <a class="buy-btn" href="YOUR_STRIPE_LINK_3" target="_blank" rel="noopener">立即購買 →</a>
+          <a class="buy-btn" href="https://buy.stripe.com/test_5kQ28k8792W3gvPcGpdAk02" target="_blank" rel="noopener">立即購買 →</a>
         </article>
 
       </div>
 
       <div class="slider-nav">
-        <button class="slider-arrow" type="button" onclick="scrollStoreSlider(-1)">←</button>
+        <button class="slider-arrow" type="button" aria-label="上一個產品" onclick="scrollStoreSlider(-1)">←</button>
 
         <div class="slider-dots" id="sliderDots">
           <span class="slider-dot active" onclick="goStoreSlide(0)"></span>
@@ -249,7 +299,7 @@
           <span class="slider-dot" onclick="goStoreSlide(2)"></span>
         </div>
 
-        <button class="slider-arrow" type="button" onclick="scrollStoreSlider(1)">→</button>
+        <button class="slider-arrow" type="button" aria-label="下一個產品" onclick="scrollStoreSlider(1)">→</button>
       </div>
     </div>
 
@@ -291,7 +341,7 @@
 
         <p>
           只要購買日曆，並喺體驗三星期內追蹤我哋 Instagram
-          <strong><a href="https://www.instagram.com/newage.forest?igsh=dGxlaWs1ZHEzMjVt&utm_source=qr" target="_blank" style="color: inherit; text-decoration: underline;">@newage.forest</a></strong>，再 DM 寫低你真實使用感受，
+          <strong><a href="https://www.instagram.com/newage.forest?igsh=dGxlaWs1ZHEzMjVt&utm_source=qr" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">@newage.forest</a></strong>，再 DM 寫低你真實使用感受，
           即可獲得專屬折扣優惠。
         </p>
 
@@ -304,7 +354,6 @@
       </div>
     </div>
 
-    <!-- FAQ 部分 -->
     <div class="card" style="margin-top:28px;">
       <h3>常見問題 FAQ</h3>
 
@@ -312,15 +361,14 @@
         <strong>Q1. 日曆最底嘅數字同符號點樣睇㗎？</strong>
         <div class="muted small" style="margin-top: 8px; line-height: 1.6;">
           <p>數字（1 至 9）代表你當日嘅<strong>流日數字</strong>；五個符號就代表<strong>五行（金、木、水、火、土）</strong>。日曆入面嘅每一個日期，都已經完全根據你提供嘅出生年月日專屬計算好，幫你直接配搭！</p>
-          
+
           <p><strong>例子說明：</strong>如果某日顯示 <code>2 / 🜄</code>，即係代表當天你嘅流日數字係 2（對應顏色：白、金、銀），而五行屬性係水（對應顏色：黑、藍、灰）。</p>
-          
-          <!-- 穿搭優先次序提示框 -->
+
           <p style="background: #f4f6f4; padding: 12px 14px; border-left: 3px solid #6e8e75; border-radius: 4px; margin: 16px 0; color: #333;">
             <strong>💡 穿搭優先次序指引：</strong><br>
             每日出門搵衫時，請<strong>優先跟隨「流日數字」</strong>嘅顏色去穿搭。如果衣櫃入面真係完全冇嗰種顏色嘅衫，先至退而求其次，<strong>跟隨「五行符號」</strong>嘅顏色。咁樣配搭就最靈活，亦能同時兼顧到當日嘅能量平衡 🌿
           </p>
-          
+
           <div style="margin-top: 12px; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
             <div>
               <strong>🔢 流日數字與顏色對應（第一優先）：</strong><br>
@@ -328,7 +376,7 @@
               • 2、7 ： 白、金、銀<br>
               • 3、8 ： 綠、青<br>
               • 4、9 ： 黑、藍、灰<br>
-              • 5 &nbsp; &nbsp; &nbsp; ： 紅、橙、紫、粉紅
+              • 5 ： 紅、橙、紫、粉紅
             </div>
             <div>
               <strong>☯️ 五行符號與顏色對應（次要後備）：</strong><br>
@@ -349,7 +397,7 @@
 
       <div class="faq-item">
         <strong>Q3. 我應該揀 30 天定 365 天版本？</strong>
-        <p class="muted">如果你係第一次接觸能量穿搭，想小試牛刀，建議由 30 天嘅「初體驗」開始，感受下能量為每日狀態帶嚟嘅改變；如果你想要長期、穩定嘅溫暖陪伴，並建立日常儀式感， 365 天版本會更適合你。</p>
+        <p class="muted">如果你係第一次接觸能量穿搭，想小試牛刀，建議由 30 天嘅「初體驗」開始，感受下能量為每日狀態帶嚟嘅改變；如果你想要長期、穩定嘅溫暖陪伴，365 天版本會更適合你。</p>
       </div>
 
       <div class="faq-item">
@@ -364,7 +412,7 @@
 
       <div class="faq-item">
         <strong>Q6. 如果我有問題，可以點聯絡你？</strong>
-        <p class="muted">隨時歡迎你透過網站嘅 Contact 頁面，或者直接喺 Instagram DM 我哋（<a href="https://www.instagram.com/newage.forest?igsh=dGxlaWs1ZHEzMjVt&utm_source=qr" target="_blank" style="color: inherit; text-decoration: underline;">@newage.forest</a>），我哋會盡快回覆你！</p>
+        <p class="muted">隨時歡迎你透過網站嘅 Contact 頁面，或者直接喺 Instagram DM 我哋（<a href="https://www.instagram.com/newage.forest?igsh=dGxlaWs1ZHEzMjVt&utm_source=qr" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">@newage.forest</a>），我哋會盡快回覆你！</p>
       </div>
     </div>
   </div>
@@ -380,13 +428,17 @@
     </div>
 
     <div class="small">
-      Instagram: <a href="https://www.instagram.com/newage.forest?igsh=dGxlaWs1ZHEzMjVt&utm_source=qr" target="_blank" style="color: inherit; text-decoration: underline;">@newage.forest</a> · 順應宇宙能量，穿出每日好運
+      Instagram:
+      <a href="https://www.instagram.com/newage.forest?igsh=dGxlaWs1ZHEzMjVt&utm_source=qr" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">@newage.forest</a>
+      · 順應宇宙能量，穿出每日好運
     </div>
   </div>
 </footer>
 
 <div class="image-modal" id="imageModal" aria-hidden="true">
   <div class="image-modal-box">
+    <button class="image-modal-nav prev" type="button" onclick="changeModalImage(-1)" aria-label="Previous image">←</button>
+    <button class="image-modal-nav next" type="button" onclick="changeModalImage(1)" aria-label="Next image">→</button>
     <button class="image-modal-close" type="button" onclick="closeImageModal()" aria-label="Close image preview">✕</button>
     <img id="imageModalImg" class="image-modal-img" src="" alt="產品完整圖片預覽">
   </div>
