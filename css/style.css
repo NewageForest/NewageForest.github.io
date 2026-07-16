@@ -500,6 +500,12 @@ section{padding:64px 0;scroll-margin-top:var(--nav-offset);}
   margin:0 auto 16px;
   box-shadow:0 6px 18px rgba(63,91,70,0.2);
 }
+.age-step-num{
+  width:72px;
+  height:72px;
+  font-size:1rem;
+  line-height:1;
+}
 .joint-step h3{
   font-size:1.1rem;
   margin-bottom:12px;

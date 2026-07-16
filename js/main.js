@@ -263,7 +263,7 @@ function calculateLifePath() {
   const data = lifePathData[lifePath];
 
   if (!data) {
-    showModal("暫時未能計算此生命靈數結果，請稍後再試。");
+    showModal("暫時未能計算此生命數字結果，請稍後再試。");
     return;
   }
 
